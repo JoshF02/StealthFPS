@@ -46,6 +46,11 @@ public class Gun : MonoBehaviour
 
     private void Awake()
     {
+        Transform canvas = GameObject.FindWithTag("Canvas").transform;
+        ammoText = canvas.GetChild(2).GetComponent<TextMeshProUGUI>();
+        carriedAmmoText = canvas.GetChild(3).GetComponent<TextMeshProUGUI>();
+        fpsCam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+
         reloadWait = new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;
         currentCarriedAmmo = maxCarriedAmmo;
