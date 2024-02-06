@@ -15,7 +15,7 @@ D:/Unity Projects/Stealth FPS
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-51000
+50715
 Successfully changed project path to: D:/Unity Projects/Stealth FPS
 D:/Unity Projects/Stealth FPS
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ D:/Unity Projects/Stealth FPS
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [18428] Host "[IP] 172.16.27.114 [Port] 0 [Flags] 2 [Guid] 3327896293 [EditorId] 3327896293 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-01TE2F3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [14236] Host "[IP] 172.16.27.114 [Port] 0 [Flags] 2 [Guid] 2532491285 [EditorId] 2532491285 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-01TE2F3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [18428] Host "[IP] 172.16.27.114 [Port] 0 [Flags] 2 [Guid] 3327896293 [EditorId] 3327896293 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-01TE2F3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [14236] Host "[IP] 172.16.27.114 [Port] 0 [Flags] 2 [Guid] 2532491285 [EditorId] 2532491285 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-01TE2F3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 15 workers.
-Refreshing native plugins compatible for Editor in 7.25 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 6.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.9f1 (ea401c316338)
 [Subsystems] Discovering subsystems at path D:/Unity Installs/2022.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -70,17 +70,17 @@ Initialize mono
 Mono path[0] = 'D:/Unity Installs/2022.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity Installs/2022.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity Installs/2022.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56460
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56748
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity Installs/2022.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004763 seconds.
-- Loaded All Assemblies, in  0.291 seconds
+Registered in 0.002974 seconds.
+- Loaded All Assemblies, in  0.256 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.199 seconds
-Domain Reload Profiling: 490ms
-	BeginReloadAssembly (91ms)
+- Finished resetting the current domain, in  0.187 seconds
+Domain Reload Profiling: 443ms
+	BeginReloadAssembly (81ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
@@ -88,26 +88,26 @@ Domain Reload Profiling: 490ms
 		CreateAndSetChildDomain (1ms)
 	RebuildCommonClasses (26ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (43ms)
-	LoadAllAssembliesAndSetupDomain (122ms)
-		LoadAssemblies (90ms)
+	initialDomainReloadingComplete (36ms)
+	LoadAllAssembliesAndSetupDomain (104ms)
+		LoadAssemblies (81ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (121ms)
-			TypeCache.Refresh (120ms)
-				TypeCache.ScanAssembly (107ms)
+		AnalyzeDomain (103ms)
+			TypeCache.Refresh (102ms)
+				TypeCache.ScanAssembly (91ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (199ms)
+	FinalizeReload (187ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (156ms)
+		SetupLoadedEditorAssemblies (145ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (6ms)
 			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (100ms)
-			ProcessInitializeOnLoadMethodAttributes (43ms)
+			ProcessInitializeOnLoadAttributes (95ms)
+			ProcessInitializeOnLoadMethodAttributes (38ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -115,55 +115,55 @@ Domain Reload Profiling: 490ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.503 seconds
-Refreshing native plugins compatible for Editor in 2.73 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.454 seconds
+Refreshing native plugins compatible for Editor in 1.92 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.510 seconds
-Domain Reload Profiling: 1013ms
-	BeginReloadAssembly (117ms)
+- Finished resetting the current domain, in  0.486 seconds
+Domain Reload Profiling: 939ms
+	BeginReloadAssembly (109ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (18ms)
-	RebuildCommonClasses (28ms)
+		CreateAndSetChildDomain (15ms)
+	RebuildCommonClasses (25ms)
 	RebuildNativeTypeToScriptingClass (9ms)
 	initialDomainReloadingComplete (28ms)
-	LoadAllAssembliesAndSetupDomain (321ms)
-		LoadAssemblies (227ms)
+	LoadAllAssembliesAndSetupDomain (283ms)
+		LoadAssemblies (203ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (163ms)
-			TypeCache.Refresh (138ms)
-				TypeCache.ScanAssembly (120ms)
-			ScanForSourceGeneratedMonoScriptInfo (16ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (510ms)
+		AnalyzeDomain (144ms)
+			TypeCache.Refresh (120ms)
+				TypeCache.ScanAssembly (108ms)
+			ScanForSourceGeneratedMonoScriptInfo (15ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (486ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (380ms)
+		SetupLoadedEditorAssemblies (360ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
 			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (46ms)
-			ProcessInitializeOnLoadAttributes (276ms)
-			ProcessInitializeOnLoadMethodAttributes (50ms)
+			ProcessInitializeOnLoadAttributes (259ms)
+			ProcessInitializeOnLoadMethodAttributes (48ms)
 			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (7ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 2.77 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.90 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4916 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 72 unused Assets / (0.7 MB). Loaded Objects now: 5368.
-Memory consumption went from 198.1 MB to 197.5 MB.
-Total: 5.483700 ms (FindLiveObjects: 0.467000 ms CreateObjectMapping: 0.415900 ms MarkObjects: 4.162300 ms  DeleteObjects: 0.437500 ms)
+Memory consumption went from 198.3 MB to 197.6 MB.
+Total: 2.682800 ms (FindLiveObjects: 0.287000 ms CreateObjectMapping: 0.272900 ms MarkObjects: 1.865600 ms  DeleteObjects: 0.256500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -181,426 +181,62 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1222366.388248 seconds.
-  path: Assets/PolygonHeist/Prefab/Characters
-  artifactKey: Guid(d6df0eee7b01a8744b2a4a0e4fabed12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Prefab/Characters using Guid(d6df0eee7b01a8744b2a4a0e4fabed12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0ca97fffaeef4bdac7a769c6eb0667c') in 0.003609 seconds
+  Time since last request: 2686.666327 seconds.
+  path: Assets/Scripts/PlayerActions.cs
+  artifactKey: Guid(5643f6d205a905e4e81031a97b56fa6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerActions.cs using Guid(5643f6d205a905e4e81031a97b56fa6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09901643bb46cefc06f8fe6ef5ba6074') in 0.002133 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/PolygonHeist/Prefab/Characters/Character_Male_Overall_01.prefab
-  artifactKey: Guid(7ff387e26f5e0ca4ca737283862d87ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Prefab/Characters/Character_Male_Overall_01.prefab using Guid(7ff387e26f5e0ca4ca737283862d87ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e9c4b375362cf1f25bf24cc7ada8418') in 0.399447 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 210
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/PolygonHeist/Prefab/Characters/Character_Female_Shirt_01.prefab
-  artifactKey: Guid(bf2edc0036d05e14f85217eb90c00587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Prefab/Characters/Character_Female_Shirt_01.prefab using Guid(bf2edc0036d05e14f85217eb90c00587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '773f77d1003ae6d8a734983bc40cd461') in 0.018513 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 222
-========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.314 seconds
-Refreshing native plugins compatible for Editor in 2.02 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.313 seconds
+Refreshing native plugins compatible for Editor in 1.88 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.742 seconds
-Domain Reload Profiling: 1056ms
-	BeginReloadAssembly (134ms)
+- Finished resetting the current domain, in  0.749 seconds
+Domain Reload Profiling: 1062ms
+	BeginReloadAssembly (122ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (8ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (37ms)
-	RebuildCommonClasses (24ms)
+		CreateAndSetChildDomain (25ms)
+	RebuildCommonClasses (27ms)
 	RebuildNativeTypeToScriptingClass (9ms)
 	initialDomainReloadingComplete (18ms)
-	LoadAllAssembliesAndSetupDomain (128ms)
-		LoadAssemblies (179ms)
+	LoadAllAssembliesAndSetupDomain (137ms)
+		LoadAssemblies (176ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (13ms)
-			TypeCache.Refresh (5ms)
+		AnalyzeDomain (29ms)
+			TypeCache.Refresh (6ms)
 				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (14ms)
 			ResolveRequiredComponents (8ms)
-	FinalizeReload (742ms)
+	FinalizeReload (750ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (328ms)
+		SetupLoadedEditorAssemblies (346ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (54ms)
-			ProcessInitializeOnLoadAttributes (216ms)
-			ProcessInitializeOnLoadMethodAttributes (48ms)
-			AfterProcessingInitializeOnLoad (2ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (17ms)
-Refreshing native plugins compatible for Editor in 2.21 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4759 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (0.6 MB). Loaded Objects now: 5421.
-Memory consumption went from 191.0 MB to 190.3 MB.
-Total: 3.761700 ms (FindLiveObjects: 0.423400 ms CreateObjectMapping: 0.349400 ms MarkObjects: 2.734400 ms  DeleteObjects: 0.253700 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 230.326105 seconds.
-  path: Assets/PolygonHeist/Prefab/Environment
-  artifactKey: Guid(e209b945e1442b3429c4ace4b5dad437) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Prefab/Environment using Guid(e209b945e1442b3429c4ace4b5dad437) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4840af6c49cb90e56f23ca29203cb04a') in 0.004403 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 2.666872 seconds.
-  path: Assets/PolygonHeist/Prefab/Environment/SM_Env_Ceiling_01.prefab
-  artifactKey: Guid(0f98ebc32ed3f834fa3acfd22bf9d035) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Prefab/Environment/SM_Env_Ceiling_01.prefab using Guid(0f98ebc32ed3f834fa3acfd22bf9d035) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97c9a2db8dae2d6f300b67e24aa40188') in 0.211536 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 32
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/PolygonHeist/Prefab/Environment/SM_Env_Pillar_Exterior_Floor_02.prefab
-  artifactKey: Guid(e58a93867b6d566439f61e7847cc8002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Prefab/Environment/SM_Env_Pillar_Exterior_Floor_02.prefab using Guid(e58a93867b6d566439f61e7847cc8002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e05b0653406f1edd4a688261d7e6d92f') in 0.008944 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 13
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/PolygonHeist/Prefab/Environment/SM_Env_Stairway_01.prefab
-  artifactKey: Guid(d7cd1485aba3f5e4f878fb305c3c5170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Prefab/Environment/SM_Env_Stairway_01.prefab using Guid(d7cd1485aba3f5e4f878fb305c3c5170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f30b10ee9f3af03a83c5c81f77971ce') in 0.009102 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/PolygonHeist/Prefab/Environment/SM_Env_Wall_Glass_01.prefab
-  artifactKey: Guid(1edb23ccba9369d4bbc4b34ba8c8d02b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Prefab/Environment/SM_Env_Wall_Glass_01.prefab using Guid(1edb23ccba9369d4bbc4b34ba8c8d02b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a29f7de385279e591a6a070d97470bef') in 3.149890 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 8.470096 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Ceiling_02.fbx
-  artifactKey: Guid(ca707401ca5bcce4db02fabb39353fa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Ceiling_02.fbx using Guid(ca707401ca5bcce4db02fabb39353fa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f386231822841d4a4c450f04ee42cd50') in 0.029795 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_VaultGate_Frame_01.fbx
-  artifactKey: Guid(74b3da0326907fe4480d4b71d3325ef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_VaultGate_Frame_01.fbx using Guid(74b3da0326907fe4480d4b71d3325ef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b298bfd31866d08b3a70c93ee001bc3') in 0.008127 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000069 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Wall_Exterior_Window_Ground_02.fbx
-  artifactKey: Guid(35652ffd496f4384db90390e66578ca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Wall_Exterior_Window_Ground_02.fbx using Guid(35652ffd496f4384db90390e66578ca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35498735d3a9369421d2a841c4e71a19') in 0.013571 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 13
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Sidewalk_Straight_01.fbx
-  artifactKey: Guid(b46aef466a9bc89439bc4ed6e62b2ee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Sidewalk_Straight_01.fbx using Guid(b46aef466a9bc89439bc4ed6e62b2ee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88b928a21c1272f92f491e8227a8931f') in 0.008138 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_VaultDoor_Frame_01.fbx
-  artifactKey: Guid(074723846dea0354c8e8ef5085ba97e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_VaultDoor_Frame_01.fbx using Guid(074723846dea0354c8e8ef5085ba97e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a04434c81b75b458da630e7086c1f357') in 0.023005 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 23
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Roof_05.fbx
-  artifactKey: Guid(efd0c4f4d4af96a4ea5fbb4e1d136875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Roof_05.fbx using Guid(efd0c4f4d4af96a4ea5fbb4e1d136875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4a366743fc13c8ff6ae61215d44eb18') in 0.008551 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Skylight_01.fbx
-  artifactKey: Guid(89ccc5700620ca34d826d17799c5406a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Skylight_01.fbx using Guid(89ccc5700620ca34d826d17799c5406a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e252e55356f577641a943e08849e78fe') in 0.015248 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 13
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Door_03.fbx
-  artifactKey: Guid(1e307198a690d134f89943277b7a5e58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Door_03.fbx using Guid(1e307198a690d134f89943277b7a5e58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bea1f7752ed680168adead4fb78b8cb9') in 0.008585 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Door_01.fbx
-  artifactKey: Guid(eb38fb54ac326384491d086284a0c9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Door_01.fbx using Guid(eb38fb54ac326384491d086284a0c9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79ab49a845fdf2a8dacd8b7293b2721d') in 0.017938 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 13
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Ceiling_05.fbx
-  artifactKey: Guid(f548dad65e36c8b4f942289e5621fd02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Ceiling_05.fbx using Guid(f548dad65e36c8b4f942289e5621fd02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '632f1d5b548b6863f770e53ce683b740') in 0.008783 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Floor_02.fbx
-  artifactKey: Guid(b974388edddf2b84d8abe8a87b3e0785) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Floor_02.fbx using Guid(b974388edddf2b84d8abe8a87b3e0785) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7a3a692c4c57ff8ac338cf73cef4b86') in 0.008105 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Pillar_02.fbx
-  artifactKey: Guid(c66e67fff86959a4b84c7423507196ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Pillar_02.fbx using Guid(c66e67fff86959a4b84c7423507196ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '414e0b0abd33d99faade385a4edac22b') in 0.008967 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Wall_Glass_Ground_01.fbx
-  artifactKey: Guid(e6bd7c6c4f89edb48bb76d2b30168a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Wall_Glass_Ground_01.fbx using Guid(e6bd7c6c4f89edb48bb76d2b30168a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b5063294bde745f80b1e160138ed90c') in 0.022995 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 18
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Pillar_Interior_04.fbx
-  artifactKey: Guid(d3fd13bdf9044bc419fb171e152cb1a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Pillar_Interior_04.fbx using Guid(d3fd13bdf9044bc419fb171e152cb1a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06f5c730a15db1210368211fdec9c445') in 0.010266 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Steps_04.fbx
-  artifactKey: Guid(7af87a23114c5d94eb60f9059b852282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Steps_04.fbx using Guid(7af87a23114c5d94eb60f9059b852282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5be37c43cae7fc95b1c910a6f0463308') in 0.009452 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Ceiling_08.fbx
-  artifactKey: Guid(07d5d728dff4f034b83f522a9dac02ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Ceiling_08.fbx using Guid(07d5d728dff4f034b83f522a9dac02ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d5388dc58cb54fd376c3a2899c2f0ca') in 0.011295 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Wall_Exterior_Window_Ground_01.fbx
-  artifactKey: Guid(e34db16364ffa9147925150b101decc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Wall_Exterior_Window_Ground_01.fbx using Guid(e34db16364ffa9147925150b101decc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27a497eafa48b3b273239a288f0605bd') in 0.015076 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 13
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Ceiling_06.fbx
-  artifactKey: Guid(ccc59c83b31e52a4faa76d90e2d0be98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Ceiling_06.fbx using Guid(ccc59c83b31e52a4faa76d90e2d0be98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a302d5ad6b4b8ce07e70c2a63eb9f57') in 0.009956 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Wall_Exterior_Door_01.fbx
-  artifactKey: Guid(83380f86e39743e4ebbc514c8de00510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Wall_Exterior_Door_01.fbx using Guid(83380f86e39743e4ebbc514c8de00510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3849f56b57e587ed49983190012b14bd') in 0.009901 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Floor_01.fbx
-  artifactKey: Guid(c29fe2498c683b4408941f1943ffb88e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Floor_01.fbx using Guid(c29fe2498c683b4408941f1943ffb88e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e3a42aa8c5148edf3cf7e30aa21e97b') in 0.008653 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Steps_02.fbx
-  artifactKey: Guid(e14dee515d9b2df48aa705ca98be9190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Steps_02.fbx using Guid(e14dee515d9b2df48aa705ca98be9190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8586240e87e00f0d6cf3adacc7e35fb') in 0.008433 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/PolygonHeist/Model/SM_Env_Sidewalk_01.fbx
-  artifactKey: Guid(365adfac290cc9a46b66b40f7944415c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolygonHeist/Model/SM_Env_Sidewalk_01.fbx using Guid(365adfac290cc9a46b66b40f7944415c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c304cafb792d0233cfacf13410a18cd7') in 0.008411 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.338 seconds
-Refreshing native plugins compatible for Editor in 1.89 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.785 seconds
-Domain Reload Profiling: 1122ms
-	BeginReloadAssembly (130ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (8ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (34ms)
-	RebuildCommonClasses (24ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (25ms)
-	LoadAllAssembliesAndSetupDomain (149ms)
-		LoadAssemblies (198ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (13ms)
-			TypeCache.Refresh (4ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (785ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (360ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
+			InitializePlatformSupportModulesInManaged (3ms)
 			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (54ms)
-			ProcessInitializeOnLoadAttributes (243ms)
+			BeforeProcessingInitializeOnLoad (47ms)
+			ProcessInitializeOnLoadAttributes (237ms)
 			ProcessInitializeOnLoadMethodAttributes (55ms)
 			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (18ms)
-Refreshing native plugins compatible for Editor in 2.31 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 1.86 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4759 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (0.6 MB). Loaded Objects now: 5466.
-Memory consumption went from 195.7 MB to 195.0 MB.
-Total: 3.131500 ms (FindLiveObjects: 0.341200 ms CreateObjectMapping: 0.299100 ms MarkObjects: 2.210300 ms  DeleteObjects: 0.280100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.293 seconds
-Refreshing native plugins compatible for Editor in 2.00 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.802 seconds
-Domain Reload Profiling: 1094ms
-	BeginReloadAssembly (117ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (27ms)
-	RebuildCommonClasses (25ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (18ms)
-	LoadAllAssembliesAndSetupDomain (123ms)
-		LoadAssemblies (173ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (13ms)
-			TypeCache.Refresh (4ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (802ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (382ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (2ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (58ms)
-			ProcessInitializeOnLoadAttributes (263ms)
-			ProcessInitializeOnLoadMethodAttributes (52ms)
-			AfterProcessingInitializeOnLoad (2ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (20ms)
-Refreshing native plugins compatible for Editor in 2.51 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4759 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (0.6 MB). Loaded Objects now: 5470.
-Memory consumption went from 195.6 MB to 195.0 MB.
-Total: 3.034700 ms (FindLiveObjects: 0.350300 ms CreateObjectMapping: 0.359100 ms MarkObjects: 2.072300 ms  DeleteObjects: 0.252400 ms)
+Unloading 4763 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (0.6 MB). Loaded Objects now: 5376.
+Memory consumption went from 171.3 MB to 170.7 MB.
+Total: 3.774000 ms (FindLiveObjects: 0.292900 ms CreateObjectMapping: 0.284400 ms MarkObjects: 2.942800 ms  DeleteObjects: 0.253200 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):

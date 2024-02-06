@@ -1,0 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public interface IInteractible
+{
+    void Interact(Transform interactorTransform);
+    string GetInteractText();
+    Transform GetTransform();
+}

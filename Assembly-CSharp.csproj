@@ -42,8 +42,12 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\PlayerActions.cs" />
      <Compile Include="Assets\Scripts\Gun.cs" />
+     <Compile Include="Assets\Scripts\PlayerInteractUI.cs" />
      <Compile Include="Assets\Scripts\Scope.cs" />
      <Compile Include="Assets\Scripts\EnemyDetection.cs" />
+     <Compile Include="Assets\Scripts\SphereInteractible.cs" />
+     <Compile Include="Assets\Scripts\IInteractible.cs" />
+     <Compile Include="Assets\Scripts\PlayerInteract.cs" />
      <Compile Include="Assets\Scripts\Target.cs" />
      <Compile Include="Assets\Scripts\WeaponSwitching.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
