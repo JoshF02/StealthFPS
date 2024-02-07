@@ -20,10 +20,11 @@ public class GameManager : MonoBehaviour
     private int score = 0;
     private float timer = 0f;
     private float maxTimer = 120.0f;
-
-    
-
     private Objectives objective;
+
+    private bool objectiveComplete = false;
+
+    [SerializeField] private GameObject stealItem;
 
     private void Awake() 
     { 
@@ -32,8 +33,19 @@ public class GameManager : MonoBehaviour
 
         timer = maxTimer;
 
-        int rand = UnityEngine.Random.Range(0, (int)Objectives.Max);
-        objective = (Objectives)rand;
+        //int rand = UnityEngine.Random.Range(0, (int)Objectives.Max);
+        //objective = (Objectives)rand;
+
+        objective = Objectives.Steal;
+
+        switch (objective) {
+            case Objectives.Steal:
+                Instantiate(stealItem);
+                break;
+            default:
+                Debug.Log("not steal");
+                break;
+        }
     }
 
     private void Update()
@@ -63,5 +75,15 @@ public class GameManager : MonoBehaviour
     public Objectives GetObjective()
     {
         return objective;
+    }
+
+    public void CompleteObjective()
+    {
+        objectiveComplete = true;
+    }
+
+    public bool GetObjectiveComplete()
+    {
+        return objectiveComplete;
     }
 }

@@ -10,7 +10,7 @@ public class EnemyDetection : MonoBehaviour
     void Awake() 
     {
         thisEnemy = this.transform.parent.gameObject;
-        Debug.Log(thisEnemy.name);
+        //Debug.Log(thisEnemy.name);
     }
 
     void OnTriggerStay(Collider other) 

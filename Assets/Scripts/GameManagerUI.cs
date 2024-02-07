@@ -34,5 +34,7 @@ public class GameManagerUI : MonoBehaviour
     {
         scoreTMPUGUI.text = GameManager.Instance.GetScore().ToString();
         timerTMPUGUI.text = GameManager.Instance.GetTimer().ToString();
+
+        if (GameManager.Instance.GetObjectiveComplete()) objTMPUGUI.text = "Objective Complete";
     }
 }

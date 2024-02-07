@@ -669,6 +669,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ddab46d258d9ee48a056018a3ad6398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stealItem: {fileID: 3072072546669155594, guid: d919a6b9f3232134893f3661e4168372,
+    type: 3}
 --- !u!4 &478324494
 Transform:
   m_ObjectHideFlags: 0
