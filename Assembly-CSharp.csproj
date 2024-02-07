@@ -46,8 +46,10 @@
      <Compile Include="Assets\Scripts\Scope.cs" />
      <Compile Include="Assets\Scripts\EnemyDetection.cs" />
      <Compile Include="Assets\Scripts\SphereInteractible.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\IInteractible.cs" />
      <Compile Include="Assets\Scripts\PlayerInteract.cs" />
+     <Compile Include="Assets\Scripts\GameManagerUI.cs" />
      <Compile Include="Assets\Scripts\Target.cs" />
      <Compile Include="Assets\Scripts\CrateInteractible.cs" />
      <Compile Include="Assets\Scripts\WeaponSwitching.cs" />
