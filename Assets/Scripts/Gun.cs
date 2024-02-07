@@ -136,4 +136,10 @@ public class Gun : MonoBehaviour
             partToRecoil.localPosition = Vector3.Lerp(partToRecoil.localPosition, originalPosition, Time.deltaTime * partRecoilSpeed);
         }
     }
+
+    public void RefillAmmo()
+    {
+        currentAmmo = maxAmmo;
+        currentCarriedAmmo = maxCarriedAmmo;
+    }
 }

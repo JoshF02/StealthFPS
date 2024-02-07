@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\Target.cs" />
      <Compile Include="Assets\Scripts\CrateInteractible.cs" />
      <Compile Include="Assets\Scripts\WeaponSwitching.cs" />
+     <Compile Include="Assets\Scripts\AmmoInteractible.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
