@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    private int score;
-    private float timer;
+    private int score = 0;
+    private float timer = 0f;
     private float maxTimer = 120.0f;
 
     private void Awake() 
@@ -31,5 +31,15 @@ public class GameManager : MonoBehaviour
     public double GetTimer()
     {
         return Math.Round(timer, 2);
+    }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
+    public void IncreaseScoreBy(int amount)
+    {
+        score += amount;
     }
 }

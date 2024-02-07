@@ -12,6 +12,7 @@ public class Target : MonoBehaviour
 
     public void Die ()
     {
+        GameManager.Instance.IncreaseScoreBy(25);
         //Debug.Log("object destroyed");
         Destroy(gameObject);
     }
