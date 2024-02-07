@@ -7,7 +7,7 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] private PlayerInteractUI playerInteractUI;
     [SerializeField] private LayerMask layerMask;
-    private float range = 5f;
+    private float range = 2.5f;
     private Camera fpsCam;
     private Slider slider;
     private float timer = 0f;

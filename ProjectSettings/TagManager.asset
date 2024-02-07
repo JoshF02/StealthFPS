@@ -7,6 +7,9 @@ TagManager:
   - Sniper
   - Detection
   - Canvas
+  - Head
+  - Limb
+  - Body
   layers:
   - Default
   - TransparentFX

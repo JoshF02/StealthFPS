@@ -85,9 +85,15 @@ public class Gun : MonoBehaviour
 
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, shootingLayerMask)) {
+            string tag = hit.collider.gameObject.tag;
+            float multiplier = 1f;
+
+            if (tag == "Head") multiplier = 2f;
+            else if (tag == "Limb") multiplier = 0.5f;
+            
             //Debug.Log(hit.collider.transform.name); 
             Target target = hit.transform.root.GetComponent<Target>();
-            if (target != null) target.TakeDamage(damage);
+            if (target != null) target.TakeDamage(damage * multiplier);
 
             //GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             //Destroy(impactGO, 2f);
