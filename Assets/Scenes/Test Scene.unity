@@ -136,6 +136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_Male_SWAT_01
       objectReference: {fileID: 0}
+    - target: {fileID: 199194, guid: cf78ac9b09f3f284f8988b9e77af54bb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 444644, guid: cf78ac9b09f3f284f8988b9e77af54bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -176,8 +180,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9559342, guid: cf78ac9b09f3f284f8988b9e77af54bb, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 860449dba2a0bbc469cdcd02fd1f15c6, type: 2}
+    - target: {fileID: 9559342, guid: cf78ac9b09f3f284f8988b9e77af54bb, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 175104, guid: cf78ac9b09f3f284f8988b9e77af54bb, type: 3}
+    - {fileID: 132842, guid: cf78ac9b09f3f284f8988b9e77af54bb, type: 3}
+    - {fileID: 168884, guid: cf78ac9b09f3f284f8988b9e77af54bb, type: 3}
+    - {fileID: 153002, guid: cf78ac9b09f3f284f8988b9e77af54bb, type: 3}
+    - {fileID: 189364, guid: cf78ac9b09f3f284f8988b9e77af54bb, type: 3}
+    - {fileID: 151108, guid: cf78ac9b09f3f284f8988b9e77af54bb, type: 3}
+    - {fileID: 111570, guid: cf78ac9b09f3f284f8988b9e77af54bb, type: 3}
+    - {fileID: 130708, guid: cf78ac9b09f3f284f8988b9e77af54bb, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf78ac9b09f3f284f8988b9e77af54bb, type: 3}

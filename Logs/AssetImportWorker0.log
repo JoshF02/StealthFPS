@@ -15,7 +15,7 @@ D:/Unity Projects/Stealth FPS
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54351
+54466
 Successfully changed project path to: D:/Unity Projects/Stealth FPS
 D:/Unity Projects/Stealth FPS
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ D:/Unity Projects/Stealth FPS
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [18956] Host "[IP] 172.16.27.114 [Port] 0 [Flags] 2 [Guid] 2468873490 [EditorId] 2468873490 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-01TE2F3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [5868] Host "[IP] 172.16.27.114 [Port] 0 [Flags] 2 [Guid] 2468355875 [EditorId] 2468355875 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-01TE2F3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [18956] Host "[IP] 172.16.27.114 [Port] 0 [Flags] 2 [Guid] 2468873490 [EditorId] 2468873490 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-01TE2F3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [5868] Host "[IP] 172.16.27.114 [Port] 0 [Flags] 2 [Guid] 2468355875 [EditorId] 2468355875 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-01TE2F3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 15 workers.
-Refreshing native plugins compatible for Editor in 9.21 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 8.40 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.9f1 (ea401c316338)
 [Subsystems] Discovering subsystems at path D:/Unity Installs/2022.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -70,31 +70,31 @@ Initialize mono
 Mono path[0] = 'D:/Unity Installs/2022.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity Installs/2022.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity Installs/2022.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56592
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56752
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity Installs/2022.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003081 seconds.
-- Loaded All Assemblies, in  0.274 seconds
+Registered in 0.002932 seconds.
+- Loaded All Assemblies, in  0.266 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.198 seconds
-Domain Reload Profiling: 471ms
-	BeginReloadAssembly (82ms)
+- Finished resetting the current domain, in  0.197 seconds
+Domain Reload Profiling: 463ms
+	BeginReloadAssembly (78ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (26ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (46ms)
-	LoadAllAssembliesAndSetupDomain (111ms)
-		LoadAssemblies (81ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (106ms)
+		LoadAssemblies (77ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (109ms)
-			TypeCache.Refresh (108ms)
-				TypeCache.ScanAssembly (98ms)
+		AnalyzeDomain (105ms)
+			TypeCache.Refresh (104ms)
+				TypeCache.ScanAssembly (94ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
 	FinalizeReload (198ms)
@@ -103,11 +103,11 @@ Domain Reload Profiling: 471ms
 		SetupLoadedEditorAssemblies (154ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (6ms)
-			SetLoadedEditorAssemblies (6ms)
+			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (98ms)
-			ProcessInitializeOnLoadMethodAttributes (43ms)
+			ProcessInitializeOnLoadAttributes (100ms)
+			ProcessInitializeOnLoadMethodAttributes (42ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -115,124 +115,56 @@ Domain Reload Profiling: 471ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.556 seconds
-Refreshing native plugins compatible for Editor in 1.96 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.461 seconds
+Refreshing native plugins compatible for Editor in 1.99 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.471 seconds
-Domain Reload Profiling: 1027ms
-	BeginReloadAssembly (120ms)
+- Finished resetting the current domain, in  0.475 seconds
+Domain Reload Profiling: 936ms
+	BeginReloadAssembly (108ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (16ms)
-	RebuildCommonClasses (32ms)
+	RebuildCommonClasses (26ms)
 	RebuildNativeTypeToScriptingClass (9ms)
 	initialDomainReloadingComplete (28ms)
-	LoadAllAssembliesAndSetupDomain (368ms)
-		LoadAssemblies (209ms)
+	LoadAllAssembliesAndSetupDomain (290ms)
+		LoadAssemblies (193ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (230ms)
-			TypeCache.Refresh (207ms)
-				TypeCache.ScanAssembly (195ms)
+		AnalyzeDomain (160ms)
+			TypeCache.Refresh (136ms)
+				TypeCache.ScanAssembly (124ms)
 			ScanForSourceGeneratedMonoScriptInfo (15ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (471ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (476ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (351ms)
+		SetupLoadedEditorAssemblies (347ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
 			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (48ms)
-			ProcessInitializeOnLoadAttributes (244ms)
+			BeforeProcessingInitializeOnLoad (46ms)
+			ProcessInitializeOnLoadAttributes (243ms)
 			ProcessInitializeOnLoadMethodAttributes (51ms)
 			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (8ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.89 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.92 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4922 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 72 unused Assets / (0.7 MB). Loaded Objects now: 5374.
-Memory consumption went from 198.4 MB to 197.7 MB.
-Total: 2.833200 ms (FindLiveObjects: 0.315500 ms CreateObjectMapping: 0.351100 ms MarkObjects: 1.894300 ms  DeleteObjects: 0.271600 ms)
+Memory consumption went from 198.6 MB to 197.9 MB.
+Total: 2.761500 ms (FindLiveObjects: 0.304800 ms CreateObjectMapping: 0.294300 ms MarkObjects: 1.906400 ms  DeleteObjects: 0.255400 ms)
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/precompiled-assembly-types:Assembly-CSharp: bb6d206925b3c56bae74bc301ef12a0f -> 9d40708b333e03944a245f261f952ef6
-  custom:scripting/monoscript/fileName/AmmoInteractible.cs:  -> c15d6424e19b9e40e2526cb9246bedfa
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.351 seconds
-Refreshing native plugins compatible for Editor in 2.96 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.959 seconds
-Domain Reload Profiling: 1310ms
-	BeginReloadAssembly (115ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (26ms)
-	RebuildCommonClasses (30ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (27ms)
-	LoadAllAssembliesAndSetupDomain (166ms)
-		LoadAssemblies (207ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (21ms)
-			TypeCache.Refresh (8ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (13ms)
-	FinalizeReload (959ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (435ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (4ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (72ms)
-			ProcessInitializeOnLoadAttributes (292ms)
-			ProcessInitializeOnLoadMethodAttributes (59ms)
-			AfterProcessingInitializeOnLoad (3ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (17ms)
-Refreshing native plugins compatible for Editor in 2.19 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4765 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (0.6 MB). Loaded Objects now: 5378.
-Memory consumption went from 171.3 MB to 170.7 MB.
-Total: 6.276900 ms (FindLiveObjects: 0.407400 ms CreateObjectMapping: 0.941400 ms MarkObjects: 4.495800 ms  DeleteObjects: 0.430900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
@@ -249,471 +181,390 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 78575.381061 seconds.
-  path: Assets/Scripts/AmmoInteractible.cs
-  artifactKey: Guid(c75634a758be58d49a8ea9d188759131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AmmoInteractible.cs using Guid(c75634a758be58d49a8ea9d188759131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59b0e7651580544aa20745a2c66f2f4d') in 0.006324 seconds
+  Time since last request: 79516.753910 seconds.
+  path: Assets/CLazyRunnerActionAnimPack
+  artifactKey: Guid(fd24af85b7fcfa444b5d392568b8f98a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack using Guid(fd24af85b7fcfa444b5d392568b8f98a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3954efbe3dbdbf511873796d8a2f32c1') in 0.002000 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.312 seconds
-Refreshing native plugins compatible for Editor in 1.84 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.771 seconds
-Domain Reload Profiling: 1083ms
-	BeginReloadAssembly (112ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (26ms)
-	RebuildCommonClasses (25ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (18ms)
-	LoadAllAssembliesAndSetupDomain (144ms)
-		LoadAssemblies (174ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (30ms)
-			TypeCache.Refresh (7ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (15ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (771ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (354ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (56ms)
-			ProcessInitializeOnLoadAttributes (242ms)
-			ProcessInitializeOnLoadMethodAttributes (48ms)
-			AfterProcessingInitializeOnLoad (2ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (15ms)
-Refreshing native plugins compatible for Editor in 1.91 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4765 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (0.6 MB). Loaded Objects now: 5382.
-Memory consumption went from 171.4 MB to 170.7 MB.
-Total: 2.639800 ms (FindLiveObjects: 0.279600 ms CreateObjectMapping: 0.276500 ms MarkObjects: 1.837100 ms  DeleteObjects: 0.245900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 2.266260 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Textures
+  artifactKey: Guid(59c88c18e50348240a81de8e5ca6aa85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Textures using Guid(59c88c18e50348240a81de8e5ca6aa85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fd67234129918f6dad71b6d4d17520c') in 0.000323 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.290 seconds
-Refreshing native plugins compatible for Editor in 1.88 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.758 seconds
-Domain Reload Profiling: 1047ms
-	BeginReloadAssembly (111ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (25ms)
-	RebuildCommonClasses (30ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (18ms)
-	LoadAllAssembliesAndSetupDomain (120ms)
-		LoadAssemblies (167ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (13ms)
-			TypeCache.Refresh (4ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (758ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (351ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (2ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (48ms)
-			ProcessInitializeOnLoadAttributes (236ms)
-			ProcessInitializeOnLoadMethodAttributes (59ms)
-			AfterProcessingInitializeOnLoad (2ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (18ms)
-Refreshing native plugins compatible for Editor in 1.81 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4765 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (0.6 MB). Loaded Objects now: 5386.
-Memory consumption went from 171.4 MB to 170.7 MB.
-Total: 2.734100 ms (FindLiveObjects: 0.315300 ms CreateObjectMapping: 0.283600 ms MarkObjects: 1.879800 ms  DeleteObjects: 0.254800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.059839 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Textures/CLazyBody_Gray.png
+  artifactKey: Guid(362fbb403af757042a09f89aa50b3d3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Textures/CLazyBody_Gray.png using Guid(362fbb403af757042a09f89aa50b3d3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df3419ce6ed29d053b384b54e7b68f2d') in 0.056268 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.315 seconds
-Refreshing native plugins compatible for Editor in 2.00 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.766 seconds
-Domain Reload Profiling: 1080ms
-	BeginReloadAssembly (120ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (29ms)
-	RebuildCommonClasses (24ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (18ms)
-	LoadAllAssembliesAndSetupDomain (144ms)
-		LoadAssemblies (180ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (29ms)
-			TypeCache.Refresh (7ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (15ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (766ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (340ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (54ms)
-			ProcessInitializeOnLoadAttributes (233ms)
-			ProcessInitializeOnLoadMethodAttributes (45ms)
-			AfterProcessingInitializeOnLoad (2ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (14ms)
-Refreshing native plugins compatible for Editor in 1.94 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4765 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (0.6 MB). Loaded Objects now: 5390.
-Memory consumption went from 171.4 MB to 170.7 MB.
-Total: 2.631900 ms (FindLiveObjects: 0.271000 ms CreateObjectMapping: 0.235700 ms MarkObjects: 1.902400 ms  DeleteObjects: 0.222200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 1.954517 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Materials
+  artifactKey: Guid(73d1bf90d183e1742b8abe8bfa999dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Materials using Guid(73d1bf90d183e1742b8abe8bfa999dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8202a41787b49caa0060f1c7b692a816') in 0.000431 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.284 seconds
-Refreshing native plugins compatible for Editor in 2.97 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.807 seconds
-Domain Reload Profiling: 1090ms
-	BeginReloadAssembly (109ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (24ms)
-	RebuildCommonClasses (26ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (18ms)
-	LoadAllAssembliesAndSetupDomain (121ms)
-		LoadAssemblies (167ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (13ms)
-			TypeCache.Refresh (4ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (807ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (373ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (53ms)
-			ProcessInitializeOnLoadAttributes (258ms)
-			ProcessInitializeOnLoadMethodAttributes (53ms)
-			AfterProcessingInitializeOnLoad (3ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (18ms)
-Refreshing native plugins compatible for Editor in 2.55 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4765 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (0.6 MB). Loaded Objects now: 5394.
-Memory consumption went from 171.4 MB to 170.7 MB.
-Total: 3.350700 ms (FindLiveObjects: 0.347300 ms CreateObjectMapping: 0.341600 ms MarkObjects: 2.369900 ms  DeleteObjects: 0.291300 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.103074 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Materials/CLazyBody_Gray.mat
+  artifactKey: Guid(a3ac3a789870a7a41a3a116e64bf55c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Materials/CLazyBody_Gray.mat using Guid(a3ac3a789870a7a41a3a116e64bf55c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cefab1d380ef95635d605905466b7bf8') in 0.198930 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.315 seconds
-Refreshing native plugins compatible for Editor in 1.93 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.768 seconds
-Domain Reload Profiling: 1083ms
-	BeginReloadAssembly (112ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (26ms)
-	RebuildCommonClasses (25ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (18ms)
-	LoadAllAssembliesAndSetupDomain (150ms)
-		LoadAssemblies (170ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (40ms)
-			TypeCache.Refresh (7ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (23ms)
-			ResolveRequiredComponents (10ms)
-	FinalizeReload (769ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (344ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (2ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (50ms)
-			ProcessInitializeOnLoadAttributes (243ms)
-			ProcessInitializeOnLoadMethodAttributes (43ms)
-			AfterProcessingInitializeOnLoad (2ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (14ms)
-Refreshing native plugins compatible for Editor in 1.88 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4765 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (0.6 MB). Loaded Objects now: 5398.
-Memory consumption went from 171.4 MB to 170.7 MB.
-Total: 2.705800 ms (FindLiveObjects: 0.294700 ms CreateObjectMapping: 0.289600 ms MarkObjects: 1.874200 ms  DeleteObjects: 0.246600 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 1.208120 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations
+  artifactKey: Guid(33cb6786128ccf242ab66eb77b53b821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations using Guid(33cb6786128ccf242ab66eb77b53b821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25c2db2e036555ba1bccbcb98242474e') in 0.000325 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.301 seconds
-Refreshing native plugins compatible for Editor in 1.87 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.792 seconds
-Domain Reload Profiling: 1093ms
-	BeginReloadAssembly (117ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (25ms)
-	RebuildCommonClasses (31ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (20ms)
-	LoadAllAssembliesAndSetupDomain (123ms)
-		LoadAssemblies (175ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (13ms)
-			TypeCache.Refresh (4ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (793ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (368ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (55ms)
-			ProcessInitializeOnLoadAttributes (247ms)
-			ProcessInitializeOnLoadMethodAttributes (57ms)
-			AfterProcessingInitializeOnLoad (2ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (17ms)
-Refreshing native plugins compatible for Editor in 2.54 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4765 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (0.6 MB). Loaded Objects now: 5402.
-Memory consumption went from 171.4 MB to 170.7 MB.
-Total: 2.624100 ms (FindLiveObjects: 0.311200 ms CreateObjectMapping: 0.283000 ms MarkObjects: 1.777900 ms  DeleteObjects: 0.251400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.789161 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement
+  artifactKey: Guid(ed452af77d5cb38479c5b001aafeee93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement using Guid(ed452af77d5cb38479c5b001aafeee93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3163beaa740850c4fde0c8feee265e5a') in 0.000334 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.311 seconds
-Refreshing native plugins compatible for Editor in 1.82 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.707 seconds
-Domain Reload Profiling: 1018ms
-	BeginReloadAssembly (111ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (24ms)
-	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (17ms)
-	LoadAllAssembliesAndSetupDomain (146ms)
-		LoadAssemblies (177ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (29ms)
-			TypeCache.Refresh (6ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (15ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (707ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (307ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (2ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (45ms)
-			ProcessInitializeOnLoadAttributes (212ms)
-			ProcessInitializeOnLoadMethodAttributes (43ms)
-			AfterProcessingInitializeOnLoad (2ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (15ms)
-Refreshing native plugins compatible for Editor in 1.85 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4765 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (0.6 MB). Loaded Objects now: 5406.
-Memory consumption went from 171.4 MB to 170.8 MB.
-Total: 2.740100 ms (FindLiveObjects: 0.318300 ms CreateObjectMapping: 0.296700 ms MarkObjects: 1.891500 ms  DeleteObjects: 0.233100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 1.278672 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P2_CLazyEscape
+  artifactKey: Guid(928ef986a22616d4aa5429b168166d88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P2_CLazyEscape using Guid(928ef986a22616d4aa5429b168166d88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '042ea07d91f41823e6d440a0b698b2ff') in 0.000317 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.752700 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P3_CLazyJump
+  artifactKey: Guid(1985bab7a6e50d04b99424310f8a0d0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P3_CLazyJump using Guid(1985bab7a6e50d04b99424310f8a0d0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aaf1b395ccc00732e7efc1b2a049d883') in 0.000332 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.573772 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P4_CLazyAttack
+  artifactKey: Guid(75c0ce4759958d1429a77f1c06e47971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P4_CLazyAttack using Guid(75c0ce4759958d1429a77f1c06e47971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '010fbeace1bed210c49cfc61ef751bac') in 0.000342 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.515612 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P5_CLazyCollision
+  artifactKey: Guid(5abe9f3fea7b5354cac10d780a744f76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P5_CLazyCollision using Guid(5abe9f3fea7b5354cac10d780a744f76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24c9995fef30e7fd35bc3a99465d73f9') in 0.000386 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.425573 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P6_CLazyWallRun
+  artifactKey: Guid(54acf939f4c58874b83b8a084b0499c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P6_CLazyWallRun using Guid(54acf939f4c58874b83b8a084b0499c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1d7c468f919cc0cf894dcfde37d739f') in 0.000333 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.147104 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_5way_PwChargeDash
+  artifactKey: Guid(35db63838a4d7dc44ac7402ec424f2fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_5way_PwChargeDash using Guid(35db63838a4d7dc44ac7402ec424f2fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18a02e225803b30e207370c2fc679f6b') in 0.000348 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.332022 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_5way_PwDash
+  artifactKey: Guid(f961922598328074aa05035c96c3e867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_5way_PwDash using Guid(f961922598328074aa05035c96c3e867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82e9377e99a806b06aebf79568a38ab1') in 0.000329 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.380824 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Boost
+  artifactKey: Guid(d7af6954d65164d44be2a1a04fd96a62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Boost using Guid(d7af6954d65164d44be2a1a04fd96a62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7c8e2eeb6298600c0a29713910df571') in 0.000319 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.367409 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_ChargeBoost
+  artifactKey: Guid(2f99b8b7a27270346a761e37a1fcd496) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_ChargeBoost using Guid(2f99b8b7a27270346a761e37a1fcd496) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8662c8d207744105f909e1975751de17') in 0.000319 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.363338 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_ChargeDash
+  artifactKey: Guid(7c99c2b7275ccef43870927c5cebcafc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_ChargeDash using Guid(7c99c2b7275ccef43870927c5cebcafc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48f823c4632d3dc46ccd2d7860fdedd1') in 0.000324 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.262064 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Dash
+  artifactKey: Guid(40e59d1324b5a2f4e8951fba2d17c595) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Dash using Guid(40e59d1324b5a2f4e8951fba2d17c595) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e32870c424e2f85359e85c9cc3fb0af9') in 0.000321 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.308707 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Jog
+  artifactKey: Guid(96218694c49e3554aa14526bba2409fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Jog using Guid(96218694c49e3554aa14526bba2409fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd140918d2cb42cd9fcb68a69909bd6e6') in 0.000322 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.317974 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_JogStop
+  artifactKey: Guid(44cbb7d69ea908d43bad89d5ccd4bdd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_JogStop using Guid(44cbb7d69ea908d43bad89d5ccd4bdd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6630170ccb2e9a9a4be4440b5431ad2b') in 0.000341 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.312843 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Stop
+  artifactKey: Guid(238b406cfe82a0b4b861eeb6acbbf535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Stop using Guid(238b406cfe82a0b4b861eeb6acbbf535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50c66442a94d644ba1576982d1a024a5') in 0.000327 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.472542 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk
+  artifactKey: Guid(8622a4836907d9b4cadc7e49610b5eb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk using Guid(8622a4836907d9b4cadc7e49610b5eb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cb6e0ae303d800fdbf7fa411ed961dd') in 0.000331 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.298445 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_WalkStop
+  artifactKey: Guid(6e573bd450dfd8e40a030e5696ac525b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_WalkStop using Guid(6e573bd450dfd8e40a030e5696ac525b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d28109fe8c3f74d831437a2546f3a7e') in 0.000321 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.023169 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_90Arc_Boost
+  artifactKey: Guid(47e0976a9d9fbcd4ead5136739b031e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_90Arc_Boost using Guid(47e0976a9d9fbcd4ead5136739b031e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca33ca22965fd7402b97bc78a64f7b55') in 0.000326 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.267889 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_90Arc_Dash
+  artifactKey: Guid(eba3c2b796b1e744a95d1957f2eb3cce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_90Arc_Dash using Guid(eba3c2b796b1e744a95d1957f2eb3cce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c8542369b8f803c321e3e06f3f5cbd0') in 0.000332 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.352614 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_90Arc_Jog
+  artifactKey: Guid(21be0e15d242c3c47b80343792fb9a40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_90Arc_Jog using Guid(21be0e15d242c3c47b80343792fb9a40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dec6ae1663aa0754eac85cb0072e25d2') in 0.000317 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.322479 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_180Arc_Walk
+  artifactKey: Guid(297c1bec6ea74f949a6ac9e74f0a22d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_180Arc_Walk using Guid(297c1bec6ea74f949a6ac9e74f0a22d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33d63cc9e2138ef874e40a8539d387cd') in 0.000337 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.227546 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_180Turn_Boost
+  artifactKey: Guid(3ea1983c6663c6848bb790833861196a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_180Turn_Boost using Guid(3ea1983c6663c6848bb790833861196a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acbdce1d2cbdf79106355fa68f902128') in 0.000329 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.582873 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_180Turn_Dash
+  artifactKey: Guid(7789d765971700248a9e8a4badae4ba0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_180Turn_Dash using Guid(7789d765971700248a9e8a4badae4ba0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecbb7216f69f3a4bc4764fcfc9b72762') in 0.000325 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.353461 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_180Turn_Jog
+  artifactKey: Guid(d3e58a2f8a9bf2d478588d8a3a6dbb23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_180Turn_Jog using Guid(d3e58a2f8a9bf2d478588d8a3a6dbb23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bd2c6111c959f4a2cc625f0d22b3ac1') in 0.000327 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.258014 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Dash_End
+  artifactKey: Guid(36176300d6d35994b91cf75ba7e89c52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Dash_End using Guid(36176300d6d35994b91cf75ba7e89c52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9bba0c9280ac2da3041023b43db05c7') in 0.000334 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.238426 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Idle
+  artifactKey: Guid(13a68c5da76e82c41bd5892d340798db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Idle using Guid(13a68c5da76e82c41bd5892d340798db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a1fcc8a76ce4b5d7e34369df07c0ac0') in 0.000328 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.238164 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Start_Jog
+  artifactKey: Guid(0ecf26a152878a0469f349be0b38bb0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Start_Jog using Guid(0ecf26a152878a0469f349be0b38bb0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95c41ffd64426bc6256092903c4f82da') in 0.000309 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.297825 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Start_Walk
+  artifactKey: Guid(33bb5d6aef889964384c8cea66fdccfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Start_Walk using Guid(33bb5d6aef889964384c8cea66fdccfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ccd9429b5c9b60d0c961b394a04b66b') in 0.000329 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.792755 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Turn_Idle
+  artifactKey: Guid(dde4df420331af247a65157283f244c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Turn_Idle using Guid(dde4df420331af247a65157283f244c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b6a7f68ded40dd874ecd81fb7c8a427') in 0.000321 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.353211 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Turn_Walk
+  artifactKey: Guid(2441850f4c2470744b64eb61957607c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Turn_Walk using Guid(2441850f4c2470744b64eb61957607c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '859a0a76ccdc2abe2c134f661a8d54d3') in 0.000312 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.948257 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Wp_Dash
+  artifactKey: Guid(4787fa27f5de0314c91a4a8c2dab9987) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_Wp_Dash using Guid(4787fa27f5de0314c91a4a8c2dab9987) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d74b45487c5871500f0eac78d613985') in 0.000324 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.199395 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk.FBX
+  artifactKey: Guid(6e950ce0deb6c22419d4f264e8441f3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk.FBX using Guid(6e950ce0deb6c22419d4f264e8441f3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3949f1909e9a0ecc5353df79fe3d8b1b') in 0.074936 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 148
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Front.FBX
+  artifactKey: Guid(3a3075913643e7f43b61bc7ccbc070e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Front.FBX using Guid(3a3075913643e7f43b61bc7ccbc070e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e2c7989beffecc53433577ab9de33ee') in 0.060908 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 148
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Back_R45.FBX
+  artifactKey: Guid(4bef3980ac3ba994daf7f1c7e07d85ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Back_R45.FBX using Guid(4bef3980ac3ba994daf7f1c7e07d85ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c755f20f2188070101d4306e4f93daf2') in 0.022510 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 148
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Back_L_Root.FBX
+  artifactKey: Guid(41d0cb1f4837b474e8fa6b1147b53ec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Back_L_Root.FBX using Guid(41d0cb1f4837b474e8fa6b1147b53ec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e280bfc0bc92ca7dbd5c1046be59e02') in 0.050847 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 148
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Front_Root.FBX
+  artifactKey: Guid(91cd408b447dd6c47ac75d9e56819403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Front_Root.FBX using Guid(91cd408b447dd6c47ac75d9e56819403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de781fe33928297c4bf18b338c5c2725') in 0.025788 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 148
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Back_L.FBX
+  artifactKey: Guid(4da88a8d14b2f2d46a116a4ca36e8480) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Back_L.FBX using Guid(4da88a8d14b2f2d46a116a4ca36e8480) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f30ba49f2deb57287cca5406e277f01f') in 0.015007 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 148
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Front_L45.FBX
+  artifactKey: Guid(d68905673cd2ab94888b03851ded7e4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Front_L45.FBX using Guid(d68905673cd2ab94888b03851ded7e4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c08ef23477949cace0989f0e80815aab') in 0.018362 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 148
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Front_R_Root.FBX
+  artifactKey: Guid(763a2875e42b011489a2dbf7c01354da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Front_R_Root.FBX using Guid(763a2875e42b011489a2dbf7c01354da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a50ca95388a5eb685e19be6b20849e20') in 0.026258 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 148
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Front_L45_Root.FBX
+  artifactKey: Guid(c1c53814cda6b6e46a80acfe3b92cddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Front_L45_Root.FBX using Guid(c1c53814cda6b6e46a80acfe3b92cddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eaeafec682c4108853199023465031d8') in 0.015984 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 148
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Root.FBX
+  artifactKey: Guid(7b50e650e8248f44990c8e7f3567257a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Root.FBX using Guid(7b50e650e8248f44990c8e7f3567257a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3432bd84111f19d490aec5f467e394b1') in 0.015599 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 148
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Front_R45_Root.FBX
+  artifactKey: Guid(4c5548ee19b42744e98be74e204738df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CLazyRunnerActionAnimPack/Animations/P1_CLazyMovement/Mvm_8way_Walk/CLazy@Mvm_Walk_Front_R45_Root.FBX using Guid(4c5548ee19b42744e98be74e204738df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21c6b9912de9f8d8d369b3e931afa41c') in 0.016582 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 148
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
