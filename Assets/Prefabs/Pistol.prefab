@@ -291,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 20
-  fireRate: 15
+  fireRate: 6
   ammoText: {fileID: 0}
   carriedAmmoText: {fileID: 0}
   fpsCam: {fileID: 0}

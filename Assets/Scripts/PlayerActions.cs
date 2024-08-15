@@ -157,7 +157,11 @@ public class PlayerActions : MonoBehaviour
     void CalculateBob(float horizontal, float vertical){
         Vector2 walkInput = new Vector2(horizontal, vertical).normalized;
         // bob offset
-        speedCurve += Time.deltaTime * ((horizontal + vertical)*bobExaggeration);
+
+        float sum = horizontal + vertical;
+        if (sum == 0) sum = horizontal * 2;
+
+        speedCurve += Time.deltaTime * (sum * bobExaggeration);
 
         bobPosition.x = (curveCos*bobLimit.x)-(walkInput.x * travelLimit.x);
         bobPosition.y = (curveSin*bobLimit.y)-(vertical * travelLimit.y);

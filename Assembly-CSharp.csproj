@@ -44,6 +44,7 @@
      <Compile Include="Assets\Scripts\Gun.cs" />
      <Compile Include="Assets\Scripts\PlayerInteractUI.cs" />
      <Compile Include="Assets\Scripts\Scope.cs" />
+     <Compile Include="Assets\Scripts\EnemyNavigation.cs" />
      <Compile Include="Assets\Scripts\EnemyDetection.cs" />
      <Compile Include="Assets\Scripts\SphereInteractible.cs" />
      <Compile Include="Assets\Scripts\StealInteractible.cs" />
@@ -69,6 +70,7 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\Frank_RPG_Gunslinger\Documentation\Frank_Gunslinger_MotionList.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
@@ -703,6 +705,9 @@
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
         <HintPath>D:\Unity Projects\Stealth FPS\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AI.Navigation">
+        <HintPath>D:\Unity Projects\Stealth FPS\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Editor">
         <HintPath>D:\Unity Projects\Stealth FPS\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
@@ -763,6 +768,9 @@
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
         <HintPath>D:\Unity Projects\Stealth FPS\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AI.Navigation.Updater">
+        <HintPath>D:\Unity Projects\Stealth FPS\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
         <HintPath>D:\Unity Projects\Stealth FPS\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
@@ -784,8 +792,14 @@
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
         <HintPath>D:\Unity Projects\Stealth FPS\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor">
+        <HintPath>D:\Unity Projects\Stealth FPS\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.State">
         <HintPath>D:\Unity Projects\Stealth FPS\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+        <HintPath>D:\Unity Projects\Stealth FPS\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>D:\Unity Projects\Stealth FPS\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>

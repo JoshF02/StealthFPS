@@ -1,0 +1,418 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.9f1 (ea401c316338) revision 15351836'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'en' Physical Memory: 32702 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+D:\Unity Installs\2022.3.9f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker5
+-projectPath
+D:/Unity Projects/Stealth FPS
+-logFile
+Logs/AssetImportWorker5.log
+-srvPort
+65370
+Successfully changed project path to: D:/Unity Projects/Stealth FPS
+D:/Unity Projects/Stealth FPS
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [22172] Host "[IP] 192.168.1.172 [Port] 0 [Flags] 2 [Guid] 503075169 [EditorId] 503075169 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-01TE2F3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [22172] Host "[IP] 192.168.1.172 [Port] 0 [Flags] 2 [Guid] 503075169 [EditorId] 503075169 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-01TE2F3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 15 workers.
+Refreshing native plugins compatible for Editor in 7.31 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.9f1 (ea401c316338)
+[Subsystems] Discovering subsystems at path D:/Unity Installs/2022.3.9f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity Projects/Stealth FPS/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2080 Ti (ID=0x1e04)
+    Vendor:   NVIDIA
+    VRAM:     11027 MB
+    Driver:   31.0.15.5161
+Initialize mono
+Mono path[0] = 'D:/Unity Installs/2022.3.9f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity Installs/2022.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Unity Installs/2022.3.9f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56204
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity Installs/2022.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002900 seconds.
+- Loaded All Assemblies, in  0.277 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.183 seconds
+Domain Reload Profiling: 460ms
+	BeginReloadAssembly (92ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (99ms)
+		LoadAssemblies (91ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (98ms)
+			TypeCache.Refresh (97ms)
+				TypeCache.ScanAssembly (87ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (184ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (142ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (94ms)
+			ProcessInitializeOnLoadMethodAttributes (36ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.440 seconds
+Refreshing native plugins compatible for Editor in 1.88 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.476 seconds
+Domain Reload Profiling: 916ms
+	BeginReloadAssembly (106ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (15ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (27ms)
+	LoadAllAssembliesAndSetupDomain (273ms)
+		LoadAssemblies (189ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (145ms)
+			TypeCache.Refresh (121ms)
+				TypeCache.ScanAssembly (110ms)
+			ScanForSourceGeneratedMonoScriptInfo (15ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (476ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (360ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (49ms)
+			ProcessInitializeOnLoadAttributes (255ms)
+			ProcessInitializeOnLoadMethodAttributes (48ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 2.02 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4967 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 72 unused Assets / (0.7 MB). Loaded Objects now: 5419.
+Memory consumption went from 199.6 MB to 199.0 MB.
+Total: 2.908200 ms (FindLiveObjects: 0.354700 ms CreateObjectMapping: 0.335800 ms MarkObjects: 1.959000 ms  DeleteObjects: 0.258300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 4540.852901 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_GoldBar_02_Convex.asset
+  artifactKey: Guid(17933a077aadf3743a8a44fbe3a600da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_GoldBar_02_Convex.asset using Guid(17933a077aadf3743a8a44fbe3a600da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce2d2d3bf2c67c4e51789441aeba49fd') in 0.088146 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_Money_Note_02_Convex.asset
+  artifactKey: Guid(bbb0318057255f14eaa5b0f1c8aad886) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_Money_Note_02_Convex.asset using Guid(bbb0318057255f14eaa5b0f1c8aad886) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad589d8ac06570cadd7843385dea2655') in 0.004945 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_Money_Stack_03_Convex.asset
+  artifactKey: Guid(50ebf0a5af8f27a409283988cf9dbd49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_Money_Stack_03_Convex.asset using Guid(50ebf0a5af8f27a409283988cf9dbd49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f4495f183977474c04f247287689837') in 0.053027 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_Jewellery_02_Convex.asset
+  artifactKey: Guid(f08fbf21f627f334da16430d2bbed07a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_Jewellery_02_Convex.asset using Guid(f08fbf21f627f334da16430d2bbed07a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '370543fc63947448343081eab253edf5') in 0.017791 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_MetalDetector_Baggage_01_Convex.asset
+  artifactKey: Guid(3b885aac30fc3ea449ce65ee96d0297b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_MetalDetector_Baggage_01_Convex.asset using Guid(3b885aac30fc3ea449ce65ee96d0297b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b86fbe663d4ecb4164bb124ebe058a8') in 0.032370 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.610983 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_RopeBarrier_02_Convex.asset
+  artifactKey: Guid(506f7d66f0fa31e4ea4c71aa5d6cd850) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_RopeBarrier_02_Convex.asset using Guid(506f7d66f0fa31e4ea4c71aa5d6cd850) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55fc1bf12b570c64a23229b15bb9ecbb') in 0.003389 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_Rug_01_Convex.asset
+  artifactKey: Guid(4554e84b7d524a949bb83b18e6cf8eba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_Rug_01_Convex.asset using Guid(4554e84b7d524a949bb83b18e6cf8eba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '642e4635f2e46931de4e5f50bac010de') in 0.003451 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_SafeDepositBox_Cover_03_Convex.asset
+  artifactKey: Guid(4e0566e02c865e945aaa16cc58f0d80c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_SafeDepositBox_Cover_03_Convex.asset using Guid(4e0566e02c865e945aaa16cc58f0d80c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f18ae036af5f3dd537c2b913e3e5da3') in 0.024058 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_SafeDepositBox_Cover_01_Convex.asset
+  artifactKey: Guid(99b4c2a08dad09c4fbc7d9d7c575b211) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_SafeDepositBox_Cover_01_Convex.asset using Guid(99b4c2a08dad09c4fbc7d9d7c575b211) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dcd625ec6edd2cf61a0e9b6f125fbb8') in 0.030661 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.004052 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_Seat_01_Convex.asset
+  artifactKey: Guid(48ec8acfc3bea4240948152a3c3111a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_Seat_01_Convex.asset using Guid(48ec8acfc3bea4240948152a3c3111a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3eeebc54f65a1f881b597a846086ee67') in 0.003362 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_Sign_Jewellery_01_Convex.asset
+  artifactKey: Guid(80d8d0d9b6cb5c04093c1bc1d028b44d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_Sign_Jewellery_01_Convex.asset using Guid(80d8d0d9b6cb5c04093c1bc1d028b44d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8100c47e6c2f134ec88206dce4a69743') in 0.003549 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_Table_02_Convex.asset
+  artifactKey: Guid(c647d017d054f0543bab0a82007ae140) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_Table_02_Convex.asset using Guid(c647d017d054f0543bab0a82007ae140) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1b126dc65ed6adb39f80b42170f454e') in 0.010338 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_Sprinkler_01_Convex.asset
+  artifactKey: Guid(8f477688a7fe0cc408bd26835400db72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_Sprinkler_01_Convex.asset using Guid(8f477688a7fe0cc408bd26835400db72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bd37f1030bd8bedd938ee96e47aef60') in 0.008225 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.406226 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Prop_VaultTrolley_01_Convex.asset
+  artifactKey: Guid(3b36d78876a7ceb45828b0374ab29649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Prop_VaultTrolley_01_Convex.asset using Guid(3b36d78876a7ceb45828b0374ab29649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '846fceda4575e7ce7c2c59fe5bb4ac7f') in 0.003698 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Veh_Car_Police_Heist_01_Convex 2.asset
+  artifactKey: Guid(d62722bbc8ecf154aaf3982e78511903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Veh_Car_Police_Heist_01_Convex 2.asset using Guid(d62722bbc8ecf154aaf3982e78511903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3905b89303f710cb6ca4446fac4eaf01') in 0.008059 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Wep_Ammo_BulletLarge_01_Convex 1.asset
+  artifactKey: Guid(1fd36573d4965d5429e17b4650153d93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Wep_Ammo_BulletLarge_01_Convex 1.asset using Guid(1fd36573d4965d5429e17b4650153d93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63ff2bfd810d82829e0fd2dff0245c3e') in 0.006819 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Veh_SwatVan_01_Convex.asset
+  artifactKey: Guid(03c76295e9da99f4a9ca5132f81d6c5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Veh_SwatVan_01_Convex.asset using Guid(03c76295e9da99f4a9ca5132f81d6c5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d022f00a5038139afa00f3b388bc744') in 0.003936 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.005629 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Wep_Ammo_BulletSmall_01_Convex 1.asset
+  artifactKey: Guid(fb7e30c14b9bca747ba232f83670b292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Wep_Ammo_BulletSmall_01_Convex 1.asset using Guid(fb7e30c14b9bca747ba232f83670b292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd28999f8169e4583b0898c00b587aca1') in 0.003613 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Wep_Ammo_Shotgun_01_Convex 1.asset
+  artifactKey: Guid(55c9d92b3ec6008429df1f4742fdbfec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Wep_Ammo_Shotgun_01_Convex 1.asset using Guid(55c9d92b3ec6008429df1f4742fdbfec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f6c9b0d02d50b851c1d509319938943') in 0.003383 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Wep_Attachment_Redot_01_Convex.asset
+  artifactKey: Guid(10a0279c5cb5f49408957db56aa94c7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Wep_Attachment_Redot_01_Convex.asset using Guid(10a0279c5cb5f49408957db56aa94c7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '943d1fd672297cea7c89b4801f96f274') in 0.009873 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Wep_Attachment_Silencer_01_Convex 1.asset
+  artifactKey: Guid(6d056e2e086e34644a12916bd930b904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Wep_Attachment_Silencer_01_Convex 1.asset using Guid(6d056e2e086e34644a12916bd930b904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5916593b2f81f10790195cf239d1b1b7') in 0.003196 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Wep_Attachment_Torch_01_Convex 1.asset
+  artifactKey: Guid(ade97f938e102f545896666cdd4766ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Wep_Attachment_Torch_01_Convex 1.asset using Guid(ade97f938e102f545896666cdd4766ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47142e3f9588466e5f83e4097922e766') in 0.007197 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Wep_Holster_01_Convex.asset
+  artifactKey: Guid(143275e473d5db841943c95e80c50368) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Wep_Holster_01_Convex.asset using Guid(143275e473d5db841943c95e80c50368) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47f0f5e5cf6c926f0517eb47ad4b67b3') in 0.008148 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Wep_PistolBandit_01_Convex 1.asset
+  artifactKey: Guid(9238b156d7cf1434ebb7f591af55d88b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Wep_PistolBandit_01_Convex 1.asset using Guid(9238b156d7cf1434ebb7f591af55d88b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b4ecea1a7784b47cb34cf68532c0671') in 0.008133 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Wep_Attachment_Redot_01_Convex 1.asset
+  artifactKey: Guid(87039a0f21d5a6e44bad1f70982cc125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Wep_Attachment_Redot_01_Convex 1.asset using Guid(87039a0f21d5a6e44bad1f70982cc125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '533996fcb9e5e248584a218a28833b68') in 0.023423 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Wep_Grenade_Base_01_Convex 1.asset
+  artifactKey: Guid(a6154d6dde5867e4a8d693d624b41ca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Wep_Grenade_Base_01_Convex 1.asset using Guid(a6154d6dde5867e4a8d693d624b41ca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3d10127fdb537af8d2fc025b0e665e5') in 0.008377 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.786341 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Wep_Shotgun_01_Convex.asset
+  artifactKey: Guid(e87a05a902ad04244b9213e72db2b2dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Wep_Shotgun_01_Convex.asset using Guid(e87a05a902ad04244b9213e72db2b2dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7abe9fd934d1f9c56090ace4b2823ada') in 0.003193 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Wep_SMG_01_Convex.asset
+  artifactKey: Guid(8fc20c3941c553b4a93ea6dfb4d9fb8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Wep_SMG_01_Convex.asset using Guid(8fc20c3941c553b4a93ea6dfb4d9fb8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad7fb40b7c408c9340de0f6ede4f10df') in 0.003207 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/PolygonHeist/Model/Collisions/SM_Wep_SniperSwat_01_Convex.asset
+  artifactKey: Guid(1b91aa0e5fbda1e48a44be5ead54c7f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonHeist/Model/Collisions/SM_Wep_SniperSwat_01_Convex.asset using Guid(1b91aa0e5fbda1e48a44be5ead54c7f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0bec39a386347f24088e2ef225b9fba') in 0.003073 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
