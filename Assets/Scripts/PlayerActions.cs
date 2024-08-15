@@ -176,8 +176,9 @@ public class PlayerActions : MonoBehaviour
     void CalculateBob(float horizontal, float vertical){
         Vector2 walkInput = new Vector2(horizontal, vertical).normalized;
 
-        // more bobbing when sprinting
+        // more bobbing when sprinting, and when not aiming
         float scale = (isSprinting ? 1.75f : 1);
+        if (!isAiming) scale *= 10;
 
         // bob offset
         float sum = (vertical == 0 ? horizontal : vertical);

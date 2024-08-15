@@ -1003,7 +1003,7 @@ PrefabInstance:
     - target: {fileID: 9039565900464493430, guid: a8b977531197a234cbed355f6a4f0105,
         type: 3}
       propertyPath: shootingLayerMask.m_Bits
-      value: 129
+      value: 193
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1994,7 +1994,7 @@ GameObject:
   - component: {fileID: 1214920641}
   - component: {fileID: 1214920640}
   - component: {fileID: 1214920639}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2641,7 +2641,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 127
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -2662,7 +2662,7 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 127
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -2950,7 +2950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6beeef3d1070ffd47932a04de56fa75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 3000
 --- !u!1 &1640499325
 GameObject:
   m_ObjectHideFlags: 0
@@ -3817,7 +3817,7 @@ PrefabInstance:
     - target: {fileID: 3753117176276209903, guid: 78ca5497eea46844d973a4dca964802d,
         type: 3}
       propertyPath: shootingLayerMask.m_Bits
-      value: 129
+      value: 193
       objectReference: {fileID: 0}
     - target: {fileID: 6605725741888279694, guid: 78ca5497eea46844d973a4dca964802d,
         type: 3}
@@ -3856,7 +3856,7 @@ GameObject:
   - component: {fileID: 1977139814}
   - component: {fileID: 1977139816}
   - component: {fileID: 1977139817}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Drone Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3947,8 +3947,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1527948004}
   - {fileID: 1214920638}
+  - {fileID: 1527948004}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1977139814
@@ -7778,12 +7778,12 @@ PrefabInstance:
     - target: {fileID: 5520105931447657389, guid: f867332fe9fb72b4eab83ca1466495f8,
         type: 3}
       propertyPath: partRecoilDistance
-      value: 0.07
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 5520105931447657389, guid: f867332fe9fb72b4eab83ca1466495f8,
         type: 3}
       propertyPath: shootingLayerMask.m_Bits
-      value: 129
+      value: 193
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7822,7 +7822,7 @@ GameObject:
   - component: {fileID: 2676189881056492394}
   - component: {fileID: 3223343919105071394}
   - component: {fileID: 2740306464489311649}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
