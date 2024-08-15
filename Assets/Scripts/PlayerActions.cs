@@ -94,7 +94,7 @@ public class PlayerActions : MonoBehaviour
             // sprinting
             if (Input.GetKey(KeyCode.LeftShift) && vertical > 0)
             {
-                vertical *= 2;
+                vertical *= 1.5f;
                 isSprinting = true;
             }
         }
@@ -174,11 +174,7 @@ public class PlayerActions : MonoBehaviour
         Vector2 walkInput = new Vector2(horizontal, vertical).normalized;
         // bob offset
 
-        //float sum = horizontal + vertical;
-        //if (sum == 0) sum = horizontal * 2;
-        float sum = (horizontal == 0 ? vertical : horizontal);
-        //if (sum == 0) sum = vertical;
-
+        float sum = (vertical == 0 ? horizontal : vertical);
         speedCurve += Time.deltaTime * (sum * bobExaggeration);
 
         bobPosition.x = (curveCos*bobLimit.x)-(walkInput.x * travelLimit.x);

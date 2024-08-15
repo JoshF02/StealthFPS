@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 379406401}
   - component: {fileID: 379406400}
   - component: {fileID: 379406405}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 87
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -1692,7 +1692,7 @@ GameObject:
   - component: {fileID: 1089092447}
   - component: {fileID: 1089092446}
   - component: {fileID: 1089092451}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1839,7 +1839,7 @@ GameObject:
   - component: {fileID: 1143781281}
   - component: {fileID: 1143781280}
   - component: {fileID: 1143781285}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2297,7 +2297,7 @@ GameObject:
   - component: {fileID: 1444378029}
   - component: {fileID: 1444378028}
   - component: {fileID: 1444378027}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2808,7 +2808,7 @@ GameObject:
   - component: {fileID: 1581890328}
   - component: {fileID: 1581890327}
   - component: {fileID: 1581890332}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2922,8 +2922,8 @@ Transform:
   m_GameObject: {fileID: 1581890326}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.11, y: 0.42775154, z: 0.91975594}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 14.11, y: 2.4277515, z: 0.91975594}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3840,6 +3840,7 @@ GameObject:
   - component: {fileID: 1977139815}
   - component: {fileID: 1977139814}
   - component: {fileID: 1977139816}
+  - component: {fileID: 1977139817}
   m_Layer: 0
   m_Name: Drone Enemy
   m_TagString: Untagged
@@ -3969,7 +3970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6beeef3d1070ffd47932a04de56fa75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 250
+  health: 2500
 --- !u!114 &1977139816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3983,6 +3984,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 678619524317598564}
+--- !u!54 &1977139817
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977139809}
+  serializedVersion: 4
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1980813344
 GameObject:
   m_ObjectHideFlags: 0
@@ -7388,7 +7416,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 247
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -7702,6 +7730,11 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 571215709239320310}
+    - target: {fileID: 5520105931447657389, guid: f867332fe9fb72b4eab83ca1466495f8,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 1600
+      objectReference: {fileID: 0}
     - target: {fileID: 5520105931447657389, guid: f867332fe9fb72b4eab83ca1466495f8,
         type: 3}
       propertyPath: ammoText
