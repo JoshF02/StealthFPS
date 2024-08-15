@@ -992,9 +992,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9039565900464493430, guid: a8b977531197a234cbed355f6a4f0105,
         type: 3}
+      propertyPath: damage
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039565900464493430, guid: a8b977531197a234cbed355f6a4f0105,
+        type: 3}
       propertyPath: hitmarker
       value: 
       objectReference: {fileID: 975711019}
+    - target: {fileID: 9039565900464493430, guid: a8b977531197a234cbed355f6a4f0105,
+        type: 3}
+      propertyPath: shootingLayerMask.m_Bits
+      value: 129
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2313,7 +2323,7 @@ Rigidbody:
   m_GameObject: {fileID: 1444378026}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 2.42
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -3804,6 +3814,11 @@ PrefabInstance:
       propertyPath: hitmarker
       value: 
       objectReference: {fileID: 975711019}
+    - target: {fileID: 3753117176276209903, guid: 78ca5497eea46844d973a4dca964802d,
+        type: 3}
+      propertyPath: shootingLayerMask.m_Bits
+      value: 129
+      objectReference: {fileID: 0}
     - target: {fileID: 6605725741888279694, guid: 78ca5497eea46844d973a4dca964802d,
         type: 3}
       propertyPath: m_Name
@@ -4007,7 +4022,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -7548,10 +7563,10 @@ MonoBehaviour:
   maxRotationStep: 5
   smooth: 10
   speedCurve: 0
-  travelLimit: {x: 0.025, y: 0.025, z: 0.025}
-  bobLimit: {x: 0.01, y: 0.01, z: 0.01}
+  travelLimit: {x: 0.0025, y: 0.0025, z: 0.0025}
+  bobLimit: {x: 0.001, y: 0.001, z: 0.001}
   bobExaggeration: 6
-  multiplier: {x: 2, y: 2, z: 2}
+  multiplier: {x: 0.2, y: 0.2, z: 0.2}
 --- !u!4 &3284249640971020198
 Transform:
   m_ObjectHideFlags: 0
@@ -7764,6 +7779,11 @@ PrefabInstance:
         type: 3}
       propertyPath: partRecoilDistance
       value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520105931447657389, guid: f867332fe9fb72b4eab83ca1466495f8,
+        type: 3}
+      propertyPath: shootingLayerMask.m_Bits
+      value: 129
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

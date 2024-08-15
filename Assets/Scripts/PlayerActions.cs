@@ -19,6 +19,7 @@ public class PlayerActions : MonoBehaviour
 
     private Transform weaponHolder;
     public bool isAiming = false;
+    private bool isCrouching = false;
     private bool isSprinting = false;
 
     [Header("Sway")]
@@ -39,8 +40,8 @@ public class PlayerActions : MonoBehaviour
     float curveSin {get => Mathf.Sin(speedCurve);}
     float curveCos {get => Mathf.Cos(speedCurve);}
 
-    public Vector3 travelLimit = Vector3.one * 0.025f;
-    public Vector3 bobLimit = Vector3.one * 0.01f;
+    public Vector3 travelLimit = Vector3.one * 0.0025f;
+    public Vector3 bobLimit = Vector3.one * 0.001f;
     Vector3 bobPosition;
 
     public float bobExaggeration;
@@ -67,7 +68,7 @@ public class PlayerActions : MonoBehaviour
     {
         Move();
         Look();
-        if (!isAiming || isSprinting) ApplyBobAndSway();
+        if (!isAiming || !isCrouching) ApplyBobAndSway();
         else ApplySway();
     }
 
@@ -85,14 +86,16 @@ public class PlayerActions : MonoBehaviour
         {
             controller.height = 1.5f;
             speed = 2f;
+            isCrouching = true;
         }
         else 
         {
             controller.height = 2f;
             speed = 4f;
+            isCrouching = false;
 
             // sprinting
-            if (Input.GetKey(KeyCode.LeftShift) && vertical > 0)
+            if (Input.GetKey(KeyCode.LeftShift) && vertical > 0) 
             {
                 vertical *= 1.5f;
                 isSprinting = true;
@@ -172,19 +175,22 @@ public class PlayerActions : MonoBehaviour
 
     void CalculateBob(float horizontal, float vertical){
         Vector2 walkInput = new Vector2(horizontal, vertical).normalized;
-        // bob offset
 
+        // more bobbing when sprinting
+        float scale = (isSprinting ? 1.75f : 1);
+
+        // bob offset
         float sum = (vertical == 0 ? horizontal : vertical);
         speedCurve += Time.deltaTime * (sum * bobExaggeration);
 
-        bobPosition.x = (curveCos*bobLimit.x)-(walkInput.x * travelLimit.x);
-        bobPosition.y = (curveSin*bobLimit.y)-(vertical * travelLimit.y);
-        bobPosition.z = -(walkInput.y * travelLimit.z);
+        bobPosition.x = (curveCos*bobLimit.x)-(walkInput.x * travelLimit.x * scale);
+        bobPosition.y = (curveSin*bobLimit.y)-(vertical * travelLimit.y * scale);
+        bobPosition.z = -(walkInput.y * travelLimit.z * scale);
     
         // bob rotation
-        bobEulerRotation.x = (walkInput != Vector2.zero ? multiplier.x * (Mathf.Sin(2*speedCurve)) : multiplier.x * (Mathf.Sin(2*speedCurve) / 2));
-        bobEulerRotation.y = (walkInput != Vector2.zero ? multiplier.y * curveCos : 0);
-        bobEulerRotation.z = (walkInput != Vector2.zero ? multiplier.z * curveCos * walkInput.x : 0);
+        bobEulerRotation.x = (walkInput != Vector2.zero ? multiplier.x * scale * (Mathf.Sin(2*speedCurve)) : multiplier.x * scale * (Mathf.Sin(2*speedCurve) / 2));
+        bobEulerRotation.y = (walkInput != Vector2.zero ? multiplier.y * scale * curveCos : 0);
+        bobEulerRotation.z = (walkInput != Vector2.zero ? multiplier.z * scale * curveCos * walkInput.x : 0);
     }
 
     void ApplyBobAndSway(){
