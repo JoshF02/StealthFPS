@@ -19,6 +19,7 @@ public class PlayerActions : MonoBehaviour
 
     private Transform weaponHolder;
     public bool isAiming = false;
+    private bool isSprinting = false;
 
     [Header("Sway")]
     public float step = 0.01f;
@@ -66,7 +67,7 @@ public class PlayerActions : MonoBehaviour
     {
         Move();
         Look();
-        if (!isAiming) ApplyBobAndSway();
+        if (!isAiming || isSprinting) ApplyBobAndSway();
         else ApplySway();
     }
 
@@ -76,16 +77,8 @@ public class PlayerActions : MonoBehaviour
         // movement
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        Vector3 move = transform.right * horizontal + transform.forward * vertical;
 
-        // sprinting
-        if (Input.GetKey(KeyCode.LeftShift)) speed = 7.5f;
-        else speed = 4f;
-
-        // gravity
-        if (controller.isGrounded) verticalSpeed = 0;
-        else verticalSpeed -= gravity * Time.deltaTime;
-        Vector3 vert = new Vector3(0f, verticalSpeed, 0f) * Time.deltaTime;
+        isSprinting = false;
 
         // crouching
         if (Input.GetKey(KeyCode.CapsLock))
@@ -93,7 +86,30 @@ public class PlayerActions : MonoBehaviour
             controller.height = 1.5f;
             speed = 2f;
         }
-        else controller.height = 2f;
+        else 
+        {
+            controller.height = 2f;
+            speed = 4f;
+
+            // sprinting
+            if (Input.GetKey(KeyCode.LeftShift) && vertical > 0)
+            {
+                vertical *= 2;
+                isSprinting = true;
+            }
+        }
+
+        Vector3 move = transform.right * horizontal + transform.forward * vertical;
+
+        // sprinting
+        //if (Input.GetKey(KeyCode.LeftShift)) speed = 7.5f;
+        //else speed = 4f;
+
+        // gravity
+        if (controller.isGrounded) verticalSpeed = 0;
+        else verticalSpeed -= gravity * Time.deltaTime;
+        Vector3 vert = new Vector3(0f, verticalSpeed, 0f) * Time.deltaTime;
+
 
         controller.Move((move * speed * Time.deltaTime) + vert);
 
@@ -158,8 +174,10 @@ public class PlayerActions : MonoBehaviour
         Vector2 walkInput = new Vector2(horizontal, vertical).normalized;
         // bob offset
 
-        float sum = horizontal + vertical;
-        if (sum == 0) sum = horizontal * 2;
+        //float sum = horizontal + vertical;
+        //if (sum == 0) sum = horizontal * 2;
+        float sum = (horizontal == 0 ? vertical : horizontal);
+        //if (sum == 0) sum = vertical;
 
         speedCurve += Time.deltaTime * (sum * bobExaggeration);
 

@@ -13,6 +13,8 @@ public class Gun : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI ammoText;
     [SerializeField] private TextMeshProUGUI carriedAmmoText;
+    [SerializeField] private GameObject hitmarker;
+    private float hitmarkerTimer = 0f;
 
     [SerializeField] private Camera fpsCam;
 
@@ -29,7 +31,7 @@ public class Gun : MonoBehaviour
     private WaitForSeconds reloadWait;
 
 
-    private float maxRecoil = -20f;
+    private float maxRecoil = -5f;
     private float recoilSpeed = 10f;
     private float recoil = 0f;
 
@@ -76,6 +78,12 @@ public class Gun : MonoBehaviour
         ApplyWeaponRecoil();
             
         if (Input.GetKeyDown(KeyCode.R)) StartCoroutine(Reload());
+
+        if (hitmarkerTimer > 0)
+        {
+            hitmarkerTimer -= Time.deltaTime;
+            if (hitmarkerTimer < 0) hitmarker.SetActive(false);
+        }
     }
 
     void Shoot()
@@ -93,7 +101,12 @@ public class Gun : MonoBehaviour
             
             //Debug.Log(hit.collider.transform.name); 
             Target target = hit.transform.root.GetComponent<Target>();
-            if (target != null) target.TakeDamage(damage * multiplier);
+            if (target != null) 
+            {
+                target.TakeDamage(damage * multiplier);
+                hitmarker.SetActive(true);
+                hitmarkerTimer = 0.1f;
+            }
 
             //GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             //Destroy(impactGO, 2f);
