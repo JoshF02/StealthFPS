@@ -9,7 +9,7 @@ public class PatrolState : MovingSuperstate
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Patrol state entered");
+        //Debug.Log("Patrol state entered");
     }
 
     // contains looping through preset patrol points, pathfinding to them once each

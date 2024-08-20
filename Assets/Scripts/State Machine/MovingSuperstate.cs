@@ -9,8 +9,16 @@ public class MovingSuperstate : NonCombatSuperstate
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("moving superstate entered");
+        //Debug.Log("moving superstate entered");
     }
 
-    // contains transition to investigate if suspicious object detected visually/audially
+    public override void UpdateLogic()
+    {
+        base.UpdateLogic();
+
+        if (sm.detection.GetDetectingSuspicious()) {    // transition to investigate if suspicious object detected visually (add audio later)
+            Debug.Log("suspicous object spotted, changing to investigate state");
+            sm.ChangeState(sm.investigateState);
+        }
+    }
 }

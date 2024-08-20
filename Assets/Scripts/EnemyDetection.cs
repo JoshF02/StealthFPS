@@ -7,8 +7,12 @@ public class EnemyDetection : MonoBehaviour
     //private float timer = 0f;
     //private GameObject thisEnemy;
     private bool detectingPlayer = false;
+    private bool detectingSuspicious = false;
+    [HideInInspector] public Transform suspicousObject = null;
 
     public bool GetDetectingPlayer() { return detectingPlayer; }
+    public bool GetDetectingSuspicious() { return detectingSuspicious; }
+    public void SetDetectingSuspicious(bool value) { detectingSuspicious = value; } 
 
     void Awake() 
     {
@@ -21,12 +25,20 @@ public class EnemyDetection : MonoBehaviour
         if (other.name == "Player") {
             detectingPlayer = true;
         }
+        else if (other.tag == "Suspicious") {
+            detectingSuspicious = true;
+            suspicousObject = other.transform;
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
         if (other.name == "Player") {
             detectingPlayer = false;
+        }
+        else if (other.tag == "Suspicious") {
+            detectingSuspicious = false;
+            suspicousObject = null;
         }
     }
 

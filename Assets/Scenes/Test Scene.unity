@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  suspicousObject: {fileID: 0}
 --- !u!65 &188171953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2308,8 +2309,8 @@ GameObject:
   - component: {fileID: 1444378028}
   - component: {fileID: 1444378027}
   m_Layer: 7
-  m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_Name: Suspicious Sphere
+  m_TagString: Suspicious
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2323,7 +2324,7 @@ Rigidbody:
   m_GameObject: {fileID: 1444378026}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 2.42
+  m_Drag: 1.1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -2628,6 +2629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  suspicousObject: {fileID: 0}
 --- !u!65 &1527948006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2645,10 +2647,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 4, y: 2, z: 8}
-  m_Center: {x: 0, y: 0, z: 4.575}
+  m_Size: {x: 6, y: 2, z: 12}
+  m_Center: {x: 0, y: 0, z: 6}
 --- !u!135 &1527948007
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2668,7 +2670,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1553693754
 GameObject:
@@ -3854,7 +3856,6 @@ GameObject:
   - component: {fileID: 1977139810}
   - component: {fileID: 1977139815}
   - component: {fileID: 1977139814}
-  - component: {fileID: 1977139816}
   - component: {fileID: 1977139817}
   - component: {fileID: 1977139818}
   m_Layer: 7
@@ -3987,19 +3988,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2500
---- !u!114 &1977139816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977139809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80ec3f9e91b24ee46ba83850ab5ca213, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 678619524317598564}
 --- !u!54 &1977139817
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4039,6 +4027,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2d0b835273a344081f911d0e1b352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nmAgent: {fileID: 0}
+  player: {fileID: 678619524317598564}
+  detection: {fileID: 0}
 --- !u!1 &1980813344
 GameObject:
   m_ObjectHideFlags: 0
@@ -7387,6 +7378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  suspicousObject: {fileID: 0}
 --- !u!1 &137011205413091163
 GameObject:
   m_ObjectHideFlags: 0

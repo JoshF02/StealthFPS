@@ -10,9 +10,9 @@ public class DroneSM : StateMachine
     [HideInInspector] public HuntState huntState;
     [HideInInspector] public PatrolState patrolState;
 
-    public NavMeshAgent nmAgent;
+    [HideInInspector] public NavMeshAgent nmAgent;
     public Transform player;
-    public EnemyDetection detection;
+    [HideInInspector] public EnemyDetection detection;
 
     private void Awake()
     {

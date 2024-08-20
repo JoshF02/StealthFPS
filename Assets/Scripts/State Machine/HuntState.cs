@@ -9,7 +9,7 @@ public class HuntState : MovingSuperstate
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("hunt state entered");
+        //Debug.Log("hunt state entered");
     }
 
     // contains pathfind to random? points in larger area, faster movement, alert any other drones that enter large radius around it

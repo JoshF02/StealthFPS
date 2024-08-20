@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NonCombatSuperstate : BaseState
 {
-    private DroneSM sm;
+    protected DroneSM sm;
 
     public NonCombatSuperstate(string name, DroneSM stateMachine) : base(name, stateMachine)
     {
@@ -14,7 +14,7 @@ public class NonCombatSuperstate : BaseState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Non combat superstate entered");
+        //Debug.Log("Non combat superstate entered");
     }
 
     public override void UpdateLogic()
@@ -22,7 +22,7 @@ public class NonCombatSuperstate : BaseState
         base.UpdateLogic();
 
         if (sm.detection.GetDetectingPlayer()) {    // transition to combat if player detected visually
-            Debug.Log("changing to combat state");
+            Debug.Log("player spotted, changing to combat state");
             sm.ChangeState(sm.combatState);
         }
     }

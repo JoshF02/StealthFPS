@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CombatState : BaseState
 {
-    private DroneSM sm;
+    protected DroneSM sm;
 
     public CombatState(DroneSM stateMachine) : base("CombatState", stateMachine)
     {
@@ -14,7 +14,7 @@ public class CombatState : BaseState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Combat state entered");
+        //Debug.Log("Combat state entered");
     }
 
     public override void UpdateLogic()
@@ -23,7 +23,7 @@ public class CombatState : BaseState
         sm.nmAgent.destination = sm.player.position;
 
         if (!sm.detection.GetDetectingPlayer()) {   // transition to hunt state if sight lost
-            Debug.Log("changing to hunt state");
+            Debug.Log("sight lost, changing to hunt state");
             sm.ChangeState(sm.huntState);
         }
     }

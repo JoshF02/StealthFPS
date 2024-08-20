@@ -10,6 +10,8 @@ TagManager:
   - Head
   - Limb
   - Body
+  - Suspicious
+  - Investigated
   layers:
   - Default
   - TransparentFX
