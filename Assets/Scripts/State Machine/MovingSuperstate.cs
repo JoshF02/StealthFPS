@@ -11,4 +11,6 @@ public class MovingSuperstate : NonCombatSuperstate
         base.Enter();
         Debug.Log("moving superstate entered");
     }
+
+    // contains transition to investigate if suspicious object detected visually/audially
 }

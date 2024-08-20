@@ -11,4 +11,8 @@ public class HuntState : MovingSuperstate
         base.Enter();
         Debug.Log("hunt state entered");
     }
+
+    // contains pathfind to random? points in larger area, faster movement, alert any other drones that enter large radius around it
+
+    // transitions to patrol after x time passed
 }

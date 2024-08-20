@@ -11,4 +11,8 @@ public class PatrolState : MovingSuperstate
         base.Enter();
         Debug.Log("Patrol state entered");
     }
+
+    // contains looping through preset patrol points, pathfinding to them once each
+
+    // transitions to hunt state if alerted by another nearby drone
 }

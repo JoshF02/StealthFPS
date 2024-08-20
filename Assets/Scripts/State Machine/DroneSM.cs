@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class DroneSM : StateMachine
 {
@@ -8,6 +9,10 @@ public class DroneSM : StateMachine
     [HideInInspector] public InvestigateState investigateState;
     [HideInInspector] public HuntState huntState;
     [HideInInspector] public PatrolState patrolState;
+
+    public NavMeshAgent nmAgent;
+    public Transform player;
+    public EnemyDetection detection;
 
     private void Awake()
     {
@@ -17,6 +22,9 @@ public class DroneSM : StateMachine
 
         huntState = new HuntState(this);
         patrolState = new PatrolState(this);
+
+        nmAgent = GetComponent<NavMeshAgent>();
+        detection = transform.GetChild(1).GetComponent<EnemyDetection>();
     }
 
     protected override BaseState GetInitialState()

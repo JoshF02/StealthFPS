@@ -11,5 +11,9 @@ public class InvestigateState : NonCombatSuperstate
         base.Enter();
         Debug.Log("investigate state entered");
     }
+
+    // contains pathfind to point of interest
+
+    // transitions to hunt state after reaching it + waiting 2 seconds
 }
 

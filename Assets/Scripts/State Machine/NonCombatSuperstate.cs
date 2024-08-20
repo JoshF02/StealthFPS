@@ -16,4 +16,14 @@ public class NonCombatSuperstate : BaseState
         base.Enter();
         Debug.Log("Non combat superstate entered");
     }
+
+    public override void UpdateLogic()
+    {
+        base.UpdateLogic();
+
+        if (sm.detection.GetDetectingPlayer()) {    // transition to combat if player detected visually
+            Debug.Log("changing to combat state");
+            sm.ChangeState(sm.combatState);
+        }
+    }
 }

@@ -4,16 +4,38 @@ using UnityEngine;
 
 public class EnemyDetection : MonoBehaviour
 {
-    private float timer = 0f;
-    private GameObject thisEnemy;
+    //private float timer = 0f;
+    //private GameObject thisEnemy;
+    private bool detectingPlayer = false;
+
+    public bool GetDetectingPlayer() { return detectingPlayer; }
 
     void Awake() 
     {
-        thisEnemy = this.transform.parent.gameObject;
+        //thisEnemy = this.transform.parent.gameObject;
         //Debug.Log(thisEnemy.name);
     }
 
-    void OnTriggerStay(Collider other) 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Player") {
+            detectingPlayer = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.name == "Player") {
+            detectingPlayer = false;
+        }
+    }
+
+    /*void Update()
+    {
+        if(detectingPlayer) Debug.Log("detecting");
+    }*/
+
+    /*void OnTriggerStay(Collider other) 
     {
         if (other.name == "Player") {
             timer += Time.deltaTime;
@@ -24,5 +46,5 @@ public class EnemyDetection : MonoBehaviour
             }
         }
         else Debug.Log(other.name);
-    }
+    }*/
 }
