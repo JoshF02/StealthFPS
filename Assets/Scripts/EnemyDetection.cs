@@ -20,12 +20,20 @@ public class EnemyDetection : MonoBehaviour
         //Debug.Log(thisEnemy.name);
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other) // NEED TO ADD RAYCASTING FOR PROPER DETECTION + change awareness size depending on state
     {
         if (other.name == "Player") {
             detectingPlayer = true;
         }
-        else if (other.tag == "Suspicious") {
+        else if (other.tag == "Suspicious" && !detectingSuspicious) {
+            detectingSuspicious = true;
+            suspicousObject = other.transform;
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Suspicious" && !detectingSuspicious) {
             detectingSuspicious = true;
             suspicousObject = other.transform;
         }
@@ -36,10 +44,10 @@ public class EnemyDetection : MonoBehaviour
         if (other.name == "Player") {
             detectingPlayer = false;
         }
-        else if (other.tag == "Suspicious") {
+        /*else if (other.tag == "Suspicious") {   // could probably remove
             detectingSuspicious = false;
             suspicousObject = null;
-        }
+        }*/
     }
 
     /*void Update()

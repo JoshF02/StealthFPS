@@ -34,8 +34,8 @@ public class InvestigateState : NonCombatSuperstate
                 if (sm.detection.suspicousObject != null) {
                     sm.detection.suspicousObject.tag = "Investigated";
                     sm.detection.suspicousObject = null;
-                    sm.detection.SetDetectingSuspicious(false);
                 }
+                sm.detection.SetDetectingSuspicious(false);
 
                 sm.ChangeState(sm.huntState);
             }
