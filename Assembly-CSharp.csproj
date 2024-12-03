@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\GameManagerUI.cs" />
      <Compile Include="Assets\Scripts\Target.cs" />
      <Compile Include="Assets\Scripts\CrateInteractible.cs" />
+     <Compile Include="Assets\Scripts\EnemyTarget.cs" />
      <Compile Include="Assets\Scripts\State Machine\StateMachine.cs" />
      <Compile Include="Assets\Scripts\WeaponSwitching.cs" />
      <Compile Include="Assets\Scripts\AmmoInteractible.cs" />
