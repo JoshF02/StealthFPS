@@ -49,6 +49,7 @@ public class CombatState : BaseState
             RaycastHit hit;
             if(Physics.Raycast(sm.nmAgent.transform.position, dir, out hit, 10.0f, sm.laserLayerMask)) {
                 Debug.Log("player hit, game over");
+                GameManager.Instance.EndGame();
             }
         }
     }

@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         timer -= Time.deltaTime;
 
         if (timer <= 0) {
-            Debug.Log("GAME OVER");
+            EndGame();
         }
     }
 
@@ -85,5 +85,10 @@ public class GameManager : MonoBehaviour
     public bool GetObjectiveComplete()
     {
         return objectiveComplete;
+    }
+
+    public void EndGame()
+    {
+        Debug.Log("Game Over");
     }
 }
