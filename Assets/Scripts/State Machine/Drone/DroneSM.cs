@@ -13,6 +13,7 @@ public class DroneSM : StateMachine
     [HideInInspector] public NavMeshAgent nmAgent;
     public Transform player;
     [HideInInspector] public EnemyDetection detection;
+    [HideInInspector] public Light turret;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class DroneSM : StateMachine
 
         nmAgent = GetComponent<NavMeshAgent>();
         detection = transform.GetChild(1).GetComponent<EnemyDetection>();
+        turret = transform.GetChild(3).GetComponent<Light>();
     }
 
     protected override BaseState GetInitialState()
