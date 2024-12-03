@@ -11,6 +11,7 @@ public class HuntState : MovingSuperstate
     public override void Enter()
     {
         base.Enter();
+        sm.turret.color = Color.yellow;
         //Debug.Log("hunt state entered");
     }
 

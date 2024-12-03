@@ -9,6 +9,7 @@ public class PatrolState : MovingSuperstate
     public override void Enter()
     {
         base.Enter();
+        sm.turret.color = Color.green;
         //Debug.Log("Patrol state entered");
         sm.detection.SetLessAware();
     }

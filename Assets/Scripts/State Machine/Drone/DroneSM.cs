@@ -14,6 +14,7 @@ public class DroneSM : StateMachine
     public Transform player;
     [HideInInspector] public EnemyDetection detection;
     [HideInInspector] public Light turret;
+    [SerializeField] public LayerMask laserLayerMask;
 
     private void Awake()
     {
