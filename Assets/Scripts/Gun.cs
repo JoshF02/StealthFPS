@@ -96,8 +96,9 @@ public class Gun : MonoBehaviour
             string tag = hit.collider.gameObject.tag;
             float multiplier = 1f;
 
-            if (tag == "Head") multiplier = 2f;
-            else if (tag == "Limb") multiplier = 0.5f;
+            //if (tag == "Head") multiplier = 2f;
+            //else if (tag == "Limb") multiplier = 0.5f;
+            if (tag == "Weakness") multiplier = 10000f;
             
             //Debug.Log(hit.collider.transform.name); 
             Target target = hit.transform.root.GetComponent<Target>();

@@ -6,7 +6,7 @@ public class CombatState : BaseState
 {
     protected DroneSM sm;
     private float shootTimer = 0f;
-    private readonly float shootCooldown = 3.0f;
+    private readonly float shootCooldown = 4.0f;
 
     public CombatState(DroneSM stateMachine) : base("CombatState", stateMachine)
     {
@@ -40,7 +40,7 @@ public class CombatState : BaseState
         }
 
         shootTimer += Time.deltaTime;   
-        sm.turret.intensity = Mathf.Lerp(0.3f, 2.0f, shootTimer / shootCooldown);
+        sm.turret.intensity = 0.3f + shootTimer;    // laser charges up
 
         if (shootTimer > shootCooldown) {   // shoot at player when cooldown reached
             shootTimer = 0f;
@@ -61,6 +61,4 @@ public class CombatState : BaseState
         sm.turret.intensity = 0.3f;
         //sm.turret.color = Color.yellow;
     }
-
-    // contains laser charge up 2-3 secs then shoot at player, instantly kill?
 }

@@ -13,6 +13,7 @@ TagManager:
   - Suspicious
   - Investigated
   - Enemy
+  - Weakness
   layers:
   - Default
   - TransparentFX
