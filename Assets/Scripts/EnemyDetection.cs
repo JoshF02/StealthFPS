@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyDetection : MonoBehaviour
 {
-    //private float timer = 0f;
-    //private GameObject thisEnemy;
     private bool detectingPlayer = false;
     private bool detectingSuspicious = false;
     [HideInInspector] public Transform suspicousObject = null;
@@ -14,14 +12,23 @@ public class EnemyDetection : MonoBehaviour
     public bool GetDetectingSuspicious() { return detectingSuspicious; }
     public void SetDetectingSuspicious(bool value) { detectingSuspicious = value; } 
 
+    public void SetMoreAware()  // initial radius should be more aware size
+    { 
+        Debug.Log("more aware");
+        GetComponent<SphereCollider>().radius *= 2;
+    }
+    public void SetLessAware()
+    { 
+        Debug.Log("less aware");
+        GetComponent<SphereCollider>().radius *= 0.5f;
+    } 
+
     void Awake() 
     {
-        //thisEnemy = this.transform.parent.gameObject;
-        //Debug.Log(thisEnemy.name);
     }
 
-    void OnTriggerEnter(Collider other) // NEED TO ADD RAYCASTING FOR PROPER DETECTION + change awareness size depending on state
-    {
+    void OnTriggerEnter(Collider other) // NEED TO ADD RAYCASTING FOR PROPER VISUAL DETECTION, + add audio detection + alerts from other drones
+    {                                   
         if (other.name == "Player") {
             detectingPlayer = true;
         }
@@ -29,6 +36,7 @@ public class EnemyDetection : MonoBehaviour
             detectingSuspicious = true;
             suspicousObject = other.transform;
         }
+        // only objects with rigidbodies set off triggers
     }
 
     void OnTriggerStay(Collider other)
@@ -44,27 +52,5 @@ public class EnemyDetection : MonoBehaviour
         if (other.name == "Player") {
             detectingPlayer = false;
         }
-        /*else if (other.tag == "Suspicious") {   // could probably remove
-            detectingSuspicious = false;
-            suspicousObject = null;
-        }*/
     }
-
-    /*void Update()
-    {
-        if(detectingPlayer) Debug.Log("detecting");
-    }*/
-
-    /*void OnTriggerStay(Collider other) 
-    {
-        if (other.name == "Player") {
-            timer += Time.deltaTime;
-
-            if (timer >= 0.5f) {
-                Debug.Log("Player spotted");
-                timer = 0f;
-            }
-        }
-        else Debug.Log(other.name);
-    }*/
 }

@@ -10,6 +10,13 @@ public class PatrolState : MovingSuperstate
     {
         base.Enter();
         //Debug.Log("Patrol state entered");
+        sm.detection.SetLessAware();
+    }
+
+    public override void Exit() // makes drone more aware when in a non-patrol state
+    {
+        base.Exit();
+        sm.detection.SetMoreAware();
     }
 
     // contains looping through preset patrol points, pathfinding to them once each

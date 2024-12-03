@@ -12,6 +12,7 @@ TagManager:
   - Body
   - Suspicious
   - Investigated
+  - Enemy
   layers:
   - Default
   - TransparentFX

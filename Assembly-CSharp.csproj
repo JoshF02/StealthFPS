@@ -40,30 +40,30 @@
     <Analyzer Include="D:\Unity Installs\2022.3.9f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\State Machine\Drone\InvestigateState.cs" />
      <Compile Include="Assets\Scripts\PlayerActions.cs" />
      <Compile Include="Assets\Scripts\Gun.cs" />
      <Compile Include="Assets\Scripts\PlayerInteractUI.cs" />
-     <Compile Include="Assets\Scripts\State Machine\NonCombatSuperstate.cs" />
      <Compile Include="Assets\Scripts\Scope.cs" />
      <Compile Include="Assets\Scripts\EnemyNavigation.cs" />
-     <Compile Include="Assets\Scripts\State Machine\CombatState.cs" />
      <Compile Include="Assets\Scripts\EnemyDetection.cs" />
-     <Compile Include="Assets\Scripts\State Machine\PatrolState.cs" />
      <Compile Include="Assets\Scripts\State Machine\Base State.cs" />
-     <Compile Include="Assets\Scripts\State Machine\HuntState.cs" />
+     <Compile Include="Assets\Scripts\State Machine\Drone\PatrolState.cs" />
      <Compile Include="Assets\Scripts\SphereInteractible.cs" />
+     <Compile Include="Assets\Scripts\State Machine\Drone\HuntState.cs" />
+     <Compile Include="Assets\Scripts\State Machine\Drone\NonCombatSuperstate.cs" />
      <Compile Include="Assets\Scripts\StealInteractible.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\State Machine\Drone\DroneSM.cs" />
+     <Compile Include="Assets\Scripts\State Machine\Drone\CombatState.cs" />
+     <Compile Include="Assets\Scripts\State Machine\Drone\MovingSuperstate.cs" />
      <Compile Include="Assets\Scripts\IInteractible.cs" />
      <Compile Include="Assets\Scripts\PlayerInteract.cs" />
      <Compile Include="Assets\Scripts\GameManagerUI.cs" />
-     <Compile Include="Assets\Scripts\State Machine\MovingSuperstate.cs" />
      <Compile Include="Assets\Scripts\Target.cs" />
      <Compile Include="Assets\Scripts\CrateInteractible.cs" />
      <Compile Include="Assets\Scripts\State Machine\StateMachine.cs" />
      <Compile Include="Assets\Scripts\WeaponSwitching.cs" />
-     <Compile Include="Assets\Scripts\State Machine\InvestigateState.cs" />
-     <Compile Include="Assets\Scripts\State Machine\DroneSM.cs" />
      <Compile Include="Assets\Scripts\AmmoInteractible.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

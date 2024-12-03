@@ -22,10 +22,7 @@ public class CombatState : BaseState
         base.UpdateLogic();
         sm.nmAgent.destination = sm.player.position;
 
-        if (!sm.detection.GetDetectingPlayer()) {   // transition to hunt state if sight lost
-            //Debug.Log("sight lost, changing to hunt state");
-            //sm.ChangeState(sm.huntState);
-
+        if (!sm.detection.GetDetectingPlayer()) {   // transition to investigate state if sight lost
             Debug.Log("sight lost, investigating last known position");
             sm.detection.suspicousObject = sm.player;
             sm.detection.SetDetectingSuspicious(true);
