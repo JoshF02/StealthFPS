@@ -18,17 +18,18 @@ public class CombatState : BaseState
         base.Enter();
         sm.turret.color = Color.red;
         //Debug.Log("Combat state entered");
+        sm.nmAgent.updateRotation = false;  // stops the nmAgent rotating the drone so it can be rotated manually
     }
 
     public override void UpdateLogic()
     {
         base.UpdateLogic();
-        Vector3 dir = sm.player.position - sm.nmAgent.transform.position;   // chases player but keeps a distance, still looks at player
+        Vector3 dir = sm.player.position - sm.transform.position;   // chases player but keeps a distance, still looks at player
         sm.nmAgent.destination = sm.player.position - (3.0f * dir.normalized);  // 3 is min distance from player
-        sm.nmAgent.angularSpeed = 0;
+        //sm.nmAgent.angularSpeed = 0;
         dir.y = 0;
         Quaternion rot = Quaternion.LookRotation(dir);
-        sm.nmAgent.transform.rotation = Quaternion.Lerp(sm.nmAgent.transform.rotation, rot, 6.0f * Time.deltaTime); // 6 is turning speed
+        sm.transform.rotation = Quaternion.Lerp(sm.transform.rotation, rot, 6.0f * Time.deltaTime); // 6 is turning speed
 
         if (!sm.detection.GetDetectingPlayer()) {   // transition to investigate state if sight lost
             Debug.Log("sight lost, investigating last known position");
@@ -47,7 +48,7 @@ public class CombatState : BaseState
             Debug.Log("shot at player");
             
             RaycastHit hit;
-            if(Physics.Raycast(sm.nmAgent.transform.position, dir, out hit, 10.0f, sm.laserLayerMask)) {
+            if(Physics.Raycast(sm.transform.position, dir, out hit, 10.0f, sm.laserLayerMask)) {
                 Debug.Log("player hit, game over");
                 GameManager.Instance.EndGame();
             }
@@ -60,5 +61,6 @@ public class CombatState : BaseState
         base.Exit();
         sm.turret.intensity = 0.3f;
         //sm.turret.color = Color.yellow;
+        sm.nmAgent.updateRotation = true;
     }
 }
