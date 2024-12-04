@@ -14,6 +14,7 @@ public class DroneSM : StateMachine
     [HideInInspector] public Transform player;
     [HideInInspector] public EnemyDetection detection;
     [HideInInspector] public Light turret;
+    [HideInInspector] public Light spotlight;
     [SerializeField] public LayerMask laserLayerMask;
     [HideInInspector] public Transform patrolPath;
 
@@ -36,6 +37,7 @@ public class DroneSM : StateMachine
         nmAgent = GetComponent<NavMeshAgent>();
         detection = transform.GetChild(1).GetComponent<EnemyDetection>();
         turret = transform.GetChild(3).GetComponent<Light>();
+        spotlight = transform.GetChild(1).GetComponent<Light>();
 
         patrolPath = transform.parent.GetChild(1);
 

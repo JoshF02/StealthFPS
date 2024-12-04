@@ -12,6 +12,7 @@ public class InvestigateState : NonCombatSuperstate
     {
         base.Enter();
         sm.turret.color = new Color(1, 0.64f, 0, 1);
+        sm.spotlight.color = new Color(1, 0.64f, 0, 1);
         //Debug.Log("investigate state entered");
 
         sm.nmAgent.destination = sm.detection.suspicousObject.position; // pathfind to point of interest

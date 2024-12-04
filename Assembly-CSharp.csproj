@@ -45,7 +45,6 @@
      <Compile Include="Assets\Scripts\Gun.cs" />
      <Compile Include="Assets\Scripts\PlayerInteractUI.cs" />
      <Compile Include="Assets\Scripts\Scope.cs" />
-     <Compile Include="Assets\Scripts\EnemyNavigation.cs" />
      <Compile Include="Assets\Scripts\EnemyDetection.cs" />
      <Compile Include="Assets\Scripts\State Machine\Base State.cs" />
      <Compile Include="Assets\Scripts\State Machine\Drone\PatrolState.cs" />

@@ -12,6 +12,7 @@ public class HuntState : MovingSuperstate
     {
         base.Enter();
         sm.turret.color = Color.yellow;
+        sm.spotlight.color = Color.yellow;
         //Debug.Log("hunt state entered");
         sm.nmAgent.destination = sm.transform.position;
         sm.nmAgent.speed *= 2;

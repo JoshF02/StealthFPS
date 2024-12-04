@@ -17,6 +17,7 @@ public class CombatState : BaseState
     {
         base.Enter();
         sm.turret.color = Color.red;
+        sm.spotlight.color = Color.red;
         //Debug.Log("Combat state entered");
         sm.nmAgent.updateRotation = false;  // stops the nmAgent rotating the drone so it can be rotated manually
         shootTimer = 0f;
@@ -43,6 +44,7 @@ public class CombatState : BaseState
 
         shootTimer += Time.deltaTime;   
         sm.turret.intensity = 0.3f + shootTimer;    // laser charges up
+        sm.spotlight.intensity = 200 + (shootTimer * 600);
 
         if (shootTimer > shootCooldown) {   // shoot at player when cooldown reached
             shootTimer = 0f;
@@ -61,6 +63,7 @@ public class CombatState : BaseState
     {
         base.Exit();
         sm.turret.intensity = 0.3f;
+        sm.spotlight.intensity = 200;
         //sm.turret.color = Color.yellow;
         sm.nmAgent.updateRotation = true;
     }
