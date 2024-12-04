@@ -72,13 +72,11 @@ public class EnemyDetection : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, dir, out hit, viewDistance, detectionLayerMask)) {   // obstructed
             if (hit.collider.gameObject.name != obj.name) {
-                //Debug.Log("OBSTRUCTION");
                 return false;
             }
         }
 
-        //Debug.Log("NO OBSTRUCTION");
-        return true;
+        return true;    // could change to detection meter filling up, rather than instant
     }
 
     void OnDrawGizmos() // shows viewcone lines

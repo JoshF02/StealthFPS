@@ -50,6 +50,9 @@ public class PlayerActions : MonoBehaviour
     public Vector3 multiplier;
     Vector3 bobEulerRotation;
 
+    [SerializeField] private GameObject smokeGrenade;
+    private int grenadesLeft = 3;
+
 
 
 
@@ -68,6 +71,7 @@ public class PlayerActions : MonoBehaviour
     {
         Move();
         Look();
+        ThrowGrenade();
         if (!isAiming || !isCrouching) ApplyBobAndSway();
         else ApplySway();
     }
@@ -137,6 +141,14 @@ public class PlayerActions : MonoBehaviour
         transform.Rotate(Vector3.up * mouseX);
 
         
+    }
+
+    private void ThrowGrenade()
+    {
+        if (Input.GetKeyDown(KeyCode.G) && grenadesLeft > 0) {
+            GameObject smokeGrenadeObj = Instantiate(smokeGrenade, transform.position + (transform.forward * 2f), Quaternion.identity);
+            grenadesLeft--;
+        }
     }
 
 
