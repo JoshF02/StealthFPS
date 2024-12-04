@@ -20,5 +20,6 @@ public class EnemyTarget : Target
 
         GameObject body = Instantiate(bodyPrefab, transform.position, quaternion.identity);
         body.name = "Drone Body";
+        body.transform.parent = this.transform.parent;
     }
 }

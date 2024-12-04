@@ -102,6 +102,9 @@ public class Gun : MonoBehaviour
             
             //Debug.Log(hit.collider.transform.name); 
             Target target = hit.transform.root.GetComponent<Target>();
+
+            if (target == null && hit.transform.root.childCount > 0) target = hit.transform.root.GetChild(0).GetComponent<Target>();   // enemy no longer root so gets child
+
             if (target != null) 
             {
                 target.TakeDamage(damage * multiplier);

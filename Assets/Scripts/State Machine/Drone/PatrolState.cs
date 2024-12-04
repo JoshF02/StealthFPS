@@ -24,8 +24,7 @@ public class PatrolState : MovingSuperstate
                                 Vector2.Distance(new Vector2(sm.transform.position.x, sm.transform.position.z), 
                                 new Vector2(sm.waypoints[sm.patrolIndex].x, sm.waypoints[sm.patrolIndex].z)) < 0.5f) { // if coordinates reached
 
-            sm.patrolIndex = (sm.patrolIndex + 1) % sm.waypoints.Length;
-            Debug.Log(sm.patrolIndex);
+            sm.patrolIndex = (sm.patrolIndex + 1) % sm.waypoints.Length;    // get next patrol point and pathfind to it
             sm.nmAgent.destination = sm.waypoints[sm.patrolIndex];
         }
     }
