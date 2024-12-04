@@ -15,6 +15,7 @@ public class SmokeGrenade : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
         rb.AddForce(player.forward * 2500.0f);
+        rb.velocity += player.GetComponent<CharacterController>().velocity;
     }
 
     void Update()
@@ -25,11 +26,9 @@ public class SmokeGrenade : MonoBehaviour
             smokeObj = Instantiate(smoke, transform.position, Quaternion.identity);  // will need to change smoke texture
             GetComponent<MeshRenderer>().enabled = false;
             hasSpawned = true;
-            //Debug.Log("spawn smoke");
         }
 
         if (timer > 18.0f) {
-            //Debug.Log("destroy smoke");
             Destroy(smokeObj);
             Destroy(gameObject);
         }
