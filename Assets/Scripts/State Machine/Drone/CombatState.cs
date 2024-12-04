@@ -21,6 +21,7 @@ public class CombatState : BaseState
         //Debug.Log("Combat state entered");
         sm.nmAgent.updateRotation = false;  // stops the nmAgent rotating the drone so it can be rotated manually
         shootTimer = 0f;
+        sm.nmAgent.speed *= 2;
     }
 
     public override void UpdateLogic()
@@ -66,5 +67,6 @@ public class CombatState : BaseState
         sm.spotlight.intensity = 200;
         //sm.turret.color = Color.yellow;
         sm.nmAgent.updateRotation = true;
+        sm.nmAgent.speed /= 2;
     }
 }

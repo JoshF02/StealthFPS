@@ -35,8 +35,8 @@ public class DroneSM : StateMachine
         patrolState = new PatrolState(this);
 
         nmAgent = GetComponent<NavMeshAgent>();
-        detection = transform.GetChild(1).GetComponent<EnemyDetection>();
-        turret = transform.GetChild(3).GetComponent<Light>();
+        detection = transform.GetChild(2).GetComponent<EnemyDetection>();
+        turret = transform.GetChild(4).GetComponent<Light>();
         spotlight = transform.GetChild(1).GetComponent<Light>();
 
         patrolPath = transform.parent.GetChild(1);
