@@ -20,6 +20,8 @@ public class DroneSM : StateMachine
     [HideInInspector] public Vector3[] waypoints;
     [HideInInspector] public int patrolIndex = 0;
 
+    [SerializeField] public Transform testingSphere;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
