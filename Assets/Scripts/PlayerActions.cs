@@ -53,7 +53,7 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private GameObject smokeGrenade;
     [SerializeField] private GameObject stone;
     private int grenadesLeft = 3;
-    private int stonesLeft = 5;
+    private int stonesLeft = 10;
 
 
 

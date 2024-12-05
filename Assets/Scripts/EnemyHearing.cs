@@ -8,30 +8,31 @@ public class EnemyHearing : MonoBehaviour
     EnemyDetection detection;
     NavMeshAgent agent;
     NavMeshPath path;
-    //public Transform target;
 
     void Start()
     {
         detection = transform.GetChild(2).GetComponent<EnemyDetection>();
-        /*agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         path = new NavMeshPath();
-
-        agent.CalculatePath(target.position, path);
-
-        Debug.Log("STATUS: " + path.status);
-        Debug.Log("LENGTH: " + CalculatePathLength(path));*/
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other)  // goes into investigate state to check out noise if it can hear it
     {
-        if (other.tag == "Sound") {
-            //Debug.Log("sound detected by " + gameObject);
+        if (other.tag == "Sound" && !detection.GetDetectingSuspicious() && agent.CalculatePath(other.transform.position, path) && (path.status == NavMeshPathStatus.PathComplete)) {  
 
-            if (!detection.GetDetectingSuspicious()) {  // goes into investigate state to check out noise
-                Debug.Log("INVESTIGATING NOISE");
+            float length = CalculatePathLength(path);
+            //Debug.Log("noise detected, path exists of length " + length);
+
+            float straightLineDist = Vector3.Distance(transform.position, other.transform.position);
+            //Debug.Log("straight line distance: " + straightLineDist);
+
+            if (length < (straightLineDist * 2)) {      // if path less than multiple of straight line distance (PLAY AROUND WITH THE MULTIPLIER)
                 detection.SetDetectingSuspicious(true);
                 detection.suspicousObject = other.transform.parent; // wont work with player as parent, need to set to null after 1 pathfind
             }
+            else Debug.Log("path too long, can't hear noise");  // does these calculations every frame, could optimise
+
+            // USING HUMANOID NAVMESH SO TINY GAPS WILL OBSTRUCT - KEEP IN MIND
         }
     }
 
@@ -50,6 +51,4 @@ public class EnemyHearing : MonoBehaviour
 
         return lengthSoFar;
     }
-
-    // enemy ontriggerstay function - calculate navmesh path + check length using code above, if less than (radius * scaledownfactor) then detect it
 }
