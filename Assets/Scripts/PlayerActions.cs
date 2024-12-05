@@ -51,7 +51,9 @@ public class PlayerActions : MonoBehaviour
     Vector3 bobEulerRotation;
 
     [SerializeField] private GameObject smokeGrenade;
+    [SerializeField] private GameObject stone;
     private int grenadesLeft = 3;
+    private int stonesLeft = 5;
 
 
 
@@ -148,6 +150,11 @@ public class PlayerActions : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G) && grenadesLeft > 0) {
             GameObject smokeGrenadeObj = Instantiate(smokeGrenade, transform.position + (transform.forward * 2f), Quaternion.identity);
             grenadesLeft--;
+        }
+
+        if (Input.GetKeyDown(KeyCode.B) && stonesLeft > 0) {
+            GameObject stoneObj = Instantiate(stone, transform.position + (transform.forward * 2f), Quaternion.identity);
+            stonesLeft--;
         }
     }
 
