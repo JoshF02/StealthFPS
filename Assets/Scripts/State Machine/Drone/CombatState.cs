@@ -24,13 +24,15 @@ public class CombatState : BaseState
         shootTimer = 0f;
         sm.nmAgent.speed *= 2;
 
-        if (sm.beenShot) {
-            Debug.Log("been shot so in combat for minimum 5 seconds");
+        if (sm.beenShot || sm.hearing.GetAlertHeard() == EnemyHearing.Alerts.EnterCombat) {
+            Debug.Log("been shot or alerted so in combat for minimum 5 seconds");
             beenShotTimer = 0f;
         }
         else beenShotTimer = 5f;
 
         sm.beenShot = false;
+
+        sm.combatAlertObj.SetActive(true);
     }
 
     public override void UpdateLogic()
@@ -76,5 +78,6 @@ public class CombatState : BaseState
         sm.spotlight.intensity = 200;
         sm.nmAgent.updateRotation = true;
         sm.nmAgent.speed /= 2;
+        sm.combatAlertObj.SetActive(false);
     }
 }

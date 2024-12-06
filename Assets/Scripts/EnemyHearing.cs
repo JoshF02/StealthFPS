@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,6 +10,16 @@ public class EnemyHearing : MonoBehaviour
     NavMeshAgent agent;
     NavMeshPath path;
     private bool noiseHeard = false;
+    public enum Alerts
+    {
+        None,
+        EnterHunt,
+        EnterCombat,
+        Max
+    }
+
+    private Alerts alertHeard = Alerts.None;
+    
     [HideInInspector] public Vector3 noisePos = new();
 
     public bool GetNoiseHeard()
@@ -19,6 +30,11 @@ public class EnemyHearing : MonoBehaviour
     public void SetNoiseHeard(bool val)
     {
         noiseHeard = val;
+    }
+
+    public Alerts GetAlertHeard()
+    {
+        return alertHeard;
     }
 
     void Start()
@@ -44,6 +60,18 @@ public class EnemyHearing : MonoBehaviour
 
             // USING HUMANOID NAVMESH SO TINY GAPS WILL OBSTRUCT - KEEP IN MIND
         }
+
+        if (other.tag == "Alert") {
+            alertHeard = (other.name == "EnterHuntAlert") ? Alerts.EnterHunt : Alerts.EnterCombat;  // NOTE - DOESNT DO PATHFINDING FOR ALERTS (could do it?)
+            //Debug.Log(alertHeard + " alert heard by " + transform.parent.gameObject.name);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        //Debug.Log("ON TRIGGER EXIT CALLED");
+        noiseHeard = false;
+        alertHeard = Alerts.None;
     }
 
     public float CalculatePathLength(NavMeshPath path)

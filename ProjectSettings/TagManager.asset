@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - Weakness
   - Sound
+  - Alert
   layers:
   - Default
   - TransparentFX

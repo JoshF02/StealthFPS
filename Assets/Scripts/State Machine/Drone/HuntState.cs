@@ -17,6 +17,7 @@ public class HuntState : MovingSuperstate
         sm.nmAgent.destination = sm.transform.position;
         sm.nmAgent.speed *= 2;
         timer = 0f;
+        sm.huntAlertObj.SetActive(true);
     }
 
     public override void UpdateLogic()
@@ -56,7 +57,6 @@ public class HuntState : MovingSuperstate
     {
         base.Exit();
         sm.nmAgent.speed /= 2;
+        sm.huntAlertObj.SetActive(false);
     }
-
-    // alert any other drones that enter large radius around it (alarm noise)
 }

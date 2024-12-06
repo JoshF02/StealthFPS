@@ -22,6 +22,8 @@ public class DroneSM : StateMachine
     [HideInInspector] public Vector3[] waypoints;
     [HideInInspector] public int patrolIndex = 0;
     [HideInInspector] public bool beenShot = false;
+    [HideInInspector] public GameObject huntAlertObj;
+    [HideInInspector] public GameObject combatAlertObj;
 
     [SerializeField] public Transform testingSphere;
 
@@ -41,6 +43,9 @@ public class DroneSM : StateMachine
         hearing = GetComponent<EnemyHearing>();
         turret = transform.GetChild(4).GetComponent<Light>();
         spotlight = transform.GetChild(1).GetComponent<Light>();
+
+        huntAlertObj = transform.GetChild(6).gameObject;
+        combatAlertObj = transform.GetChild(7).gameObject;
 
         patrolPath = transform.parent.GetChild(1);
 

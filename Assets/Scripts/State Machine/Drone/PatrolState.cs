@@ -21,6 +21,11 @@ public class PatrolState : MovingSuperstate
     {
         base.UpdateLogic();
 
+        if (sm.hearing.GetAlertHeard() == EnemyHearing.Alerts.EnterHunt) {
+            Debug.Log("Enter hunt alert recieved");
+            sm.ChangeState(sm.huntState);
+        }
+
         if ((Mathf.Abs(sm.transform.position.y - sm.waypoints[sm.patrolIndex].y) < 2.5f) && // if within height limit
                                 Vector2.Distance(new Vector2(sm.transform.position.x, sm.transform.position.z), 
                                 new Vector2(sm.waypoints[sm.patrolIndex].x, sm.waypoints[sm.patrolIndex].z)) < 0.5f) { // if coordinates reached
@@ -35,6 +40,4 @@ public class PatrolState : MovingSuperstate
         base.Exit();
         sm.detection.SetMoreAware();
     }
-
-    // transitions to hunt state if alerted by another nearby drone
 }

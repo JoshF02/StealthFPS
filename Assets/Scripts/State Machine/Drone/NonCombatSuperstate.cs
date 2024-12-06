@@ -25,5 +25,10 @@ public class NonCombatSuperstate : BaseState
             Debug.Log("player spotted, changing to combat state");
             sm.ChangeState(sm.combatState);
         }
+
+        if (sm.hearing.GetAlertHeard() == EnemyHearing.Alerts.EnterCombat) {    // put in if statement above after done testing
+            Debug.Log("Enter combat alert recieved");
+            sm.ChangeState(sm.combatState);
+        }
     }
 }
