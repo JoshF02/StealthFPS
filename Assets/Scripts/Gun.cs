@@ -115,6 +115,8 @@ public class Gun : MonoBehaviour
             //GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             //Destroy(impactGO, 2f);
         }
+
+        PlayerSound.Instance.PlaySoundForDuration("shoot", 40, 0.1f);
     }
 
     bool CanShoot()

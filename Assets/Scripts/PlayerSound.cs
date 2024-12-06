@@ -49,4 +49,18 @@ public class PlayerSound : MonoBehaviour
             soundCollider.transform.localScale = new(max, max, max);
         } 
     }
+
+    IEnumerator PlaySoundForDurationCoroutine(string name, int radius, float duration)
+    {
+        StartSound(name, radius);
+        Debug.Log("starting sound");
+        yield return new WaitForSeconds(duration);
+        Debug.Log("stopping sound");
+        StopSound(name);
+    }
+
+    public void PlaySoundForDuration(string name, int radius, float duration)
+    {
+        StartCoroutine(PlaySoundForDurationCoroutine(name, radius, duration));
+    }
 }
