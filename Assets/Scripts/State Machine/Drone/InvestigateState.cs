@@ -16,6 +16,7 @@ public class InvestigateState : NonCombatSuperstate
         //Debug.Log("investigate state entered");
 
         sm.nmAgent.destination = sm.detection.suspicousObject.position; // pathfind to point of interest
+        timer = 0f;
     }
 
     public override void UpdateLogic()

@@ -34,7 +34,7 @@ public class CombatState : BaseState
         Quaternion rot = Quaternion.LookRotation(dir);
         sm.transform.rotation = Quaternion.Lerp(sm.transform.rotation, rot, 6.0f * Time.deltaTime); // 6 is turning speed
 
-        if (!sm.detection.GetDetectingPlayer()) {   // transition to investigate state if sight lost
+        if (!sm.detection.GetDetectingPlayer(sm.transform.position, sm.player.position)) {   // transition to investigate state if sight lost
             Debug.Log("sight lost, investigating last known position");
             sm.detection.suspicousObject = sm.player;
             sm.detection.SetDetectingSuspicious(true);

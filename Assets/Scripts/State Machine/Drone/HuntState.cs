@@ -16,6 +16,7 @@ public class HuntState : MovingSuperstate
         //Debug.Log("hunt state entered");
         sm.nmAgent.destination = sm.transform.position;
         sm.nmAgent.speed *= 2;
+        timer = 0f;
     }
 
     public override void UpdateLogic()

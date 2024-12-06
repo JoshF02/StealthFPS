@@ -13,7 +13,13 @@ public class EnemyDetection : MonoBehaviour
     private readonly float viewAngle = 40;
     [SerializeField] public LayerMask detectionLayerMask;
 
-    public bool GetDetectingPlayer() { return detectingPlayer; }
+    public bool GetDetectingPlayer(Vector3 enemyPos, Vector3 playerPos)
+    {
+        if (detectingPlayer) return true;
+
+        return (Vector3.Distance(enemyPos, playerPos) < 3.0f);  // detects player if very close
+    }
+
     public bool GetDetectingSuspicious() { return detectingSuspicious; }
     public void SetDetectingSuspicious(bool value) { detectingSuspicious = value; } 
 

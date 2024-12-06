@@ -21,7 +21,7 @@ public class NonCombatSuperstate : BaseState
     {
         base.UpdateLogic();
 
-        if (sm.detection.GetDetectingPlayer()) {    // transition to combat if player detected visually
+        if (sm.detection.GetDetectingPlayer(sm.transform.position, sm.player.position)) {    // transition to combat if player detected visually
             Debug.Log("player spotted, changing to combat state");
             sm.ChangeState(sm.combatState);
         }
