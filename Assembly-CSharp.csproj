@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\SoundGenerator.cs" />
      <Compile Include="Assets\Scripts\EnemyTarget.cs" />
      <Compile Include="Assets\Scripts\State Machine\StateMachine.cs" />
+     <Compile Include="Assets\Scripts\PlayerSound.cs" />
      <Compile Include="Assets\Scripts\WeaponSwitching.cs" />
      <Compile Include="Assets\Scripts\AmmoInteractible.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

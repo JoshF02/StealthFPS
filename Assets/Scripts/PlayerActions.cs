@@ -123,6 +123,13 @@ public class PlayerActions : MonoBehaviour
         controller.Move((move * speed * Time.deltaTime) + vert);
 
         CalculateBob(horizontal * speed * 0.25f, vertical * speed * 0.25f);
+
+        // sound for moving
+        if (move != Vector3.zero && !isCrouching) {
+            int multiplier = isSprinting ? 2 : 1;
+            PlayerSound.Instance.StartSound("movement", 10 * multiplier);
+        }
+        else PlayerSound.Instance.StopSound("movement");
     }
 
 
