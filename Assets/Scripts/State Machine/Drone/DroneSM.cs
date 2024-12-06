@@ -21,6 +21,7 @@ public class DroneSM : StateMachine
 
     [HideInInspector] public Vector3[] waypoints;
     [HideInInspector] public int patrolIndex = 0;
+    [HideInInspector] public bool beenShot = false;
 
     [SerializeField] public Transform testingSphere;
 

@@ -7,11 +7,12 @@ public class EnemyTarget : Target
 {
     [SerializeField] private GameObject bodyPrefab;
 
-    /*public override void TakeDamage(float amount)
+    public override void TakeDamage(float amount)
     {
         base.TakeDamage(amount);
-        Debug.Log("enemy take damage");
-    }*/
+        //Debug.Log("enemy shot");
+        GetComponent<DroneSM>().beenShot = true;
+    }
 
     public override void Die()
     {

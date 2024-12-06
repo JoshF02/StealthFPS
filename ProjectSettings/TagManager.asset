@@ -15,7 +15,6 @@ TagManager:
   - Enemy
   - Weakness
   - Sound
-  - DeleteOnInvestigate
   layers:
   - Default
   - TransparentFX

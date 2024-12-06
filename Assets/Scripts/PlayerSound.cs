@@ -24,9 +24,6 @@ public class PlayerSound : MonoBehaviour
 
     public void StartSound(string name, int radius)
     {  
-        //if (sounds.ContainsKey(name) && sounds[name] == radius) return;   // optimisation but probably worsens performance for 1-2 sounds
-        //Debug.Log("values being changed");
-
         sounds[name] = radius;
         soundCollider.SetActive(true);
         int max = sounds.Values.Max();  // uses largest value as collider radius
@@ -53,9 +50,9 @@ public class PlayerSound : MonoBehaviour
     IEnumerator PlaySoundForDurationCoroutine(string name, int radius, float duration)
     {
         StartSound(name, radius);
-        Debug.Log("starting sound");
+        //Debug.Log("starting sound");
         yield return new WaitForSeconds(duration);
-        Debug.Log("stopping sound");
+        //Debug.Log("stopping sound");
         StopSound(name);
     }
 
