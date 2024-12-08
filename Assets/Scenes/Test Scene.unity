@@ -13409,9 +13409,9 @@ MonoBehaviour:
   bobLimit: {x: 0.001, y: 0.001, z: 0.001}
   bobExaggeration: 6
   multiplier: {x: 0.2, y: 0.2, z: 0.2}
-  smokeGrenade: {fileID: 7331377226245137785, guid: 846e865e9c22bab40b7f0a4cfec9d717,
+  smokeGrenade: {fileID: 975181926835640718, guid: 846e865e9c22bab40b7f0a4cfec9d717,
     type: 3}
-  stone: {fileID: 1087372321815346018, guid: 36eec0743c3f0ff43ab9d5e3e62139ba, type: 3}
+  stone: {fileID: 6093005845324860779, guid: 36eec0743c3f0ff43ab9d5e3e62139ba, type: 3}
 --- !u!4 &3284249640971020198
 Transform:
   m_ObjectHideFlags: 0

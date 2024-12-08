@@ -50,8 +50,8 @@ public class PlayerActions : MonoBehaviour
     public Vector3 multiplier;
     Vector3 bobEulerRotation;
 
-    [SerializeField] private GameObject smokeGrenade;
-    [SerializeField] private GameObject stone;
+    [SerializeField] private SmokeGrenade smokeGrenade;
+    [SerializeField] private StoneThrowable stone;
     private int grenadesLeft = 3;
     private int stonesLeft = 20;
 
@@ -155,12 +155,14 @@ public class PlayerActions : MonoBehaviour
     private void ThrowGrenade()
     {
         if (Input.GetKeyDown(KeyCode.G) && grenadesLeft > 0) {
-            GameObject smokeGrenadeObj = Instantiate(smokeGrenade, transform.position + (transform.GetChild(0).forward * 2f), Quaternion.identity);
+            SmokeGrenade smokeGrenadeObj = Instantiate<SmokeGrenade>(smokeGrenade, transform.position + (cam.forward * 2f), Quaternion.identity);
+            smokeGrenadeObj.Init(cam, 1500f, 50f);
             grenadesLeft--;
         }
 
         if (Input.GetKeyDown(KeyCode.B) && stonesLeft > 0) {
-            GameObject stoneObj = Instantiate(stone, transform.position + (transform.GetChild(0).forward * 2f), Quaternion.identity);
+            StoneThrowable stoneObj = Instantiate<StoneThrowable>(stone, transform.position + (cam.forward * 2f), Quaternion.identity);
+            stoneObj.Init(cam, 2500f, 20f);
             stonesLeft--;
         }
     }
