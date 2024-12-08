@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class StoneThrowable : MonoBehaviour
 {
-    private Transform player;
+    private Transform cam;
     private Rigidbody rb;
     private bool hasCollided = false;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(player.forward * 2500.0f);
-        rb.velocity += player.GetComponent<CharacterController>().velocity;
+        rb.AddForce(cam.forward * 2500.0f);
+        rb.velocity += cam.parent.GetComponent<CharacterController>().velocity;
+        rb.AddTorque(cam.right * 20f);
     }
 
     void OnCollisionEnter(Collision collision)  // only generates sound once it hits ground/object

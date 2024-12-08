@@ -53,7 +53,7 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private GameObject smokeGrenade;
     [SerializeField] private GameObject stone;
     private int grenadesLeft = 3;
-    private int stonesLeft = 10;
+    private int stonesLeft = 20;
 
 
 
@@ -155,12 +155,12 @@ public class PlayerActions : MonoBehaviour
     private void ThrowGrenade()
     {
         if (Input.GetKeyDown(KeyCode.G) && grenadesLeft > 0) {
-            GameObject smokeGrenadeObj = Instantiate(smokeGrenade, transform.position + (transform.forward * 2f), Quaternion.identity);
+            GameObject smokeGrenadeObj = Instantiate(smokeGrenade, transform.position + (transform.GetChild(0).forward * 2f), Quaternion.identity);
             grenadesLeft--;
         }
 
         if (Input.GetKeyDown(KeyCode.B) && stonesLeft > 0) {
-            GameObject stoneObj = Instantiate(stone, transform.position + (transform.forward * 2f), Quaternion.identity);
+            GameObject stoneObj = Instantiate(stone, transform.position + (transform.GetChild(0).forward * 2f), Quaternion.identity);
             stonesLeft--;
         }
     }

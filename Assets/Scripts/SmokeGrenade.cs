@@ -6,16 +6,17 @@ public class SmokeGrenade : MonoBehaviour
 {
     [SerializeField] private GameObject smoke;
     private GameObject smokeObj;
-    private Transform player;
+    private Transform cam;
     private Rigidbody rb;
     private float timer = 0f;
     private bool hasSpawned = false;
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(player.forward * 2500.0f);
-        rb.velocity += player.GetComponent<CharacterController>().velocity;
+        rb.AddForce(cam.forward * 1500.0f);
+        rb.velocity += cam.parent.GetComponent<CharacterController>().velocity;
+        rb.AddTorque(cam.right * 50f);
     }
 
     void Update()
