@@ -52,8 +52,10 @@ public class PlayerActions : MonoBehaviour
 
     [SerializeField] private SmokeGrenade smokeGrenade;
     [SerializeField] private StoneThrowable stone;
+    [SerializeField] private ThrowingKnife throwingKnife;
     private int grenadesLeft = 3;
     private int stonesLeft = 20;
+    private int throwingKnivesLeft = 100;
 
 
 
@@ -155,15 +157,21 @@ public class PlayerActions : MonoBehaviour
     private void ThrowGrenade()
     {
         if (Input.GetKeyDown(KeyCode.G) && grenadesLeft > 0) {
-            SmokeGrenade smokeGrenadeObj = Instantiate<SmokeGrenade>(smokeGrenade, transform.position + (cam.forward * 2f), Quaternion.identity);
+            SmokeGrenade smokeGrenadeObj = Instantiate<SmokeGrenade>(smokeGrenade, transform.position + (cam.forward * 2f), transform.localRotation);
             smokeGrenadeObj.Init(cam, 1500f, 50f);
             grenadesLeft--;
         }
 
         if (Input.GetKeyDown(KeyCode.B) && stonesLeft > 0) {
-            StoneThrowable stoneObj = Instantiate<StoneThrowable>(stone, transform.position + (cam.forward * 2f), Quaternion.identity);
+            StoneThrowable stoneObj = Instantiate<StoneThrowable>(stone, transform.position + (cam.forward * 2f), transform.localRotation);
             stoneObj.Init(cam, 2500f, 20f);
             stonesLeft--;
+        }
+
+        if (Input.GetKeyDown(KeyCode.N) && throwingKnivesLeft > 0) {
+            ThrowingKnife throwingKnifeObj = Instantiate<ThrowingKnife>(throwingKnife, cam.position + (cam.forward * 2f), transform.localRotation);
+            throwingKnifeObj.Init(cam, 7500f, 200f);
+            throwingKnivesLeft--;
         }
     }
 
