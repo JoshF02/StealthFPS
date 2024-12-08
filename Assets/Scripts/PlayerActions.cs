@@ -77,7 +77,7 @@ public class PlayerActions : MonoBehaviour
     {
         Move();
         Look();
-        ThrowGrenade();
+        Throwables();
         if (!isAiming || !isCrouching) ApplyBobAndSway();
         else ApplySway();
     }
@@ -156,7 +156,7 @@ public class PlayerActions : MonoBehaviour
         
     }
 
-    private void ThrowGrenade()
+    private void Throwables()   // throwable gadget usage
     {
         if (Input.GetKeyDown(KeyCode.G) && grenadesLeft > 0) {
             SmokeGrenade smokeGrenadeObj = Instantiate<SmokeGrenade>(smokeGrenade, transform.position + (cam.forward * 2f), transform.localRotation);

@@ -68,7 +68,7 @@ public class EnemyHearing : MonoBehaviour
         }
 
         if (other.tag == "EMP") {
-            Debug.Log("emp detected");
+            //Debug.Log("emp detected");
             disableForSecs = 10f;
         }
     }

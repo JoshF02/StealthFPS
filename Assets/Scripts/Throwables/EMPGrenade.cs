@@ -9,18 +9,22 @@ public class EMPGrenade : Throwable
     void OnCollisionEnter(Collision collision) 
     {
         if (!hasCollided) {
-            Debug.Log("EMP detonating now");
-            GetComponent<MeshRenderer>().enabled = false;
             hasCollided = true;
-            transform.GetChild(0).gameObject.SetActive(true);
-            StartCoroutine(Duration(0.1f));
+            StartCoroutine(Detonation());
         }
     }
 
-    IEnumerator Duration(float seconds)
+    IEnumerator Detonation()
     {
-        yield return new WaitForSeconds(seconds);
-        Debug.Log("destroying EMP");
+        //Debug.Log("EMP hit ground");
+
+        yield return new WaitForSeconds(1.0f);
+        Debug.Log("EMP detonating");
+        GetComponent<MeshRenderer>().enabled = false; 
+        transform.GetChild(0).gameObject.SetActive(true);
+        
+        yield return new WaitForSeconds(0.1f);
+        //Debug.Log("destroying EMP");
         Destroy(gameObject);
     }
 }
