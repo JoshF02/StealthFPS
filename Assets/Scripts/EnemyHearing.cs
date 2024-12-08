@@ -19,6 +19,7 @@ public class EnemyHearing : MonoBehaviour
     }
 
     private Alerts alertHeard = Alerts.None;
+    public float disableForSecs = 0;
     
     [HideInInspector] public Vector3 noisePos = new();
 
@@ -64,6 +65,11 @@ public class EnemyHearing : MonoBehaviour
         if (other.tag == "Alert") {
             alertHeard = (other.name == "EnterHuntAlert") ? Alerts.EnterHunt : Alerts.EnterCombat;  // NOTE - DOESNT DO PATHFINDING FOR ALERTS (could do it?)
             //Debug.Log(alertHeard + " alert heard by " + transform.parent.gameObject.name);
+        }
+
+        if (other.tag == "EMP") {
+            Debug.Log("emp detected");
+            disableForSecs = 10f;
         }
     }
 

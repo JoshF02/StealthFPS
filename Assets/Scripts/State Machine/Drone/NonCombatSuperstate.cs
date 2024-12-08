@@ -2,14 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NonCombatSuperstate : BaseState
+public class NonCombatSuperstate : DroneBaseState
 {
-    protected DroneSM sm;
-
-    public NonCombatSuperstate(string name, DroneSM stateMachine) : base(name, stateMachine)
-    {
-        sm = (DroneSM)this.stateMachine;
-    }
+    public NonCombatSuperstate(string name, DroneSM stateMachine) : base(name, stateMachine) {}
 
     public override void Enter()
     {

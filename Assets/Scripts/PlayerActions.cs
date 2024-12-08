@@ -53,9 +53,11 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private SmokeGrenade smokeGrenade;
     [SerializeField] private StoneThrowable stone;
     [SerializeField] private ThrowingKnife throwingKnife;
+    [SerializeField] private EMPGrenade empGrenade;
     private int grenadesLeft = 3;
     private int stonesLeft = 20;
     private int throwingKnivesLeft = 100;
+    private int empGrenadesLeft = 100;
 
 
 
@@ -172,6 +174,12 @@ public class PlayerActions : MonoBehaviour
             ThrowingKnife throwingKnifeObj = Instantiate<ThrowingKnife>(throwingKnife, cam.position + (cam.forward * 2f), transform.localRotation);
             throwingKnifeObj.Init(cam, 7500f, 200f);
             throwingKnivesLeft--;
+        }
+
+        if (Input.GetKeyDown(KeyCode.M) && empGrenadesLeft > 0) {
+            EMPGrenade empGrenadeObj = Instantiate<EMPGrenade>(empGrenade, transform.position + (cam.forward * 2f), transform.localRotation);
+            empGrenadeObj.Init(cam, 2500f, 20f);
+            empGrenadesLeft--;
         }
     }
 

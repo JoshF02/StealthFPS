@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombatState : BaseState
+public class CombatState : DroneBaseState
 {
-    protected DroneSM sm;
     private float shootTimer = 0f;
     private readonly float shootCooldown = 4.0f;
     private float beenShotTimer = 0f;
 
-    public CombatState(DroneSM stateMachine) : base("CombatState", stateMachine)
-    {
-        sm = (DroneSM)this.stateMachine;
-    }
+    public CombatState(DroneSM stateMachine) : base("CombatState", stateMachine) {}
 
     public override void Enter()
     {

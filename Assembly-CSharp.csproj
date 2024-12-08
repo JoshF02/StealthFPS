@@ -43,6 +43,7 @@
      <Compile Include="Assets\Scripts\State Machine\Drone\InvestigateState.cs" />
      <Compile Include="Assets\Scripts\PlayerActions.cs" />
      <Compile Include="Assets\Scripts\Gun.cs" />
+     <Compile Include="Assets\Scripts\State Machine\Drone\DroneBaseState.cs" />
      <Compile Include="Assets\Scripts\PlayerInteractUI.cs" />
      <Compile Include="Assets\Scripts\Scope.cs" />
      <Compile Include="Assets\Scripts\EnemyDetection.cs" />
@@ -66,6 +67,8 @@
      <Compile Include="Assets\Scripts\CrateInteractible.cs" />
      <Compile Include="Assets\Scripts\SoundGenerator.cs" />
      <Compile Include="Assets\Scripts\EnemyTarget.cs" />
+     <Compile Include="Assets\Scripts\State Machine\Drone\DisabledState.cs" />
+     <Compile Include="Assets\Scripts\Throwables\EMPGrenade.cs" />
      <Compile Include="Assets\Scripts\State Machine\StateMachine.cs" />
      <Compile Include="Assets\Scripts\PlayerSound.cs" />
      <Compile Include="Assets\Scripts\Throwables\Throwable.cs" />

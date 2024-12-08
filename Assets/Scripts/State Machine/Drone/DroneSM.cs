@@ -9,6 +9,7 @@ public class DroneSM : StateMachine
     [HideInInspector] public InvestigateState investigateState;
     [HideInInspector] public HuntState huntState;
     [HideInInspector] public PatrolState patrolState;
+    [HideInInspector] public DisabledState disabledState;
 
     [HideInInspector] public NavMeshAgent nmAgent;
     [HideInInspector] public Transform player;
@@ -24,6 +25,7 @@ public class DroneSM : StateMachine
     [HideInInspector] public bool beenShot = false;
     [HideInInspector] public GameObject huntAlertObj;
     [HideInInspector] public GameObject combatAlertObj;
+    //[HideInInspector] public int disableForSecs = 0;
 
     [SerializeField] public Transform testingSphere;
 
@@ -37,6 +39,8 @@ public class DroneSM : StateMachine
 
         huntState = new HuntState(this);
         patrolState = new PatrolState(this);
+
+        disabledState = new DisabledState(this);
 
         nmAgent = GetComponent<NavMeshAgent>();
         detection = transform.GetChild(2).GetComponent<EnemyDetection>();

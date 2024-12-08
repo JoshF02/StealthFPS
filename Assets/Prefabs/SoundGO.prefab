@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4590912880826196581}
   - component: {fileID: 5831440490081380181}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SoundGO
   m_TagString: Sound
   m_Icon: {fileID: 0}

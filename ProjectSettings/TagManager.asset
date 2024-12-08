@@ -16,6 +16,7 @@ TagManager:
   - Weakness
   - Sound
   - Alert
+  - EMP
   layers:
   - Default
   - TransparentFX
