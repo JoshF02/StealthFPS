@@ -23,6 +23,7 @@ public class DroneSM : StateMachine
     public GameObject CombatAlertObj { get; private set; }
     [HideInInspector] public int patrolIndex = 0;
     [HideInInspector] public bool beenShot = false;
+    [HideInInspector] public float reenterCombatFromAlertCooldown = 0f;
     [SerializeField] public LayerMask laserLayerMask;
 
     private void Awake()

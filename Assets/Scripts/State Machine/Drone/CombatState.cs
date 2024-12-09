@@ -56,12 +56,21 @@ public class CombatState : DroneBaseState
         Quaternion rot = Quaternion.LookRotation(new(dir.x, 0, dir.z));
         sm.transform.rotation = Quaternion.Lerp(sm.transform.rotation, rot, 6.0f * Time.deltaTime); // 6 is turning speed
 
-        if (!sm.Detection.GetDetectingTarget(sm.transform.position, target.position, (target == sm.Player)) && beenShotTimer > 5f) {   // transition to investigate state if sight lost
-            Debug.Log("sight lost, investigating last known position");
-            sm.Detection.StartDetectingSuspicious(target);
-            sm.ChangeState(sm.InvestigateState);
-            sm.Detection.StopDetectingSuspicious();
-            return;
+        if (!sm.Detection.GetDetectingTarget(sm.transform.position, target.position, (target == sm.Player))) {   // transition if sight lost
+            
+            if (sm.Player.GetComponent<PlayerActions>().HasTeleported) {
+                Debug.Log("teleport broke line of sight, going into hunt mode");
+                sm.ChangeState(sm.HuntState);
+                return;
+            }
+
+            if (beenShotTimer > 5f) {
+                Debug.Log("sight lost, investigating last known position");
+                sm.Detection.StartDetectingSuspicious(target);
+                sm.ChangeState(sm.InvestigateState);
+                sm.Detection.StopDetectingSuspicious();
+                return;
+            }
         }
 
         shootTimer += Time.deltaTime;   
@@ -95,5 +104,6 @@ public class CombatState : DroneBaseState
         sm.CombatAlertObj.SetActive(false);
 
         sm.beenShot = false;
+        sm.reenterCombatFromAlertCooldown = 1f;
     }
 }

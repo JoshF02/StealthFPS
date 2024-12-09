@@ -22,7 +22,8 @@ public class NonCombatSuperstate : DroneBaseState
             return;
         }
 
-        if (sm.Hearing.AlertHeard == EnemyHearing.Alerts.EnterCombat) {    // put in if statement above after done testing
+        sm.reenterCombatFromAlertCooldown -= Time.deltaTime;
+        if (sm.Hearing.AlertHeard == EnemyHearing.Alerts.EnterCombat && sm.reenterCombatFromAlertCooldown <= 0f) {    // put in if statement above after done testing
             Debug.Log("Enter combat alert recieved");
             sm.ChangeState(sm.CombatState);
             return;

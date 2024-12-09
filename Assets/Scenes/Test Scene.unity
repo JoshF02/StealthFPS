@@ -1530,6 +1530,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stealItem: {fileID: 3072072546669155594, guid: d919a6b9f3232134893f3661e4168372,
     type: 3}
+  silentStep: 0
+  faster: 0
+  noBodies: 0
+  invisWhenStill: 0
 --- !u!4 &478324494
 Transform:
   m_ObjectHideFlags: 0
@@ -9139,6 +9143,9 @@ MonoBehaviour:
     type: 3}
   decoyThrowable: {fileID: 7955065385057335299, guid: 4248d3499fe77c945b1e2b843130dfb0,
     type: 3}
+  teleporterThrowable: {fileID: 815534138503465637, guid: 159e8e83976b9b3469bdad7072437090,
+    type: 3}
+  InvisPerkActive: 0
 --- !u!4 &3284249640971020198
 Transform:
   m_ObjectHideFlags: 0

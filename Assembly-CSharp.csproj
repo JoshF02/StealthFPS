@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\Interactibles\AmmoInteractible.cs" />
      <Compile Include="Assets\Scripts\State Machine\Drone\DroneBaseState.cs" />
      <Compile Include="Assets\Scripts\PlayerInteractUI.cs" />
+     <Compile Include="Assets\Scripts\Throwables\TeleporterThrowable.cs" />
      <Compile Include="Assets\Scripts\Scope.cs" />
      <Compile Include="Assets\Scripts\EnemyDetection.cs" />
      <Compile Include="Assets\Scripts\State Machine\Base State.cs" />

@@ -51,12 +51,21 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private ThrowingKnife throwingKnife;
     [SerializeField] private EMPGrenade empGrenade;
     [SerializeField] private DecoyThrowable decoyThrowable;
+    [SerializeField] private TeleporterThrowable teleporterThrowable;
     private int grenadesLeft = 3;
     private int stonesLeft = 20;
     private int throwingKnivesLeft = 100;
     private int empGrenadesLeft = 100;
     private int decoysLeft = 100;
+    private int teleportersLeft = 10;
     public bool InvisPerkActive = false; // can make get private but wont show
+    private Transform activeTeleporter = null;
+    public bool HasTeleported { get; private set; } = false;
+
+    public void SetActiveTeleporter(Transform teleporter)
+    {
+        activeTeleporter = teleporter;
+    }
 
 
 
@@ -188,6 +197,27 @@ public class PlayerActions : MonoBehaviour
             DecoyThrowable decoyThrowableObj = Instantiate<DecoyThrowable>(decoyThrowable, transform.position + (cam.forward * 2f), transform.localRotation);
             decoyThrowableObj.Init(cam, 2500f, 20f);
             decoysLeft--;
+        }
+
+        if (Input.GetKeyDown(KeyCode.L) && teleportersLeft > 0) {
+            TeleporterThrowable teleporterThrowableObj = Instantiate<TeleporterThrowable>(teleporterThrowable, transform.position + (cam.forward * 2f), transform.localRotation);
+            teleporterThrowableObj.Init(cam, 2500f, 20f);
+            teleporterThrowableObj.SetPlayerActions(this);
+            teleportersLeft--;
+        }
+
+        if (HasTeleported) {
+            Debug.Log("resetting teleported bool");
+            HasTeleported = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P) && activeTeleporter != null) {
+            Debug.Log("teleporting");
+            controller.enabled = false;
+            transform.position = activeTeleporter.position + new Vector3(0, 1.08f, 0);
+            controller.enabled = true;
+            HasTeleported = true;
+            //activeTeleporter = null;
         }
     }
 

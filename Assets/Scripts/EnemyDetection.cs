@@ -13,10 +13,16 @@ public class EnemyDetection : MonoBehaviour
     public bool DetectingDecoy { get; private set; } = false;
     public Transform SuspicousObject { get; private set; } = null;
     public Transform Decoy { get; private set; } = null;
+    private Transform playerTransform = null;
     [SerializeField] private LayerMask detectionLayerMask;
 
     public bool GetDetectingPlayer(Vector3 enemyPos, Vector3 playerPos)
     {
+        if (playerTransform != null) {
+            if (playerTransform.GetComponent<PlayerActions>().InvisPerkActive) detectingPlayer = false; // moved player detection check here
+            else detectingPlayer = CanSeeObject(playerTransform);
+        }
+        
         if (detectingPlayer) return true;
 
         if (GameManager.Instance.invisWhenStill) return false;  // dont detect close player if invis perk active
@@ -60,7 +66,8 @@ public class EnemyDetection : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {                                   
         if (other.name == "Player" && !detectingPlayer && !other.GetComponent<PlayerActions>().InvisPerkActive) {
-            detectingPlayer = CanSeeObject(other.transform);
+            /*detectingPlayer = CanSeeObject(other.transform);
+            if (detectingPlayer) */playerTransform = other.transform;
         }
         else if (other.tag == "Suspicious" && !DetectingSuspicious) {
             DetectingSuspicious = CanSeeObject(other.transform);
@@ -77,7 +84,8 @@ public class EnemyDetection : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         if (other.name == "Player" && !detectingPlayer && !other.GetComponent<PlayerActions>().InvisPerkActive) {
-            detectingPlayer = CanSeeObject(other.transform);
+            /*detectingPlayer = CanSeeObject(other.transform);
+            if (detectingPlayer) */playerTransform = other.transform;
         }
         else if (other.tag == "Suspicious" && !DetectingSuspicious) {
             DetectingSuspicious = CanSeeObject(other.transform);
@@ -90,16 +98,21 @@ public class EnemyDetection : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)  // SHOULD USE BETTER WAY OF BREAKING DETECTION
+    /*void OnTriggerExit(Collider other)  // SHOULD USE BETTER WAY OF BREAKING DETECTION
     {
         if (other.name == "Player") {
             detectingPlayer = false;
         }
-        /*else if (other.tag == "Decoy") {
-            Debug.Log("stopped detecting decoy");
-            detectingDecoy = false;
-        }*/
-    }
+    }*/
+
+    /*void Update()
+    {
+        if (detectingPlayer && playerTransform != null) {
+            Debug.Log("!!! checking player detection");
+            detectingPlayer = CanSeeObject(playerTransform);
+            //if  (!detectingPlayer) playerTransform = null;
+        }
+    }*/
 
     bool CanSeeObject(Transform obj)
     {
