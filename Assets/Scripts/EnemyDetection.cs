@@ -8,6 +8,8 @@ public class EnemyDetection : MonoBehaviour
 {
     private bool detectingPlayer = false;
     private bool detectingSuspicious = false;
+    private bool detectingDecoy = false;
+    [HideInInspector] public Transform decoy = null;
     [HideInInspector] public Transform suspicousObject = null;
     private readonly float viewDistance = 10.0f;
     private readonly float viewAngle = 40;
@@ -22,6 +24,13 @@ public class EnemyDetection : MonoBehaviour
 
     public bool GetDetectingSuspicious() { return detectingSuspicious; }
     public void SetDetectingSuspicious(bool value) { detectingSuspicious = value; } 
+    public bool GetDetectingDecoy() { return detectingDecoy; }
+    public void SetDetectingDecoy(bool value) { detectingDecoy = value; } 
+    public bool GetDetectingTarget(Vector3 enemyPos, Vector3 targetPos, bool targetIsPlayer)
+    {
+        if (targetIsPlayer) return GetDetectingPlayer(enemyPos, targetPos);
+        else return GetDetectingDecoy();
+    }
 
     public void SetMoreAware()  // initial radius should be more aware size
     { 
@@ -36,7 +45,7 @@ public class EnemyDetection : MonoBehaviour
         //GetComponent<BoxCollider>().size *= 0.5f;
     } 
 
-    void OnTriggerEnter(Collider other) // NEED TO add audio detection + alerts from other drones
+    void OnTriggerEnter(Collider other)
     {                                   
         if (other.name == "Player" && !detectingPlayer) {
             detectingPlayer = CanSeeObject(other.transform);
@@ -44,6 +53,11 @@ public class EnemyDetection : MonoBehaviour
         else if (other.tag == "Suspicious" && !detectingSuspicious) {
             detectingSuspicious = CanSeeObject(other.transform);
             if (detectingSuspicious) suspicousObject = other.transform;
+        }
+        else if (other.tag == "Decoy") {
+            //Debug.Log("detecting decoy");
+            detectingDecoy = CanSeeObject(other.transform);
+            if (detectingDecoy) decoy = other.transform;
         }
         // only objects with rigidbodies set off triggers
     }
@@ -57,6 +71,11 @@ public class EnemyDetection : MonoBehaviour
             detectingSuspicious = CanSeeObject(other.transform);
             if (detectingSuspicious) suspicousObject = other.transform;
         }
+        else if (other.tag == "Decoy") {
+            //Debug.Log("detecting decoy");
+            detectingDecoy = CanSeeObject(other.transform);
+            if (detectingDecoy) decoy = other.transform;
+        }
     }
 
     void OnTriggerExit(Collider other)  // SHOULD USE BETTER WAY OF BREAKING DETECTION
@@ -64,6 +83,10 @@ public class EnemyDetection : MonoBehaviour
         if (other.name == "Player") {
             detectingPlayer = false;
         }
+        /*else if (other.tag == "Decoy") {
+            Debug.Log("stopped detecting decoy");
+            detectingDecoy = false;
+        }*/
     }
 
     bool CanSeeObject(Transform obj)

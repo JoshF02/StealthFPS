@@ -44,6 +44,7 @@
      <Compile Include="Assets\Scripts\PlayerActions.cs" />
      <Compile Include="Assets\Scripts\Interactibles\IInteractible.cs" />
      <Compile Include="Assets\Scripts\Gun.cs" />
+     <Compile Include="Assets\Scripts\Throwables\DecoyThrowable.cs" />
      <Compile Include="Assets\Scripts\Interactibles\AmmoInteractible.cs" />
      <Compile Include="Assets\Scripts\State Machine\Drone\DroneBaseState.cs" />
      <Compile Include="Assets\Scripts\PlayerInteractUI.cs" />

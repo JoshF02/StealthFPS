@@ -1167,6 +1167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decoy: {fileID: 0}
   suspicousObject: {fileID: 0}
   detectionLayerMask:
     serializedVersion: 2
@@ -1890,6 +1891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decoy: {fileID: 0}
   suspicousObject: {fileID: 0}
   detectionLayerMask:
     serializedVersion: 2
@@ -4434,6 +4436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decoy: {fileID: 0}
   suspicousObject: {fileID: 0}
   detectionLayerMask:
     serializedVersion: 2
@@ -5598,6 +5601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decoy: {fileID: 0}
   suspicousObject: {fileID: 0}
   detectionLayerMask:
     serializedVersion: 2
@@ -6527,7 +6531,7 @@ GameObject:
   - component: {fileID: 1317342065}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9540,6 +9544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decoy: {fileID: 0}
   suspicousObject: {fileID: 0}
   detectionLayerMask:
     serializedVersion: 2
@@ -13240,6 +13245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decoy: {fileID: 0}
   suspicousObject: {fileID: 0}
   detectionLayerMask:
     serializedVersion: 2
@@ -13459,6 +13465,8 @@ MonoBehaviour:
   throwingKnife: {fileID: 7579824525254459245, guid: 61806b7d1b4ec55458a7ceba01a1aaaa,
     type: 3}
   empGrenade: {fileID: 2525097625948369028, guid: 1f3cfb87db171c448824085602360e5e,
+    type: 3}
+  decoyThrowable: {fileID: 7955065385057335299, guid: 4248d3499fe77c945b1e2b843130dfb0,
     type: 3}
 --- !u!4 &3284249640971020198
 Transform:

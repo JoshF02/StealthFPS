@@ -17,6 +17,8 @@ TagManager:
   - Sound
   - Alert
   - EMP
+  - Decoy
+  - Ground
   layers:
   - Default
   - TransparentFX

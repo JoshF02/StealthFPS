@@ -24,6 +24,7 @@ public class PatrolState : MovingSuperstate
         if (sm.hearing.GetAlertHeard() == EnemyHearing.Alerts.EnterHunt) {
             Debug.Log("Enter hunt alert recieved");
             sm.ChangeState(sm.huntState);
+            return;
         }
 
         if ((Mathf.Abs(sm.transform.position.y - sm.waypoints[sm.patrolIndex].y) < 2.5f) && // if within height limit
