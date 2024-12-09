@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     public bool faster = false;
     public bool noBodies = false;
     public bool invisWhenStill = false;
+    public int slot1;
+    public int slot2;
+    public int perkNum;
 
     private void Awake() 
     { 
@@ -50,6 +53,26 @@ public class GameManager : MonoBehaviour
                 break;
             default:
                 Debug.Log("not steal");
+                break;
+        }
+
+        slot1 = UnityEngine.Random.Range(0, 6);
+        slot2 = slot1;
+        while (slot2 == slot1) slot2 = UnityEngine.Random.Range(0, 6);
+        perkNum = UnityEngine.Random.Range(0, 4);
+
+        switch(perkNum) {
+            case 0:
+                silentStep = true;
+                break;
+            case 1:
+                faster = true;
+                break;
+            case 2:
+                noBodies = true;
+                break;
+            case 3:
+                invisWhenStill = true;
                 break;
         }
     }

@@ -5,11 +5,11 @@ using UnityEngine;
 public class TeleporterThrowable : Throwable
 {
     [SerializeField] private GameObject teleporterPrefab;
-    private PlayerActions playerActions = null;
+    private PlayerActions playerActions;
 
-    public void SetPlayerActions(PlayerActions playerActions)
+    void Awake()
     {
-        this.playerActions = playerActions;
+        playerActions = GameObject.FindWithTag("Player").GetComponent<PlayerActions>();
     }
 
     void OnCollisionEnter(Collision collision)  // only spawns teleporter once it hits ground

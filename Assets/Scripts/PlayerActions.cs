@@ -62,13 +62,27 @@ public class PlayerActions : MonoBehaviour
     private Transform activeTeleporter = null;
     public bool HasTeleported { get; private set; } = false;
 
+    private enum ThrowableTypes
+    {
+        Stone,
+        Smoke,
+        Knife,
+        EMP,
+        Decoy,
+        Teleporter,
+        Max
+    }
+
+    private Throwable slot1Prefab;
+    private Throwable slot2Prefab;
+    private int slot1Ammo;
+    private int slot2Ammo;
+
+
     public void SetActiveTeleporter(Transform teleporter)
     {
         activeTeleporter = teleporter;
     }
-
-
-
 
 
     private void Awake()
@@ -78,6 +92,60 @@ public class PlayerActions : MonoBehaviour
         controller = transform.GetComponent<CharacterController>();
         cam = transform.GetChild(0);
         weaponHolder = cam.GetChild(1);
+
+        switch((ThrowableTypes)GameManager.Instance.slot1) {
+            case ThrowableTypes.Stone:
+                slot1Prefab = stone;
+                slot1Ammo = 100;
+                break;
+            case ThrowableTypes.Smoke:
+                slot1Prefab = smokeGrenade;
+                slot1Ammo = 10;
+                break;
+            case ThrowableTypes.Knife:
+                slot1Prefab = throwingKnife;
+                slot1Ammo = 10;
+                break;
+            case ThrowableTypes.EMP:
+                slot1Prefab = empGrenade;
+                slot1Ammo = 10;
+                break;
+            case ThrowableTypes.Decoy:
+                slot1Prefab = decoyThrowable;
+                slot1Ammo = 10;
+                break;
+            case ThrowableTypes.Teleporter:
+                slot1Prefab = teleporterThrowable;
+                slot1Ammo = 10;
+                break;
+        }
+
+        switch((ThrowableTypes)GameManager.Instance.slot2) {
+            case ThrowableTypes.Stone:
+                slot2Prefab = stone;
+                slot2Ammo = 100;
+                break;
+            case ThrowableTypes.Smoke:
+                slot2Prefab = smokeGrenade;
+                slot2Ammo = 10;
+                break;
+            case ThrowableTypes.Knife:
+                slot2Prefab = throwingKnife;
+                slot2Ammo = 10;
+                break;
+            case ThrowableTypes.EMP:
+                slot2Prefab = empGrenade;
+                slot2Ammo = 10;
+                break;
+            case ThrowableTypes.Decoy:
+                slot2Prefab = decoyThrowable;
+                slot2Ammo = 10;
+                break;
+            case ThrowableTypes.Teleporter:
+                slot2Prefab = teleporterThrowable;
+                slot2Ammo = 10;
+                break;
+        }
     }
 
 
@@ -169,6 +237,46 @@ public class PlayerActions : MonoBehaviour
 
     private void Throwables()   // throwable gadget usage
     {
+        if (Input.GetKeyDown(KeyCode.U) && slot1Ammo > 0) {
+            Throwable slot1Obj = Instantiate<Throwable>(slot1Prefab, cam.position + (cam.forward * 2f), transform.localRotation);
+            float force, torque;
+            if ((ThrowableTypes)GameManager.Instance.slot1 == ThrowableTypes.Stone) {
+                force = 2500f;
+                torque = 20f;
+            }
+            else if ((ThrowableTypes)GameManager.Instance.slot1 == ThrowableTypes.Knife) {
+                force = 7500f;
+                torque = 200f;
+            }
+            else {
+                force = 1500f;
+                torque = 50f;
+            }
+
+            slot1Obj.Init(cam, force, torque);
+            slot1Ammo--;
+        }
+
+        if (Input.GetKeyDown(KeyCode.I) && slot2Ammo > 0) {
+            Throwable slot2Obj = Instantiate<Throwable>(slot2Prefab, cam.position + (cam.forward * 2f), transform.localRotation);
+            float force, torque;
+            if ((ThrowableTypes)GameManager.Instance.slot2 == ThrowableTypes.Stone) {
+                force = 2500f;
+                torque = 20f;
+            }
+            else if ((ThrowableTypes)GameManager.Instance.slot2 == ThrowableTypes.Knife) {
+                force = 7500f;
+                torque = 200f;
+            }
+            else {
+                force = 1500f;
+                torque = 50f;
+            }
+
+            slot2Obj.Init(cam, force, torque);
+            slot2Ammo--;
+        }
+
         if (Input.GetKeyDown(KeyCode.G) && grenadesLeft > 0) {
             SmokeGrenade smokeGrenadeObj = Instantiate<SmokeGrenade>(smokeGrenade, transform.position + (cam.forward * 2f), transform.localRotation);
             smokeGrenadeObj.Init(cam, 1500f, 50f);
@@ -202,7 +310,6 @@ public class PlayerActions : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L) && teleportersLeft > 0) {
             TeleporterThrowable teleporterThrowableObj = Instantiate<TeleporterThrowable>(teleporterThrowable, transform.position + (cam.forward * 2f), transform.localRotation);
             teleporterThrowableObj.Init(cam, 2500f, 20f);
-            teleporterThrowableObj.SetPlayerActions(this);
             teleportersLeft--;
         }
 
