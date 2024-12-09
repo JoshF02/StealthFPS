@@ -16,10 +16,10 @@ public class EnemyHearing : MonoBehaviour
         EnterCombat,
         Max
     }
-    [HideInInspector] public bool NoiseHeard { get; private set; } = false;
-    [HideInInspector] public Alerts AlertHeard { get; private set; } = Alerts.None;
-    [HideInInspector] public float DisableForSecs { get; private set; } = 0;
-    [HideInInspector] public Vector3 NoisePos { get; private set; } = new();
+    public bool NoiseHeard { get; private set; } = false;
+    public Alerts AlertHeard { get; private set; } = Alerts.None;
+    public float DisableForSecs { get; private set; } = 0;
+    public Vector3 NoisePos { get; private set; } = new();
 
     public void StopHearingNoise()
     {

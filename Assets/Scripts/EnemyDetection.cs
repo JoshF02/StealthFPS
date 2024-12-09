@@ -9,15 +9,17 @@ public class EnemyDetection : MonoBehaviour
     private readonly float viewDistance = 10.0f;
     private readonly float viewAngle = 32;
     private bool detectingPlayer = false;
-    [HideInInspector] public bool DetectingSuspicious { get; private set; } = false;
-    [HideInInspector] public bool DetectingDecoy { get; private set; } = false;
-    [HideInInspector] public Transform SuspicousObject { get; private set; } = null;
-    [HideInInspector] public Transform Decoy { get; private set; } = null;
+    public bool DetectingSuspicious { get; private set; } = false;
+    public bool DetectingDecoy { get; private set; } = false;
+    public Transform SuspicousObject { get; private set; } = null;
+    public Transform Decoy { get; private set; } = null;
     [SerializeField] private LayerMask detectionLayerMask;
 
     public bool GetDetectingPlayer(Vector3 enemyPos, Vector3 playerPos)
     {
         if (detectingPlayer) return true;
+
+        if (GameManager.Instance.invisWhenStill) return false;  // dont detect close player if invis perk active
 
         return (Vector3.Distance(enemyPos, playerPos) < 3.0f);  // detects player if very close
     }
@@ -57,7 +59,7 @@ public class EnemyDetection : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {                                   
-        if (other.name == "Player" && !detectingPlayer) {
+        if (other.name == "Player" && !detectingPlayer && !other.GetComponent<PlayerActions>().InvisPerkActive) {
             detectingPlayer = CanSeeObject(other.transform);
         }
         else if (other.tag == "Suspicious" && !DetectingSuspicious) {
@@ -74,7 +76,7 @@ public class EnemyDetection : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.name == "Player" && !detectingPlayer) {
+        if (other.name == "Player" && !detectingPlayer && !other.GetComponent<PlayerActions>().InvisPerkActive) {
             detectingPlayer = CanSeeObject(other.transform);
         }
         else if (other.tag == "Suspicious" && !DetectingSuspicious) {

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerActions : MonoBehaviour
 {
-    //controls stuff
+    [Header("Controls")]
     [SerializeField] private float speed;
     [SerializeField] private float mouseSensitivity;
     [SerializeField] private float forceMagnitude;
@@ -15,8 +15,6 @@ public class PlayerActions : MonoBehaviour
     float xRotation = 0f;
     private float verticalSpeed = 0f;
     private readonly float gravity = 30f;
-
-
     private Transform weaponHolder;
     public bool isAiming = false;
     private bool isCrouching = false;
@@ -31,7 +29,6 @@ public class PlayerActions : MonoBehaviour
     public float rotationStep = 4f;
     public float maxRotationStep = 5f;
     Vector3 swayEulerRot; 
-
     public float smooth = 10f;
     float smoothRot = 12f;
 
@@ -39,17 +36,16 @@ public class PlayerActions : MonoBehaviour
     public float speedCurve;
     float curveSin {get => Mathf.Sin(speedCurve);}
     float curveCos {get => Mathf.Cos(speedCurve);}
-
     public Vector3 travelLimit = Vector3.one * 0.0025f;
     public Vector3 bobLimit = Vector3.one * 0.001f;
     Vector3 bobPosition;
-
     public float bobExaggeration;
 
     [Header("Bob Rotation")]
     public Vector3 multiplier;
     Vector3 bobEulerRotation;
 
+    [Header("Throwables")]
     [SerializeField] private SmokeGrenade smokeGrenade;
     [SerializeField] private StoneThrowable stone;
     [SerializeField] private ThrowingKnife throwingKnife;
@@ -60,6 +56,7 @@ public class PlayerActions : MonoBehaviour
     private int throwingKnivesLeft = 100;
     private int empGrenadesLeft = 100;
     private int decoysLeft = 100;
+    public bool InvisPerkActive = false; // can make get private but wont show
 
 
 
@@ -114,11 +111,9 @@ public class PlayerActions : MonoBehaviour
             }
         }
 
-        Vector3 move = transform.right * horizontal + transform.forward * vertical;
+        if (GameManager.Instance.faster) speed *= 1.5f;
 
-        // sprinting
-        //if (Input.GetKey(KeyCode.LeftShift)) speed = 7.5f;
-        //else speed = 4f;
+        Vector3 move = transform.right * horizontal + transform.forward * vertical;
 
         // gravity
         if (controller.isGrounded) verticalSpeed = 0;
@@ -133,9 +128,14 @@ public class PlayerActions : MonoBehaviour
         // sound for moving
         if (move != Vector3.zero && !isCrouching) {
             int multiplier = isSprinting ? 2 : 1;
+            if (GameManager.Instance.silentStep) multiplier -= 1;
             PlayerSound.Instance.StartSound("movement", 10 * multiplier);
         }
         else PlayerSound.Instance.StopSound("movement");
+
+        // invisibility when still perk
+        if (GameManager.Instance.invisWhenStill && move == Vector3.zero) InvisPerkActive = true;
+        else InvisPerkActive = false;
     }
 
 

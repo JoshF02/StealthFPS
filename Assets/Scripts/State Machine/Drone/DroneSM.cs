@@ -5,22 +5,22 @@ using UnityEngine.AI;
 
 public class DroneSM : StateMachine
 {
-    [HideInInspector] public CombatState CombatState { get; private set; }
-    [HideInInspector] public InvestigateState InvestigateState { get; private set; }
-    [HideInInspector] public HuntState HuntState { get; private set; }
-    [HideInInspector] public PatrolState PatrolState { get; private set; }
-    [HideInInspector] public DisabledState DisabledState { get; private set; }
+    public CombatState CombatState { get; private set; }
+    public InvestigateState InvestigateState { get; private set; }
+    public HuntState HuntState { get; private set; }
+    public PatrolState PatrolState { get; private set; }
+    public DisabledState DisabledState { get; private set; }
 
-    [HideInInspector] public NavMeshAgent NmAgent { get; private set; }
-    [HideInInspector] public Transform Player { get; private set; }
-    [HideInInspector] public EnemyDetection Detection { get; private set; }
-    [HideInInspector] public EnemyHearing Hearing { get; private set; }
-    [HideInInspector] public Light Turret { get; private set; }
-    [HideInInspector] public Light Spotlight { get; private set; }
-    [HideInInspector] public Transform PatrolPath { get; private set; }
-    [HideInInspector] public Vector3[] Waypoints { get; private set; }
-    [HideInInspector] public GameObject HuntAlertObj { get; private set; }
-    [HideInInspector] public GameObject CombatAlertObj { get; private set; }
+    public NavMeshAgent NmAgent { get; private set; }
+    public Transform Player { get; private set; }
+    public EnemyDetection Detection { get; private set; }
+    public EnemyHearing Hearing { get; private set; }
+    public Light Turret { get; private set; }
+    public Light Spotlight { get; private set; }
+    public Transform PatrolPath { get; private set; }
+    public Vector3[] Waypoints { get; private set; }
+    public GameObject HuntAlertObj { get; private set; }
+    public GameObject CombatAlertObj { get; private set; }
     [HideInInspector] public int patrolIndex = 0;
     [HideInInspector] public bool beenShot = false;
     [SerializeField] public LayerMask laserLayerMask;

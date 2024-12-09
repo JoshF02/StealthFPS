@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject stealItem;
 
+    // Perks
+    public bool silentStep = false; // can make gets private but wont show
+    public bool faster = false;
+    public bool noBodies = false;
+    public bool invisWhenStill = false;
+
     private void Awake() 
     { 
         if (Instance != null && Instance != this) Destroy(this); // can only be 1 instance
