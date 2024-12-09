@@ -8,7 +8,6 @@ public class EnemyDetection : MonoBehaviour
 {
     private readonly float viewDistance = 10.0f;
     private readonly float viewAngle = 32;
-    private bool detectingPlayer = false;
     public bool DetectingSuspicious { get; private set; } = false;
     public bool DetectingDecoy { get; private set; } = false;
     public Transform SuspicousObject { get; private set; } = null;
@@ -16,22 +15,15 @@ public class EnemyDetection : MonoBehaviour
     private Transform playerTransform = null;
     [SerializeField] private LayerMask detectionLayerMask;
 
-    public bool GetDetectingPlayer(Vector3 enemyPos, Vector3 playerPos)
+    public bool GetDetectingPlayer()
     {
-        if (playerTransform != null) {
-            if (playerTransform.GetComponent<PlayerActions>().InvisPerkActive) detectingPlayer = false; // moved player detection check here
-            else detectingPlayer = CanSeeObject(playerTransform);
-        }
-        
-        if (detectingPlayer) return true;
-
-        if (GameManager.Instance.invisWhenStill) return false;  // dont detect close player if invis perk active
-
-        return (Vector3.Distance(enemyPos, playerPos) < 3.0f);  // detects player if very close
+        if (playerTransform == null || playerTransform.GetComponent<PlayerActions>().InvisPerkActive) return false;
+        else if (Vector3.Distance(transform.position, playerTransform.position) < 3.0f) return true; // will need to edit value / remove / keep in mind, can detect through thin objs
+        else return CanSeeObject(playerTransform);
     }
-    public bool GetDetectingTarget(Vector3 enemyPos, Vector3 targetPos, bool targetIsPlayer)
+    public bool GetDetectingTarget(bool targetIsPlayer)
     {
-        if (targetIsPlayer) return GetDetectingPlayer(enemyPos, targetPos);
+        if (targetIsPlayer) return GetDetectingPlayer();
         else return DetectingDecoy;
     }
     public void StartDetectingSuspicious(Transform target)
@@ -65,9 +57,8 @@ public class EnemyDetection : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {                                   
-        if (other.name == "Player" && !detectingPlayer && !other.GetComponent<PlayerActions>().InvisPerkActive) {
-            /*detectingPlayer = CanSeeObject(other.transform);
-            if (detectingPlayer) */playerTransform = other.transform;
+        if (other.name == "Player") {
+            playerTransform = other.transform;
         }
         else if (other.tag == "Suspicious" && !DetectingSuspicious) {
             DetectingSuspicious = CanSeeObject(other.transform);
@@ -83,9 +74,8 @@ public class EnemyDetection : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.name == "Player" && !detectingPlayer && !other.GetComponent<PlayerActions>().InvisPerkActive) {
-            /*detectingPlayer = CanSeeObject(other.transform);
-            if (detectingPlayer) */playerTransform = other.transform;
+        if (other.name == "Player") {
+            playerTransform = other.transform;
         }
         else if (other.tag == "Suspicious" && !DetectingSuspicious) {
             DetectingSuspicious = CanSeeObject(other.transform);
@@ -97,22 +87,6 @@ public class EnemyDetection : MonoBehaviour
             if (DetectingDecoy) Decoy = other.transform;
         }
     }
-
-    /*void OnTriggerExit(Collider other)  // SHOULD USE BETTER WAY OF BREAKING DETECTION
-    {
-        if (other.name == "Player") {
-            detectingPlayer = false;
-        }
-    }*/
-
-    /*void Update()
-    {
-        if (detectingPlayer && playerTransform != null) {
-            Debug.Log("!!! checking player detection");
-            detectingPlayer = CanSeeObject(playerTransform);
-            //if  (!detectingPlayer) playerTransform = null;
-        }
-    }*/
 
     bool CanSeeObject(Transform obj)
     {

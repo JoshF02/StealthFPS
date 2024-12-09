@@ -27,7 +27,7 @@ public class CombatState : DroneBaseState
         }
         else beenShotTimer = 5f;
 
-        target = (!sm.Detection.GetDetectingPlayer(sm.transform.position, sm.Player.position) && sm.Detection.DetectingDecoy && !sm.beenShot) ? sm.Detection.Decoy : sm.Player;
+        target = (!sm.Detection.GetDetectingPlayer() && sm.Detection.DetectingDecoy && !sm.beenShot) ? sm.Detection.Decoy : sm.Player;
         if (target == sm.Player) {
             sm.CombatAlertObj.SetActive(true);  // TARGET STUFF DOESNT WORK WITH ALERTS SO ONLY CREATE ALERT IF FIGHTING PLAYER
         }
@@ -41,7 +41,7 @@ public class CombatState : DroneBaseState
             beenShotTimer = 0f;
         }
 
-        target = (!sm.Detection.GetDetectingPlayer(sm.transform.position, sm.Player.position) && sm.Detection.DetectingDecoy && !sm.beenShot) ? sm.Detection.Decoy : sm.Player;
+        target = (!sm.Detection.GetDetectingPlayer() && sm.Detection.DetectingDecoy && !sm.beenShot) ? sm.Detection.Decoy : sm.Player;
         //Debug.Log("target is player: " + (target == sm.player));
         
         if (target != sm.Player && target == null) {
@@ -56,7 +56,7 @@ public class CombatState : DroneBaseState
         Quaternion rot = Quaternion.LookRotation(new(dir.x, 0, dir.z));
         sm.transform.rotation = Quaternion.Lerp(sm.transform.rotation, rot, 6.0f * Time.deltaTime); // 6 is turning speed
 
-        if (!sm.Detection.GetDetectingTarget(sm.transform.position, target.position, (target == sm.Player))) {   // transition if sight lost
+        if (!sm.Detection.GetDetectingTarget(target == sm.Player)) {   // transition if sight lost
             
             if (sm.Player.GetComponent<PlayerActions>().HasTeleported) {
                 Debug.Log("teleport broke line of sight, going into hunt mode");

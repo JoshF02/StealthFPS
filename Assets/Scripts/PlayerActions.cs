@@ -207,7 +207,7 @@ public class PlayerActions : MonoBehaviour
         }
 
         if (HasTeleported) {
-            Debug.Log("resetting teleported bool");
+            //Debug.Log("resetting teleported bool");
             HasTeleported = false;
         }
 

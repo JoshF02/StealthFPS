@@ -18,7 +18,7 @@ public class InvestigateState : NonCombatSuperstate
         //Debug.Log("investigate state entered");
 
         if (sm.Hearing.NoiseHeard) sm.NmAgent.destination = sm.Hearing.NoisePos;
-        else sm.NmAgent.destination = sm.Detection.SuspicousObject.position;
+        else if (sm.Detection.SuspicousObject != null) sm.NmAgent.destination = sm.Detection.SuspicousObject.position;
         
         timer = 0f;
     }

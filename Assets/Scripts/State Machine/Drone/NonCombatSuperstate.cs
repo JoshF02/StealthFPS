@@ -16,7 +16,7 @@ public class NonCombatSuperstate : DroneBaseState
     {
         base.UpdateLogic();
 
-        if (sm.Detection.GetDetectingPlayer(sm.transform.position, sm.Player.position) || sm.beenShot) {    // transition to combat if player detected visually, or shot by player
+        if (sm.Detection.GetDetectingPlayer() || sm.beenShot) {    // transition to combat if player detected visually, or shot by player
             Debug.Log("player spotted, changing to combat state");
             sm.ChangeState(sm.CombatState);
             return;
