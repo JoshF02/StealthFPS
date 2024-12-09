@@ -9,36 +9,36 @@ public class PatrolState : MovingSuperstate
     public override void Enter()
     {
         base.Enter();
-        sm.turret.color = Color.green;
-        sm.spotlight.color = Color.green;
+        sm.Turret.color = Color.green;
+        sm.Spotlight.color = Color.green;
         //Debug.Log("Patrol state entered");
-        sm.detection.SetLessAware();
+        sm.Detection.SetLessAware();
 
-        sm.nmAgent.destination = sm.waypoints[sm.patrolIndex];
+        sm.NmAgent.destination = sm.Waypoints[sm.patrolIndex];
     }
 
     public override void UpdateLogic()
     {
         base.UpdateLogic();
 
-        if (sm.hearing.GetAlertHeard() == EnemyHearing.Alerts.EnterHunt) {
+        if (sm.Hearing.AlertHeard == EnemyHearing.Alerts.EnterHunt) {
             Debug.Log("Enter hunt alert recieved");
-            sm.ChangeState(sm.huntState);
+            sm.ChangeState(sm.HuntState);
             return;
         }
 
-        if ((Mathf.Abs(sm.transform.position.y - sm.waypoints[sm.patrolIndex].y) < 2.5f) && // if within height limit
+        if ((Mathf.Abs(sm.transform.position.y - sm.Waypoints[sm.patrolIndex].y) < 2.5f) && // if within height limit
                                 Vector2.Distance(new Vector2(sm.transform.position.x, sm.transform.position.z), 
-                                new Vector2(sm.waypoints[sm.patrolIndex].x, sm.waypoints[sm.patrolIndex].z)) < 0.5f) { // if coordinates reached
+                                new Vector2(sm.Waypoints[sm.patrolIndex].x, sm.Waypoints[sm.patrolIndex].z)) < 0.5f) { // if coordinates reached
 
-            sm.patrolIndex = (sm.patrolIndex + 1) % sm.waypoints.Length;    // get next patrol point and pathfind to it
-            sm.nmAgent.destination = sm.waypoints[sm.patrolIndex];
+            sm.patrolIndex = (sm.patrolIndex + 1) % sm.Waypoints.Length;    // get next patrol point and pathfind to it
+            sm.NmAgent.destination = sm.Waypoints[sm.patrolIndex];
         }
     }
 
     public override void Exit() // makes drone more aware when in a non-patrol state
     {
         base.Exit();
-        sm.detection.SetMoreAware();
+        sm.Detection.SetMoreAware();
     }
 }

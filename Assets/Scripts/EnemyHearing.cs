@@ -9,7 +9,6 @@ public class EnemyHearing : MonoBehaviour
 {
     NavMeshAgent agent;
     NavMeshPath path;
-    private bool noiseHeard = false;
     public enum Alerts
     {
         None,
@@ -17,25 +16,14 @@ public class EnemyHearing : MonoBehaviour
         EnterCombat,
         Max
     }
+    [HideInInspector] public bool NoiseHeard { get; private set; } = false;
+    [HideInInspector] public Alerts AlertHeard { get; private set; } = Alerts.None;
+    [HideInInspector] public float DisableForSecs { get; private set; } = 0;
+    [HideInInspector] public Vector3 NoisePos { get; private set; } = new();
 
-    private Alerts alertHeard = Alerts.None;
-    public float disableForSecs = 0;
-    
-    [HideInInspector] public Vector3 noisePos = new();
-
-    public bool GetNoiseHeard()
+    public void StopHearingNoise()
     {
-        return noiseHeard;
-    }
-
-    public void SetNoiseHeard(bool val)
-    {
-        noiseHeard = val;
-    }
-
-    public Alerts GetAlertHeard()
-    {
-        return alertHeard;
+        NoiseHeard = false;
     }
 
     void Start()
@@ -44,40 +32,45 @@ public class EnemyHearing : MonoBehaviour
         path = new NavMeshPath();
     }
 
+    void Update()
+    {
+        DisableForSecs -= Time.deltaTime;
+    }
+
     void OnTriggerStay(Collider other)  // goes into investigate state to check out noise if it can hear it
     {
-        noiseHeard = false; 
+        NoiseHeard = false; 
 
         if (other.tag == "Sound" && agent.CalculatePath(other.transform.position, path) && (path.status == NavMeshPathStatus.PathComplete)) {  
             float length = CalculatePathLength(path);
             float straightLineDist = Vector3.Distance(transform.position, other.transform.position);
 
             if (length < (straightLineDist * 2)) {      // if path less than multiple of straight line distance (PLAY AROUND WITH THE MULTIPLIER)
-                noiseHeard = true;
-                noisePos = other.transform.parent.position;
+                NoiseHeard = true;
+                NoisePos = other.transform.parent.position;
                 //Debug.Log("valid noise heard");
             }
-            else Debug.Log("path too long, can't hear noise");  // does these calculations every frame, could optimise
+            //else Debug.Log("path too long, can't hear noise");  // does these calculations every frame, could optimise
 
             // USING HUMANOID NAVMESH SO TINY GAPS WILL OBSTRUCT - KEEP IN MIND
         }
 
         if (other.tag == "Alert") {
-            alertHeard = (other.name == "EnterHuntAlert") ? Alerts.EnterHunt : Alerts.EnterCombat;  // NOTE - DOESNT DO PATHFINDING FOR ALERTS (could do it?)
+            AlertHeard = (other.name == "EnterHuntAlert") ? Alerts.EnterHunt : Alerts.EnterCombat;  // NOTE - DOESNT DO PATHFINDING FOR ALERTS (could do it?)
             //Debug.Log(alertHeard + " alert heard by " + transform.parent.gameObject.name);
         }
 
         if (other.tag == "EMP") {
             //Debug.Log("emp detected");
-            disableForSecs = 10f;
+            DisableForSecs = 10f;
         }
     }
 
     void OnTriggerExit(Collider other)
     {
         //Debug.Log("ON TRIGGER EXIT CALLED");
-        noiseHeard = false;
-        alertHeard = Alerts.None;
+        NoiseHeard = false;
+        AlertHeard = Alerts.None;
     }
 
     public float CalculatePathLength(NavMeshPath path)

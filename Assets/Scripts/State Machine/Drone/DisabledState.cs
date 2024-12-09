@@ -14,30 +14,24 @@ public class DisabledState : BaseState
     public override void Enter()
     {
         base.Enter();
-        sm.turret.intensity = 0;
-        sm.spotlight.intensity = 0;
+        sm.Turret.intensity = 0;
+        sm.Spotlight.intensity = 0;
     }
 
     public override void UpdateLogic()
     {
         base.UpdateLogic();
 
-        sm.turret.intensity = 0;
-        sm.spotlight.intensity = 0;
-
-        sm.hearing.disableForSecs -= Time.deltaTime;
-        //Debug.Log("in disabled state for " + sm.hearing.disableForSecs);
-
-        if (sm.hearing.disableForSecs <= 0) {
+        if (sm.Hearing.DisableForSecs <= 0) {
             Debug.Log("exiting disabled state, into hunt");
-            sm.ChangeState(sm.huntState);
+            sm.ChangeState(sm.HuntState);
         }
     }
 
     public override void Exit()
     {
         base.Exit();
-        sm.turret.intensity = 0.3f;
-        sm.spotlight.intensity = 200;
+        sm.Turret.intensity = 0.3f;
+        sm.Spotlight.intensity = 200;
     }
 }

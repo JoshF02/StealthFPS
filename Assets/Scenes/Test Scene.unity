@@ -591,8 +591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decoy: {fileID: 0}
-  suspicousObject: {fileID: 0}
   detectionLayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -2524,7 +2522,7 @@ PrefabInstance:
     - target: {fileID: 6127730640627936306, guid: 27a7fae009199d14e9cdcbba5e507c6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.88
+      value: -18.32
       objectReference: {fileID: 0}
     - target: {fileID: 6127730640627936306, guid: 27a7fae009199d14e9cdcbba5e507c6a,
         type: 3}
@@ -2799,7 +2797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.25, y: 10}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975711021
@@ -8910,8 +8908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decoy: {fileID: 0}
-  suspicousObject: {fileID: 0}
   detectionLayerMask:
     serializedVersion: 2
     m_Bits: 0

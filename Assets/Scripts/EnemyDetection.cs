@@ -6,14 +6,14 @@ using UnityEngine;
 
 public class EnemyDetection : MonoBehaviour
 {
-    private bool detectingPlayer = false;
-    private bool detectingSuspicious = false;
-    private bool detectingDecoy = false;
-    [HideInInspector] public Transform decoy = null;
-    [HideInInspector] public Transform suspicousObject = null;
     private readonly float viewDistance = 10.0f;
     private readonly float viewAngle = 32;
-    [SerializeField] public LayerMask detectionLayerMask;
+    private bool detectingPlayer = false;
+    [HideInInspector] public bool DetectingSuspicious { get; private set; } = false;
+    [HideInInspector] public bool DetectingDecoy { get; private set; } = false;
+    [HideInInspector] public Transform SuspicousObject { get; private set; } = null;
+    [HideInInspector] public Transform Decoy { get; private set; } = null;
+    [SerializeField] private LayerMask detectionLayerMask;
 
     public bool GetDetectingPlayer(Vector3 enemyPos, Vector3 playerPos)
     {
@@ -21,15 +21,25 @@ public class EnemyDetection : MonoBehaviour
 
         return (Vector3.Distance(enemyPos, playerPos) < 3.0f);  // detects player if very close
     }
-
-    public bool GetDetectingSuspicious() { return detectingSuspicious; }
-    public void SetDetectingSuspicious(bool value) { detectingSuspicious = value; } 
-    public bool GetDetectingDecoy() { return detectingDecoy; }
-    public void SetDetectingDecoy(bool value) { detectingDecoy = value; } 
     public bool GetDetectingTarget(Vector3 enemyPos, Vector3 targetPos, bool targetIsPlayer)
     {
         if (targetIsPlayer) return GetDetectingPlayer(enemyPos, targetPos);
-        else return GetDetectingDecoy();
+        else return DetectingDecoy;
+    }
+    public void StartDetectingSuspicious(Transform target)
+    {
+        SuspicousObject = target;
+        DetectingSuspicious = true;
+    }
+    public void StopDetectingSuspicious(bool shouldDisableBool = false)
+    {
+        SuspicousObject = null;
+        if (shouldDisableBool) DetectingSuspicious = false;
+    }
+    public void StopDetectingDecoy(bool shouldDisableBool = false)
+    {
+        Decoy = null;
+        if (shouldDisableBool) DetectingDecoy = false;
     }
 
     public void SetMoreAware()  // initial radius should be more aware size
@@ -50,14 +60,14 @@ public class EnemyDetection : MonoBehaviour
         if (other.name == "Player" && !detectingPlayer) {
             detectingPlayer = CanSeeObject(other.transform);
         }
-        else if (other.tag == "Suspicious" && !detectingSuspicious) {
-            detectingSuspicious = CanSeeObject(other.transform);
-            if (detectingSuspicious) suspicousObject = other.transform;
+        else if (other.tag == "Suspicious" && !DetectingSuspicious) {
+            DetectingSuspicious = CanSeeObject(other.transform);
+            if (DetectingSuspicious) SuspicousObject = other.transform;
         }
         else if (other.tag == "Decoy") {
             //Debug.Log("detecting decoy");
-            detectingDecoy = CanSeeObject(other.transform);
-            if (detectingDecoy) decoy = other.transform;
+            DetectingDecoy = CanSeeObject(other.transform);
+            if (DetectingDecoy) Decoy = other.transform;
         }
         // only objects with rigidbodies set off triggers
     }
@@ -67,14 +77,14 @@ public class EnemyDetection : MonoBehaviour
         if (other.name == "Player" && !detectingPlayer) {
             detectingPlayer = CanSeeObject(other.transform);
         }
-        else if (other.tag == "Suspicious" && !detectingSuspicious) {
-            detectingSuspicious = CanSeeObject(other.transform);
-            if (detectingSuspicious) suspicousObject = other.transform;
+        else if (other.tag == "Suspicious" && !DetectingSuspicious) {
+            DetectingSuspicious = CanSeeObject(other.transform);
+            if (DetectingSuspicious) SuspicousObject = other.transform;
         }
         else if (other.tag == "Decoy") {
             //Debug.Log("detecting decoy");
-            detectingDecoy = CanSeeObject(other.transform);
-            if (detectingDecoy) decoy = other.transform;
+            DetectingDecoy = CanSeeObject(other.transform);
+            if (DetectingDecoy) Decoy = other.transform;
         }
     }
 

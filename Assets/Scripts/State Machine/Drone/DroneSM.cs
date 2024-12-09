@@ -5,73 +5,69 @@ using UnityEngine.AI;
 
 public class DroneSM : StateMachine
 {
-    [HideInInspector] public CombatState combatState;
-    [HideInInspector] public InvestigateState investigateState;
-    [HideInInspector] public HuntState huntState;
-    [HideInInspector] public PatrolState patrolState;
-    [HideInInspector] public DisabledState disabledState;
+    [HideInInspector] public CombatState CombatState { get; private set; }
+    [HideInInspector] public InvestigateState InvestigateState { get; private set; }
+    [HideInInspector] public HuntState HuntState { get; private set; }
+    [HideInInspector] public PatrolState PatrolState { get; private set; }
+    [HideInInspector] public DisabledState DisabledState { get; private set; }
 
-    [HideInInspector] public NavMeshAgent nmAgent;
-    [HideInInspector] public Transform player;
-    [HideInInspector] public EnemyDetection detection;
-    [HideInInspector] public EnemyHearing hearing;
-    [HideInInspector] public Light turret;
-    [HideInInspector] public Light spotlight;
-    [SerializeField] public LayerMask laserLayerMask;
-    [HideInInspector] public Transform patrolPath;
-
-    [HideInInspector] public Vector3[] waypoints;
+    [HideInInspector] public NavMeshAgent NmAgent { get; private set; }
+    [HideInInspector] public Transform Player { get; private set; }
+    [HideInInspector] public EnemyDetection Detection { get; private set; }
+    [HideInInspector] public EnemyHearing Hearing { get; private set; }
+    [HideInInspector] public Light Turret { get; private set; }
+    [HideInInspector] public Light Spotlight { get; private set; }
+    [HideInInspector] public Transform PatrolPath { get; private set; }
+    [HideInInspector] public Vector3[] Waypoints { get; private set; }
+    [HideInInspector] public GameObject HuntAlertObj { get; private set; }
+    [HideInInspector] public GameObject CombatAlertObj { get; private set; }
     [HideInInspector] public int patrolIndex = 0;
     [HideInInspector] public bool beenShot = false;
-    [HideInInspector] public GameObject huntAlertObj;
-    [HideInInspector] public GameObject combatAlertObj;
-    //[HideInInspector] public int disableForSecs = 0;
-
-    [SerializeField] public Transform testingSphere;
+    [SerializeField] public LayerMask laserLayerMask;
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        Player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        combatState = new CombatState(this);
+        CombatState = new CombatState(this);
 
-        investigateState = new InvestigateState(this);
+        InvestigateState = new InvestigateState(this);
 
-        huntState = new HuntState(this);
-        patrolState = new PatrolState(this);
+        HuntState = new HuntState(this);
+        PatrolState = new PatrolState(this);
 
-        disabledState = new DisabledState(this);
+        DisabledState = new DisabledState(this);
 
-        nmAgent = GetComponent<NavMeshAgent>();
-        detection = transform.GetChild(2).GetComponent<EnemyDetection>();
-        hearing = GetComponent<EnemyHearing>();
-        turret = transform.GetChild(4).GetComponent<Light>();
-        spotlight = transform.GetChild(1).GetComponent<Light>();
+        NmAgent = GetComponent<NavMeshAgent>();
+        Detection = transform.GetChild(2).GetComponent<EnemyDetection>();
+        Hearing = GetComponent<EnemyHearing>();
+        Turret = transform.GetChild(4).GetComponent<Light>();
+        Spotlight = transform.GetChild(1).GetComponent<Light>();
 
-        huntAlertObj = transform.GetChild(6).gameObject;
-        combatAlertObj = transform.GetChild(7).gameObject;
+        HuntAlertObj = transform.GetChild(6).gameObject;
+        CombatAlertObj = transform.GetChild(7).gameObject;
 
-        patrolPath = transform.parent.GetChild(1);
+        PatrolPath = transform.parent.GetChild(1);
 
-        waypoints = new Vector3[patrolPath.childCount];
+        Waypoints = new Vector3[PatrolPath.childCount];
 
-        for (int i = 0; i < waypoints.Length; i++) {
-            waypoints[i] = patrolPath.GetChild(i).position;
+        for (int i = 0; i < Waypoints.Length; i++) {
+            Waypoints[i] = PatrolPath.GetChild(i).position;
         }
     }
 
     protected override BaseState GetInitialState()
     {
-        return patrolState;
+        return PatrolState;
     }
 
     void OnDrawGizmos() // visualises patrol path
     {
-        patrolPath = transform.parent.GetChild(1);
-        Vector3 startPos = patrolPath.GetChild(0).position;
+        PatrolPath = transform.parent.GetChild(1);
+        Vector3 startPos = PatrolPath.GetChild(0).position;
         Vector3 prevPos = startPos;
 
-        foreach(Transform waypoint in patrolPath) {
+        foreach(Transform waypoint in PatrolPath) {
             Gizmos.DrawSphere(waypoint.position, 0.3f);
             Gizmos.DrawLine(prevPos, waypoint.position);
             prevPos = waypoint.position;
