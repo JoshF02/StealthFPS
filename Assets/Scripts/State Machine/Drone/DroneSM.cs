@@ -67,6 +67,7 @@ public class DroneSM : StateMachine
 
     void OnDrawGizmos() // visualises patrol path
     {
+        patrolPath = transform.parent.GetChild(1);
         Vector3 startPos = patrolPath.GetChild(0).position;
         Vector3 prevPos = startPos;
 

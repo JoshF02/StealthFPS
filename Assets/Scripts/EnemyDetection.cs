@@ -12,7 +12,7 @@ public class EnemyDetection : MonoBehaviour
     [HideInInspector] public Transform decoy = null;
     [HideInInspector] public Transform suspicousObject = null;
     private readonly float viewDistance = 10.0f;
-    private readonly float viewAngle = 40;
+    private readonly float viewAngle = 32;
     [SerializeField] public LayerMask detectionLayerMask;
 
     public bool GetDetectingPlayer(Vector3 enemyPos, Vector3 playerPos)

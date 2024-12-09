@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     private int score = 0;
     private float timer = 0f;
-    private float maxTimer = 120.0f;
+    private float maxTimer = 12000.0f;
     private Objectives objective;
 
     private bool objectiveComplete = false;
