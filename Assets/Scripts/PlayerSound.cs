@@ -8,51 +8,49 @@ public class PlayerSound : MonoBehaviour
 {
     public static PlayerSound Instance { get; private set; }
 
-    private GameObject soundCollider;
-
-    private Dictionary<string, int> sounds = new();
+    private GameObject _soundCollider;
+    private Dictionary<string, int> _sounds = new();
 
     private void Awake()
     {
-        if (Instance != null && Instance != this) Destroy(this); // can only be 1 instance
+        if ((Instance != null) && (Instance != this)) Destroy(this); // can only be 1 instance
         else Instance = this; 
 
-        soundCollider = transform.GetChild(1).gameObject;
-        soundCollider.SetActive(false);
-        soundCollider.transform.localScale = new(0.1f, 0.1f, 0.1f);
+        _soundCollider = transform.GetChild(1).gameObject;
+        _soundCollider.SetActive(false);
+        _soundCollider.transform.localScale = new(0.1f, 0.1f, 0.1f);
     }
 
     public void StartSound(string name, int radius)
     {  
-        sounds[name] = radius;
-        soundCollider.SetActive(true);
-        int max = sounds.Values.Max();  // uses largest value as collider radius
-        soundCollider.transform.localScale = new(max, max, max);
+        _sounds[name] = radius;
+        _soundCollider.SetActive(true);
+        int max = _sounds.Values.Max();  // uses largest value as collider radius
+        _soundCollider.transform.localScale = new(max, max, max);
     }
 
     public void StopSound(string name)
     {
-        if (!sounds.ContainsKey(name)) return;  // sound being stopped is not active
+        if (!_sounds.ContainsKey(name)) return;  // sound being stopped is not active
 
-        sounds.Remove(name);
-        //Debug.Log("sound removed");
+        _sounds.Remove(name);
 
-        if (sounds.Keys.Count == 0) {       // disables collider if no sounds active
-            soundCollider.SetActive(false);
-            soundCollider.transform.localScale = new(0.1f, 0.1f, 0.1f);
+        if (_sounds.Keys.Count == 0)    // disables collider if no sounds active
+        {       
+            _soundCollider.SetActive(false);
+            _soundCollider.transform.localScale = new(0.1f, 0.1f, 0.1f);
         }
-        else {  // uses largest value as collider radius
-            int max = sounds.Values.Max();
-            soundCollider.transform.localScale = new(max, max, max);
+        else    // uses largest value as collider radius
+        {  
+            int max = _sounds.Values.Max();
+            _soundCollider.transform.localScale = new(max, max, max);
         } 
     }
 
-    IEnumerator PlaySoundForDurationCoroutine(string name, int radius, float duration)
+    private IEnumerator PlaySoundForDurationCoroutine(string name, int radius, float duration)
     {
         StartSound(name, radius);
-        //Debug.Log("starting sound");
         yield return new WaitForSeconds(duration);
-        //Debug.Log("stopping sound");
         StopSound(name);
     }
 

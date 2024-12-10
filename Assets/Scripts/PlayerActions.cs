@@ -6,60 +6,59 @@ using UnityEngine.UI;
 public class PlayerActions : MonoBehaviour
 {
     [Header("Controls")]
-    [SerializeField] private float speed;
-    [SerializeField] private float mouseSensitivity;
-    [SerializeField] private float forceMagnitude;
-    [HideInInspector] public float scrollWheelRotation = 0f;
-    private CharacterController controller;
-    private Transform cam;
-    float xRotation = 0f;
-    private float verticalSpeed = 0f;
-    private readonly float gravity = 30f;
-    private Transform weaponHolder;
-    public bool isAiming = false;
-    private bool isCrouching = false;
-    private bool isSprinting = false;
+    public bool IsAiming = false;
+    private float _speed;
+    [SerializeField] private float _mouseSensitivity;
+    [SerializeField] private float _forceMagnitude;
+    private CharacterController _controller;
+    private Transform _cam;
+    private float _xRotation = 0f;
+    private float _verticalSpeed = 0f;
+    private readonly float _gravity = 30f;
+    private Transform _weaponHolder;
+    private bool _isCrouching = false;
+    private bool _isSprinting = false;
 
     [Header("Sway")]
-    public float step = 0.01f;
-    public float maxStepDistance = 0.06f;
-    Vector3 swayPos;
+    [SerializeField] private float _step = 0.01f;
+    [SerializeField] private float _maxStepDistance = 0.06f;
+    private Vector3 _swayPos;
 
     [Header("Sway Rotation")]
-    public float rotationStep = 4f;
-    public float maxRotationStep = 5f;
-    Vector3 swayEulerRot; 
-    public float smooth = 10f;
-    float smoothRot = 12f;
+    [SerializeField] private float _rotationStep = 4f;
+    [SerializeField] private float _maxRotationStep = 5f; 
+    [SerializeField] private float _smooth = 10f;
+    private Vector3 _swayEulerRot;
+    private float _smoothRot = 12f;
 
     [Header("Bobbing")]
-    public float speedCurve;
-    float curveSin {get => Mathf.Sin(speedCurve);}
-    float curveCos {get => Mathf.Cos(speedCurve);}
-    public Vector3 travelLimit = Vector3.one * 0.0025f;
-    public Vector3 bobLimit = Vector3.one * 0.001f;
-    Vector3 bobPosition;
-    public float bobExaggeration;
+    [SerializeField] private float _speedCurve;
+    [SerializeField] private Vector3 _travelLimit = Vector3.one * 0.0025f;
+    [SerializeField] private Vector3 _bobLimit = Vector3.one * 0.001f;
+    [SerializeField] private float _bobExaggeration;
+    private Vector3 _bobPosition;
+    private float _curveSin {get => Mathf.Sin(_speedCurve);}
+    private float _curveCos {get => Mathf.Cos(_speedCurve);}
 
     [Header("Bob Rotation")]
-    public Vector3 multiplier;
-    Vector3 bobEulerRotation;
+    [SerializeField] private Vector3 _multiplier;
+    private Vector3 _bobEulerRotation;
 
     [Header("Throwables")]
-    [SerializeField] private SmokeGrenade smokeGrenade;
-    [SerializeField] private StoneThrowable stone;
-    [SerializeField] private ThrowingKnife throwingKnife;
-    [SerializeField] private EMPGrenade empGrenade;
-    [SerializeField] private DecoyThrowable decoyThrowable;
-    [SerializeField] private TeleporterThrowable teleporterThrowable;
-    private int grenadesLeft = 3;
-    private int stonesLeft = 20;
-    private int throwingKnivesLeft = 100;
-    private int empGrenadesLeft = 100;
-    private int decoysLeft = 100;
-    private int teleportersLeft = 10;
-    public bool InvisPerkActive = false; // can make get private but wont show
-    private Transform activeTeleporter = null;
+    [SerializeField] private SmokeGrenade _smokeGrenade;
+    [SerializeField] private StoneThrowable _stone;
+    [SerializeField] private ThrowingKnife _throwingKnife;
+    [SerializeField] private EMPGrenade _empGrenade;
+    [SerializeField] private DecoyThrowable _decoyThrowable;
+    [SerializeField] private TeleporterThrowable _teleporterThrowable;
+    private int _grenadesLeft = 3;
+    private int _stonesLeft = 20;
+    private int _throwingKnivesLeft = 100;
+    private int _empGrenadesLeft = 100;
+    private int _decoysLeft = 100;
+    private int _teleportersLeft = 10;
+    private Transform _activeTeleporter = null;
+    [field:SerializeField] public bool InvisPerkActive { get; private set; } = false;
     public bool HasTeleported { get; private set; } = false;
 
     private enum ThrowableTypes
@@ -73,91 +72,90 @@ public class PlayerActions : MonoBehaviour
         Max
     }
 
-    private Throwable slot1Prefab;
-    private Throwable slot2Prefab;
-    private int slot1Ammo;
-    private int slot2Ammo;
+    private Throwable _slot1Prefab;
+    private Throwable _slot2Prefab;
+    private int _slot1Ammo;
+    private int _slot2Ammo;
 
 
     public void SetActiveTeleporter(Transform teleporter)
     {
-        activeTeleporter = teleporter;
+        _activeTeleporter = teleporter;
     }
-
 
     private void Awake()
     {
         //controls
         Cursor.lockState = CursorLockMode.Locked;
-        controller = transform.GetComponent<CharacterController>();
-        cam = transform.GetChild(0);
-        weaponHolder = cam.GetChild(1);
+        _controller = transform.GetComponent<CharacterController>();
+        _cam = transform.GetChild(0);
+        _weaponHolder = _cam.GetChild(1);
 
-        switch((ThrowableTypes)GameManager.Instance.slot1) {
+        switch((ThrowableTypes)GameManager.Instance.ThrowableSlot1)
+        {
             case ThrowableTypes.Stone:
-                slot1Prefab = stone;
-                slot1Ammo = 100;
+                _slot1Prefab = _stone;
+                _slot1Ammo = 100;
                 break;
             case ThrowableTypes.Smoke:
-                slot1Prefab = smokeGrenade;
-                slot1Ammo = 10;
+                _slot1Prefab = _smokeGrenade;
+                _slot1Ammo = 10;
                 break;
             case ThrowableTypes.Knife:
-                slot1Prefab = throwingKnife;
-                slot1Ammo = 10;
+                _slot1Prefab = _throwingKnife;
+                _slot1Ammo = 10;
                 break;
             case ThrowableTypes.EMP:
-                slot1Prefab = empGrenade;
-                slot1Ammo = 10;
+                _slot1Prefab = _empGrenade;
+                _slot1Ammo = 10;
                 break;
             case ThrowableTypes.Decoy:
-                slot1Prefab = decoyThrowable;
-                slot1Ammo = 10;
+                _slot1Prefab = _decoyThrowable;
+                _slot1Ammo = 10;
                 break;
             case ThrowableTypes.Teleporter:
-                slot1Prefab = teleporterThrowable;
-                slot1Ammo = 10;
+                _slot1Prefab = _teleporterThrowable;
+                _slot1Ammo = 10;
                 break;
         }
 
-        switch((ThrowableTypes)GameManager.Instance.slot2) {
+        switch((ThrowableTypes)GameManager.Instance.ThrowableSlot2)
+        {
             case ThrowableTypes.Stone:
-                slot2Prefab = stone;
-                slot2Ammo = 100;
+                _slot2Prefab = _stone;
+                _slot2Ammo = 100;
                 break;
             case ThrowableTypes.Smoke:
-                slot2Prefab = smokeGrenade;
-                slot2Ammo = 10;
+                _slot2Prefab = _smokeGrenade;
+                _slot2Ammo = 10;
                 break;
             case ThrowableTypes.Knife:
-                slot2Prefab = throwingKnife;
-                slot2Ammo = 10;
+                _slot2Prefab = _throwingKnife;
+                _slot2Ammo = 10;
                 break;
             case ThrowableTypes.EMP:
-                slot2Prefab = empGrenade;
-                slot2Ammo = 10;
+                _slot2Prefab = _empGrenade;
+                _slot2Ammo = 10;
                 break;
             case ThrowableTypes.Decoy:
-                slot2Prefab = decoyThrowable;
-                slot2Ammo = 10;
+                _slot2Prefab = _decoyThrowable;
+                _slot2Ammo = 10;
                 break;
             case ThrowableTypes.Teleporter:
-                slot2Prefab = teleporterThrowable;
-                slot2Ammo = 10;
+                _slot2Prefab = _teleporterThrowable;
+                _slot2Ammo = 10;
                 break;
         }
     }
-
 
     private void Update()
     {
         Move();
         Look();
         Throwables();
-        if (!isAiming || !isCrouching) ApplyBobAndSway();
+        if (!IsAiming || !_isCrouching) ApplyBobAndSway();
         else ApplySway();
     }
-
 
     private void Move()
     {
@@ -165,56 +163,55 @@ public class PlayerActions : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        isSprinting = false;
+        _isSprinting = false;
 
         // crouching
         if (Input.GetKey(KeyCode.CapsLock))
         {
-            controller.height = 1.5f;
-            speed = 2f;
-            isCrouching = true;
+            _controller.height = 1.5f;
+            _speed = 2f;
+            _isCrouching = true;
         }
         else 
         {
-            controller.height = 2f;
-            speed = 4f;
-            isCrouching = false;
+            _controller.height = 2f;
+            _speed = 4f;
+            _isCrouching = false;
 
             // sprinting
-            if (Input.GetKey(KeyCode.LeftShift) && vertical > 0) 
+            if (Input.GetKey(KeyCode.LeftShift) && (vertical > 0)) 
             {
                 vertical *= 1.5f;
-                isSprinting = true;
+                _isSprinting = true;
             }
         }
 
-        if (GameManager.Instance.faster) speed *= 1.5f;
+        if (GameManager.Instance.Faster) _speed *= 1.5f;
 
         Vector3 move = transform.right * horizontal + transform.forward * vertical;
 
         // gravity
-        if (controller.isGrounded) verticalSpeed = 0;
-        else verticalSpeed -= gravity * Time.deltaTime;
-        Vector3 vert = new Vector3(0f, verticalSpeed, 0f) * Time.deltaTime;
+        if (_controller.isGrounded) _verticalSpeed = 0;
+        else _verticalSpeed -= _gravity * Time.deltaTime;
 
+        Vector3 vert = new Vector3(0f, _verticalSpeed, 0f) * Time.deltaTime;
 
-        controller.Move((move * speed * Time.deltaTime) + vert);
-
-        CalculateBob(horizontal * speed * 0.25f, vertical * speed * 0.25f);
+        _controller.Move((move * _speed * Time.deltaTime) + vert);
+        CalculateBob(horizontal * _speed * 0.25f, vertical * _speed * 0.25f);
 
         // sound for moving
-        if (move != Vector3.zero && !isCrouching) {
-            int multiplier = isSprinting ? 2 : 1;
-            if (GameManager.Instance.silentStep) multiplier -= 1;
+        if ((move != Vector3.zero) && !_isCrouching)
+        {
+            int multiplier = _isSprinting ? 2 : 1;
+            if (GameManager.Instance.SilentStep) multiplier -= 1;
             PlayerSound.Instance.StartSound("movement", 10 * multiplier);
         }
         else PlayerSound.Instance.StopSound("movement");
 
         // invisibility when still perk
-        if (GameManager.Instance.invisWhenStill && move == Vector3.zero) InvisPerkActive = true;
+        if (GameManager.Instance.InvisWhenStill && (move == Vector3.zero)) InvisPerkActive = true;
         else InvisPerkActive = false;
     }
-
 
     private void Look()
     {
@@ -223,111 +220,120 @@ public class PlayerActions : MonoBehaviour
 
         CalculateSway(mouseX, mouseY);
 
-        mouseX *= mouseSensitivity;
-        mouseY *= mouseSensitivity;
+        mouseX *= _mouseSensitivity;
+        mouseY *= _mouseSensitivity;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        _xRotation -= mouseY;
+        _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
 
-        cam.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        _cam.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
-
-        
     }
 
     private void Throwables()   // throwable gadget usage
     {
-        if (Input.GetKeyDown(KeyCode.U) && slot1Ammo > 0) {
-            Throwable slot1Obj = Instantiate<Throwable>(slot1Prefab, cam.position + (cam.forward * 2f), transform.localRotation);
+        if (Input.GetKeyDown(KeyCode.U) && (_slot1Ammo > 0))
+        {
+            Throwable slot1Obj = Instantiate<Throwable>(_slot1Prefab, _cam.position + (_cam.forward * 2f), transform.localRotation);
             float force, torque;
-            if ((ThrowableTypes)GameManager.Instance.slot1 == ThrowableTypes.Stone) {
+            if ((ThrowableTypes)GameManager.Instance.ThrowableSlot1 == ThrowableTypes.Stone)
+            {
                 force = 2500f;
                 torque = 20f;
             }
-            else if ((ThrowableTypes)GameManager.Instance.slot1 == ThrowableTypes.Knife) {
+            else if ((ThrowableTypes)GameManager.Instance.ThrowableSlot1 == ThrowableTypes.Knife)
+            {
                 force = 7500f;
                 torque = 200f;
             }
-            else {
+            else
+            {
                 force = 1500f;
                 torque = 50f;
             }
 
-            slot1Obj.Init(cam, force, torque);
-            slot1Ammo--;
+            slot1Obj.Init(_cam, force, torque);
+            _slot1Ammo--;
         }
 
-        if (Input.GetKeyDown(KeyCode.I) && slot2Ammo > 0) {
-            Throwable slot2Obj = Instantiate<Throwable>(slot2Prefab, cam.position + (cam.forward * 2f), transform.localRotation);
+        if (Input.GetKeyDown(KeyCode.I) && _slot2Ammo > 0)
+        {
+            Throwable slot2Obj = Instantiate<Throwable>(_slot2Prefab, _cam.position + (_cam.forward * 2f), transform.localRotation);
             float force, torque;
-            if ((ThrowableTypes)GameManager.Instance.slot2 == ThrowableTypes.Stone) {
+            if ((ThrowableTypes)GameManager.Instance.ThrowableSlot2 == ThrowableTypes.Stone)
+            {
                 force = 2500f;
                 torque = 20f;
             }
-            else if ((ThrowableTypes)GameManager.Instance.slot2 == ThrowableTypes.Knife) {
+            else if ((ThrowableTypes)GameManager.Instance.ThrowableSlot2 == ThrowableTypes.Knife)
+            {
                 force = 7500f;
                 torque = 200f;
             }
-            else {
+            else
+            {
                 force = 1500f;
                 torque = 50f;
             }
 
-            slot2Obj.Init(cam, force, torque);
-            slot2Ammo--;
+            slot2Obj.Init(_cam, force, torque);
+            _slot2Ammo--;
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && grenadesLeft > 0) {
-            SmokeGrenade smokeGrenadeObj = Instantiate<SmokeGrenade>(smokeGrenade, transform.position + (cam.forward * 2f), transform.localRotation);
-            smokeGrenadeObj.Init(cam, 1500f, 50f);
-            grenadesLeft--;
+        if (Input.GetKeyDown(KeyCode.G) && _grenadesLeft > 0)
+        {
+            SmokeGrenade smokeGrenadeObj = Instantiate<SmokeGrenade>(_smokeGrenade, transform.position + (_cam.forward * 2f), transform.localRotation);
+            smokeGrenadeObj.Init(_cam, 1500f, 50f);
+            _grenadesLeft--;
         }
 
-        if (Input.GetKeyDown(KeyCode.B) && stonesLeft > 0) {
-            StoneThrowable stoneObj = Instantiate<StoneThrowable>(stone, transform.position + (cam.forward * 2f), transform.localRotation);
-            stoneObj.Init(cam, 2500f, 20f);
-            stonesLeft--;
+        if (Input.GetKeyDown(KeyCode.B) && _stonesLeft > 0)
+        {
+            StoneThrowable stoneObj = Instantiate<StoneThrowable>(_stone, transform.position + (_cam.forward * 2f), transform.localRotation);
+            stoneObj.Init(_cam, 2500f, 20f);
+            _stonesLeft--;
         }
 
-        if (Input.GetKeyDown(KeyCode.N) && throwingKnivesLeft > 0) {
-            ThrowingKnife throwingKnifeObj = Instantiate<ThrowingKnife>(throwingKnife, cam.position + (cam.forward * 2f), transform.localRotation);
-            throwingKnifeObj.Init(cam, 7500f, 200f);
-            throwingKnivesLeft--;
+        if (Input.GetKeyDown(KeyCode.N) && _throwingKnivesLeft > 0)
+        {
+            ThrowingKnife throwingKnifeObj = Instantiate<ThrowingKnife>(_throwingKnife, _cam.position + (_cam.forward * 2f), transform.localRotation);
+            throwingKnifeObj.Init(_cam, 7500f, 200f);
+            _throwingKnivesLeft--;
         }
 
-        if (Input.GetKeyDown(KeyCode.M) && empGrenadesLeft > 0) {
-            EMPGrenade empGrenadeObj = Instantiate<EMPGrenade>(empGrenade, transform.position + (cam.forward * 2f), transform.localRotation);
-            empGrenadeObj.Init(cam, 2500f, 20f);
-            empGrenadesLeft--;
+        if (Input.GetKeyDown(KeyCode.M) && _empGrenadesLeft > 0)
+        {
+            EMPGrenade empGrenadeObj = Instantiate<EMPGrenade>(_empGrenade, transform.position + (_cam.forward * 2f), transform.localRotation);
+            empGrenadeObj.Init(_cam, 2500f, 20f);
+            _empGrenadesLeft--;
         }
 
-        if (Input.GetKeyDown(KeyCode.K) && decoysLeft > 0) {
-            DecoyThrowable decoyThrowableObj = Instantiate<DecoyThrowable>(decoyThrowable, transform.position + (cam.forward * 2f), transform.localRotation);
-            decoyThrowableObj.Init(cam, 2500f, 20f);
-            decoysLeft--;
+        if (Input.GetKeyDown(KeyCode.K) && _decoysLeft > 0)
+        {
+            DecoyThrowable decoyThrowableObj = Instantiate<DecoyThrowable>(_decoyThrowable, transform.position + (_cam.forward * 2f), transform.localRotation);
+            decoyThrowableObj.Init(_cam, 2500f, 20f);
+            _decoysLeft--;
         }
 
-        if (Input.GetKeyDown(KeyCode.L) && teleportersLeft > 0) {
-            TeleporterThrowable teleporterThrowableObj = Instantiate<TeleporterThrowable>(teleporterThrowable, transform.position + (cam.forward * 2f), transform.localRotation);
-            teleporterThrowableObj.Init(cam, 2500f, 20f);
-            teleportersLeft--;
+        if (Input.GetKeyDown(KeyCode.L) && _teleportersLeft > 0)
+        {
+            TeleporterThrowable teleporterThrowableObj = Instantiate<TeleporterThrowable>(_teleporterThrowable, transform.position + (_cam.forward * 2f), transform.localRotation);
+            teleporterThrowableObj.Init(_cam, 2500f, 20f);
+            _teleportersLeft--;
         }
 
-        if (HasTeleported) {
-            //Debug.Log("resetting teleported bool");
-            HasTeleported = false;
-        }
+        if (HasTeleported) HasTeleported = false;
 
-        if (Input.GetKeyDown(KeyCode.P) && activeTeleporter != null) {
+        if (Input.GetKeyDown(KeyCode.P) && _activeTeleporter != null)
+        {
             Debug.Log("teleporting");
-            controller.enabled = false;
-            transform.position = activeTeleporter.position + new Vector3(0, 1.08f, 0);
-            controller.enabled = true;
+            _controller.enabled = false;
+            transform.position = _activeTeleporter.position + new Vector3(0, 1.08f, 0);
+            _controller.enabled = true;
             HasTeleported = true;
             //activeTeleporter = null;
         }
     }
-
 
     private void OnControllerColliderHit(ControllerColliderHit hit) // allows player to push rigidbodies
     {
@@ -339,57 +345,58 @@ public class PlayerActions : MonoBehaviour
             forceDirection.y = 0;
             forceDirection.Normalize();
 
-            rigidbody.AddForceAtPosition(forceDirection * forceMagnitude * speed, transform.position, ForceMode.Impulse);
+            rigidbody.AddForceAtPosition(forceDirection * _forceMagnitude * _speed, transform.position, ForceMode.Impulse);
         }
     }
 
-
-
-
-    void CalculateSway(float mouseX, float mouseY){
+    private void CalculateSway(float mouseX, float mouseY)
+    {
         Vector2 lookInput = new Vector2(mouseX, mouseY);
         // sway
-        Vector2 invertLook = lookInput *-step;
-        invertLook.x = Mathf.Clamp(invertLook.x, -maxStepDistance, maxStepDistance);
-        invertLook.y = Mathf.Clamp(invertLook.y, -maxStepDistance, maxStepDistance);
+        Vector2 invertLook = lookInput *-_step;
+        invertLook.x = Mathf.Clamp(invertLook.x, -_maxStepDistance, _maxStepDistance);
+        invertLook.y = Mathf.Clamp(invertLook.y, -_maxStepDistance, _maxStepDistance);
 
-        swayPos = invertLook;
+        _swayPos = invertLook;
     
         // sway rotation
-        invertLook = lookInput * -rotationStep;
-        invertLook.x = Mathf.Clamp(invertLook.x, -maxRotationStep, maxRotationStep);
-        invertLook.y = Mathf.Clamp(invertLook.y, -maxRotationStep, maxRotationStep);
-        swayEulerRot = new Vector3(invertLook.y, invertLook.x, invertLook.x);
+        invertLook = lookInput * -_rotationStep;
+        invertLook.x = Mathf.Clamp(invertLook.x, -_maxRotationStep, _maxRotationStep);
+        invertLook.y = Mathf.Clamp(invertLook.y, -_maxRotationStep, _maxRotationStep);
+        _swayEulerRot = new Vector3(invertLook.y, invertLook.x, invertLook.x);
     }
 
-    void CalculateBob(float horizontal, float vertical){
+    private void CalculateBob(float horizontal, float vertical)
+    {
         Vector2 walkInput = new Vector2(horizontal, vertical).normalized;
 
         // more bobbing when sprinting, and when not aiming
-        float scale = (isSprinting ? 1.75f : 1);
-        if (!isAiming) scale *= 10;
+        float scale = (_isSprinting ? 1.75f : 1);
+        if (!IsAiming) scale *= 10;
 
         // bob offset
         float sum = (vertical == 0 ? horizontal : vertical);
-        speedCurve += Time.deltaTime * (sum * bobExaggeration);
+        _speedCurve += Time.deltaTime * (sum * _bobExaggeration);
 
-        bobPosition.x = (curveCos*bobLimit.x)-(walkInput.x * travelLimit.x * scale);
-        bobPosition.y = (curveSin*bobLimit.y)-(vertical * travelLimit.y * scale);
-        bobPosition.z = -(walkInput.y * travelLimit.z * scale);
+        _bobPosition.x = (_curveCos*_bobLimit.x)-(walkInput.x * _travelLimit.x * scale);
+        _bobPosition.y = (_curveSin*_bobLimit.y)-(vertical * _travelLimit.y * scale);
+        _bobPosition.z = -(walkInput.y * _travelLimit.z * scale);
     
         // bob rotation
-        bobEulerRotation.x = (walkInput != Vector2.zero ? multiplier.x * scale * (Mathf.Sin(2*speedCurve)) : multiplier.x * scale * (Mathf.Sin(2*speedCurve) / 2));
-        bobEulerRotation.y = (walkInput != Vector2.zero ? multiplier.y * scale * curveCos : 0);
-        bobEulerRotation.z = (walkInput != Vector2.zero ? multiplier.z * scale * curveCos * walkInput.x : 0);
+        _bobEulerRotation.x = (walkInput != Vector2.zero ? _multiplier.x * scale * (Mathf.Sin(2*_speedCurve)) : _multiplier.x * scale * (Mathf.Sin(2*_speedCurve) / 2));
+        _bobEulerRotation.y = (walkInput != Vector2.zero ? _multiplier.y * scale * _curveCos : 0);
+        _bobEulerRotation.z = (walkInput != Vector2.zero ? _multiplier.z * scale * _curveCos * walkInput.x : 0);
     }
 
-    void ApplyBobAndSway(){
-        weaponHolder.localPosition = Vector3.Lerp(weaponHolder.localPosition, swayPos + bobPosition, Time.deltaTime * smooth);
-        weaponHolder.localRotation = Quaternion.Slerp(weaponHolder.localRotation, Quaternion.Euler(swayEulerRot) * Quaternion.Euler(bobEulerRotation), Time.deltaTime * smoothRot);
+    private void ApplyBobAndSway()
+    {
+        _weaponHolder.localPosition = Vector3.Lerp(_weaponHolder.localPosition, _swayPos + _bobPosition, Time.deltaTime * _smooth);
+        _weaponHolder.localRotation = Quaternion.Slerp(_weaponHolder.localRotation, Quaternion.Euler(_swayEulerRot) * Quaternion.Euler(_bobEulerRotation), Time.deltaTime * _smoothRot);
     }
 
-    void ApplySway() {
-        weaponHolder.localPosition = Vector3.Lerp(weaponHolder.localPosition, swayPos, Time.deltaTime * smooth);
-        weaponHolder.localRotation = Quaternion.Slerp(weaponHolder.localRotation, Quaternion.Euler(swayEulerRot), Time.deltaTime * smoothRot);
+    private void ApplySway()
+    {
+        _weaponHolder.localPosition = Vector3.Lerp(_weaponHolder.localPosition, _swayPos, Time.deltaTime * _smooth);
+        _weaponHolder.localRotation = Quaternion.Slerp(_weaponHolder.localRotation, Quaternion.Euler(_swayEulerRot), Time.deltaTime * _smoothRot);
     }
 }

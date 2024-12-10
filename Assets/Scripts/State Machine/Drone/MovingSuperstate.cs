@@ -16,7 +16,8 @@ public class MovingSuperstate : NonCombatSuperstate
     {
         base.UpdateLogic();
 
-        if (sm.Detection.DetectingSuspicious || sm.Hearing.NoiseHeard) {    // transition to investigate if suspicious object detected visually or audibly
+        if (sm.Detection.DetectingSuspicious || sm.Hearing.NoiseHeard)  // transition to investigate if suspicious object detected visually or audibly
+        {    
             Debug.Log("suspicous object spotted, changing to investigate state");
             sm.ChangeState(sm.InvestigateState);
         }

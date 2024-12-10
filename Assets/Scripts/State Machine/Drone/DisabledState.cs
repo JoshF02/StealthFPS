@@ -22,7 +22,8 @@ public class DisabledState : BaseState
     {
         base.UpdateLogic();
 
-        if (sm.Hearing.DisableForSecs <= 0) {
+        if (sm.Hearing.DisableForSecs <= 0)
+        {
             Debug.Log("exiting disabled state, into hunt");
             sm.ChangeState(sm.HuntState);
         }

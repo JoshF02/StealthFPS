@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class EMPGrenade : Throwable
 {
-    private bool hasCollided = false;
+    private bool _hasCollided = false;
 
-    void OnCollisionEnter(Collision collision) 
+    private void OnCollisionEnter(Collision collision) 
     {
-        if (!hasCollided) {
-            hasCollided = true;
+        if (!_hasCollided) {
+            _hasCollided = true;
             StartCoroutine(Detonation());
         }
     }
 
-    IEnumerator Detonation()
+    private IEnumerator Detonation()
     {
         //Debug.Log("EMP hit ground");
 

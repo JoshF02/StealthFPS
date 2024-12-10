@@ -16,20 +16,23 @@ public class NonCombatSuperstate : DroneBaseState
     {
         base.UpdateLogic();
 
-        if (sm.Detection.GetDetectingPlayer() || sm.beenShot) {    // transition to combat if player detected visually, or shot by player
+        if (sm.Detection.GetDetectingPlayer() || sm.BeenShot)   // transition to combat if player detected visually, or shot by player
+        {    
             Debug.Log("player spotted, changing to combat state");
             sm.ChangeState(sm.CombatState);
             return;
         }
 
-        sm.reenterCombatFromAlertCooldown -= Time.deltaTime;
-        if (sm.Hearing.AlertHeard == EnemyHearing.Alerts.EnterCombat && sm.reenterCombatFromAlertCooldown <= 0f) {    // put in if statement above after done testing
+        sm.ReenterCombatFromAlertCooldown -= Time.deltaTime;
+        if (sm.Hearing.AlertHeard == EnemyHearing.Alerts.EnterCombat && sm.ReenterCombatFromAlertCooldown <= 0f)    // put in if statement above after done testing
+        {    
             Debug.Log("Enter combat alert recieved");
             sm.ChangeState(sm.CombatState);
             return;
         }
 
-        if (sm.Detection.DetectingDecoy) {
+        if (sm.Detection.DetectingDecoy)
+        {
             Debug.Log("decoy detected, entering combat state");
             sm.ChangeState(sm.CombatState);
             return;

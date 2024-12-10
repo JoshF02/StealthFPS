@@ -478,20 +478,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b628d312496ee4f883ebb0ed94ae59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  _damage: 10000
   range: 100
-  fireRate: 1
-  ammoText: {fileID: 0}
-  carriedAmmoText: {fileID: 0}
-  fpsCam: {fileID: 0}
-  maxAmmo: 6
-  currentAmmo: 0
-  maxCarriedAmmo: 25
-  currentCarriedAmmo: 0
-  reloadTime: 5
-  shootingLayerMask:
+  _fireRate: 1
+  _maxAmmo: 6
+  _currentAmmo: 0
+  _maxCarriedAmmo: 25
+  _currentCarriedAmmo: 0
+  _reloadTime: 5
+  _shootingLayerMask:
     serializedVersion: 2
-    m_Bits: 1
-  partToRecoil: {fileID: 5163943062077069690}
-  partRecoilSpeed: 20
-  partRecoilDistance: 0.1
+    m_Bits: 193
+  _partToRecoil: {fileID: 5163943062077069690}
+  _partRecoilSpeed: 20
+  _partRecoilDistance: 0.1

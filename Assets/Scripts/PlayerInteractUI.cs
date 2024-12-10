@@ -5,17 +5,17 @@ using TMPro;
 
 public class PlayerInteractUI : MonoBehaviour
 {
-    [SerializeField] private GameObject containerGameObject;
-    [SerializeField] private TextMeshProUGUI interactTextMeshProUGUI;
+    [SerializeField] private GameObject _containerGameObject;
+    [SerializeField] private TextMeshProUGUI _interactTextMeshProUGUI;
 
     public void Show(IInteractible interactible)
     {
-        containerGameObject.SetActive(true);
-        interactTextMeshProUGUI.text = interactible.GetInteractText();
+        _containerGameObject.SetActive(true);
+        _interactTextMeshProUGUI.text = interactible.GetInteractText();
     }
 
     public void Hide()
     {
-        containerGameObject.SetActive(false);
+        _containerGameObject.SetActive(false);
     }
 }

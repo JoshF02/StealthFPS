@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class StealInteractible : MonoBehaviour, IInteractible
 {
-    [SerializeField] private string interactText;
+    [SerializeField] private string _interactText;
 
     public void Interact(Transform interactorTransform)
     {
         Debug.Log("Steal item! " + transform.gameObject);
 
-        if (GameManager.Instance.GetObjective() == Objectives.Steal) {  // should always be true if this object exists
+        if (GameManager.Instance.GetObjective() == Objectives.Steal)    // should always be true if this object exists
+        {  
             GameManager.Instance.CompleteObjective();
             GameManager.Instance.IncreaseScoreBy(500);
             Destroy(gameObject);
@@ -19,7 +20,7 @@ public class StealInteractible : MonoBehaviour, IInteractible
 
     public string GetInteractText()
     {
-        return interactText;
+        return _interactText;
     }
 
     public Transform GetTransform()

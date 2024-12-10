@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class SphereInteractible : MonoBehaviour, IInteractible
 {
-    // to make new interactible object type, create a script like this with different name + text + logic
-    [SerializeField] private string interactText;
+    [SerializeField] private string _interactText;
 
     public void Interact(Transform interactorTransform)
     {
         Debug.Log("Interact! " + transform.gameObject);
-        // put interaction logic here
         Destroy(gameObject);
     }
 
     public string GetInteractText()
     {
-        return interactText;
+        return _interactText;
     }
 
     public Transform GetTransform()

@@ -14,25 +14,25 @@ public class PatrolState : MovingSuperstate
         //Debug.Log("Patrol state entered");
         sm.Detection.SetLessAware();
 
-        sm.NmAgent.destination = sm.Waypoints[sm.patrolIndex];
+        sm.NmAgent.destination = sm.Waypoints[sm.PatrolIndex];
     }
 
     public override void UpdateLogic()
     {
         base.UpdateLogic();
 
-        if (sm.Hearing.AlertHeard == EnemyHearing.Alerts.EnterHunt) {
+        if (sm.Hearing.AlertHeard == EnemyHearing.Alerts.EnterHunt)
+        {
             Debug.Log("Enter hunt alert recieved");
             sm.ChangeState(sm.HuntState);
             return;
         }
 
-        if ((Mathf.Abs(sm.transform.position.y - sm.Waypoints[sm.patrolIndex].y) < 2.5f) && // if within height limit
-                                Vector2.Distance(new Vector2(sm.transform.position.x, sm.transform.position.z), 
-                                new Vector2(sm.Waypoints[sm.patrolIndex].x, sm.Waypoints[sm.patrolIndex].z)) < 0.5f) { // if coordinates reached
-
-            sm.patrolIndex = (sm.patrolIndex + 1) % sm.Waypoints.Length;    // get next patrol point and pathfind to it
-            sm.NmAgent.destination = sm.Waypoints[sm.patrolIndex];
+        if ((Mathf.Abs(sm.transform.position.y - sm.Waypoints[sm.PatrolIndex].y) < 2.5f) && // if within height limit
+            Vector2.Distance(new(sm.transform.position.x, sm.transform.position.z), new(sm.Waypoints[sm.PatrolIndex].x, sm.Waypoints[sm.PatrolIndex].z)) < 0.5f)    // if coordinates reached
+        { 
+            sm.PatrolIndex = (sm.PatrolIndex + 1) % sm.Waypoints.Length;    // get next patrol point and pathfind to it
+            sm.NmAgent.destination = sm.Waypoints[sm.PatrolIndex];
         }
     }
 

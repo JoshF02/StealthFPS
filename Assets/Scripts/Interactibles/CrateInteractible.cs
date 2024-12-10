@@ -4,27 +4,26 @@ using UnityEngine;
 
 public class CrateInteractible : MonoBehaviour, IInteractible
 {
-    [SerializeField] private string interactText;
-    [SerializeField] private Transform weaponHolder;
-    private WeaponSwitching weaponSwitching;
-
-    [SerializeField] private GameObject sniper;
-    [SerializeField] private GameObject shotgun;
+    [SerializeField] private string _interactText;
+    [SerializeField] private Transform _weaponHolder;
+    [SerializeField] private GameObject _sniper;
+    [SerializeField] private GameObject _shotgun;
+    private WeaponSwitching _weaponSwitching;
 
     private void Awake()
     {
-        weaponSwitching = weaponHolder.GetComponent<WeaponSwitching>();
-
-        int rand = Random.Range(0, 2);
+        _weaponSwitching = _weaponHolder.GetComponent<WeaponSwitching>();
 
         GameObject storedWeapon = null;
-
-        switch (rand) {
+        int rand = Random.Range(0, 2);
+        
+        switch (rand)
+        {
             case 0:
-                storedWeapon = Instantiate(sniper);
+                storedWeapon = Instantiate(_sniper);
                 break;
             case 1:
-                storedWeapon = Instantiate(shotgun);
+                storedWeapon = Instantiate(_shotgun);
                 break;
         }
 
@@ -37,21 +36,21 @@ public class CrateInteractible : MonoBehaviour, IInteractible
     {
         Debug.Log("Pick up weapon!");
 
-        Transform storeWeapon = weaponHolder.GetChild(weaponSwitching.selectedWeapon);
+        Transform storeWeapon = _weaponHolder.GetChild(_weaponSwitching.SelectedWeapon);
         storeWeapon.SetParent(transform);
         storeWeapon.SetLocalPositionAndRotation(new Vector3(0,0,0), Quaternion.identity);
         storeWeapon.gameObject.SetActive(false);
 
         Transform pickupWeapon = transform.GetChild(0);
-        pickupWeapon.SetParent(weaponHolder);
+        pickupWeapon.SetParent(_weaponHolder);
         pickupWeapon.SetLocalPositionAndRotation(new Vector3(0, pickupWeapon.tag == "Sniper" ? -0.06f : 0f,0), Quaternion.identity);
         pickupWeapon.gameObject.SetActive(true);
-        pickupWeapon.SetSiblingIndex(weaponSwitching.selectedWeapon);
+        pickupWeapon.SetSiblingIndex(_weaponSwitching.SelectedWeapon);
     }
 
     public string GetInteractText()
     {
-        return interactText;
+        return _interactText;
     }
 
     public Transform GetTransform()

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DecoyThrowable : Throwable
 {
-    [SerializeField] private GameObject decoyPrefab;
+    [SerializeField] private GameObject _decoyPrefab;
 
-    void OnCollisionEnter(Collision collision)  // only spawns decoy once it hits ground
+    private void OnCollisionEnter(Collision collision)  // only spawns decoy once it hits ground
     {
         if (collision.transform.tag != "Ground") return;
 
         Debug.Log("spawning decoy now");
-        GameObject decoyObj = Instantiate(decoyPrefab, transform.position, Quaternion.identity);
+        GameObject decoyObj = Instantiate(_decoyPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

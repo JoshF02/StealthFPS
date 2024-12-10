@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041e4d899dddd3349b8918b2ca779410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoke: {fileID: 4869332049042168055, guid: 18f064473dd2dda49bc143389d4f17e9, type: 3}
+  _smoke: {fileID: 4869332049042168055, guid: 18f064473dd2dda49bc143389d4f17e9, type: 3}
 --- !u!136 &2571961420726983585
 CapsuleCollider:
   m_ObjectHideFlags: 0

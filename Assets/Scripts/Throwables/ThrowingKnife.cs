@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class ThrowingKnife : Throwable
 {
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.root.childCount > 0 && collision.transform.root.GetChild(0).TryGetComponent<EnemyTarget>(out EnemyTarget target)) {
+        if(collision.transform.root.childCount > 0 && collision.transform.root.GetChild(0).TryGetComponent<EnemyTarget>(out EnemyTarget target))
+        {
             //Debug.Log("throwing knife hit enemy");
             target.TakeDamage(999999);
             Destroy(gameObject);
         }
-        else {
+        else
+        {
             //Debug.Log("throwing knife hit something else");
             Destroy(gameObject);
         }

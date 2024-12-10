@@ -8,7 +8,7 @@ public class InvestigateState : NonCombatSuperstate
 {
     public InvestigateState(DroneSM stateMachine) : base("InvestigateState", stateMachine) {}
 
-    private float timer = 0f;
+    private float _timer = 0f;
 
     public override void Enter()
     {
@@ -20,7 +20,7 @@ public class InvestigateState : NonCombatSuperstate
         if (sm.Hearing.NoiseHeard) sm.NmAgent.destination = sm.Hearing.NoisePos;
         else if (sm.Detection.SuspicousObject != null) sm.NmAgent.destination = sm.Detection.SuspicousObject.position;
         
-        timer = 0f;
+        _timer = 0f;
     }
 
     public override void UpdateLogic()
@@ -30,14 +30,17 @@ public class InvestigateState : NonCombatSuperstate
         if (sm.Hearing.NoiseHeard) sm.NmAgent.destination = sm.Hearing.NoisePos;
         else if (sm.Detection.SuspicousObject != null) sm.NmAgent.destination = sm.Detection.SuspicousObject.position;
 
-        if (Vector3.Distance(sm.NmAgent.destination, sm.transform.position) < 3.0f) {   // transitions to hunt state after reaching it + waiting 2 seconds
-            timer += Time.deltaTime;
+        if (Vector3.Distance(sm.NmAgent.destination, sm.transform.position) < 3.0f) // transitions to hunt state after reaching it + waiting 2 seconds
+        {   
+            _timer += Time.deltaTime;
 
-            if (timer > 2.0f) {
-                timer = 0f;
+            if (_timer > 2.0f)
+            {
+                _timer = 0f;
                 Debug.Log("finished investigating, changing to hunt state");
 
-                if (sm.Hearing.NoiseHeard) {
+                if (sm.Hearing.NoiseHeard)
+                {
                     sm.Hearing.StopHearingNoise();
                     sm.ChangeState(sm.HuntState);
                     return;

@@ -301,9 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decoy: {fileID: 0}
-  suspicousObject: {fileID: 0}
-  detectionLayerMask:
+  _detectionLayerMask:
     serializedVersion: 2
     m_Bits: 449
 --- !u!65 &7392477279338366660
@@ -897,24 +895,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2d0b835273a344081f911d0e1b352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState:
-    name: 
-  nmAgent: {fileID: 0}
-  player: {fileID: 0}
-  detection: {fileID: 0}
-  hearing: {fileID: 0}
-  turret: {fileID: 0}
-  spotlight: {fileID: 0}
-  laserLayerMask:
+  PatrolIndex: 0
+  BeenShot: 0
+  ReenterCombatFromAlertCooldown: 0
+  <LaserLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 193
-  patrolPath: {fileID: 639614991394490998}
-  waypoints: []
-  patrolIndex: 0
-  beenShot: 0
-  huntAlertObj: {fileID: 0}
-  combatAlertObj: {fileID: 0}
-  testingSphere: {fileID: 0}
+    m_Bits: 449
 --- !u!114 &5035437131616977280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,8 +913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f624c5f890613e4384ac16ef62b6912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2500
-  bodyPrefab: {fileID: 3018759091780828105, guid: 3e792f5221f15fd4d9153fa217364da7,
+  _bodyPrefab: {fileID: 3018759091780828105, guid: 3e792f5221f15fd4d9153fa217364da7,
     type: 3}
 --- !u!114 &4419239046441496597
 MonoBehaviour:
@@ -942,8 +927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6320ecffdda8d4599a805d1cbfb4ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disableForSecs: 0
-  noisePos: {x: 0, y: 0, z: 0}
 --- !u!1001 &2048682002100458284
 PrefabInstance:
   m_ObjectHideFlags: 0

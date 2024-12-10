@@ -6,21 +6,23 @@ using UnityEngine;
 
 public class GameManagerUI : MonoBehaviour
 {
-    private TextMeshProUGUI scoreTMPUGUI;
-    private TextMeshProUGUI timerTMPUGUI;
-    private TextMeshProUGUI objTMPUGUI;
+    private TextMeshProUGUI _scoreTMPUGUI;
+    private TextMeshProUGUI _timerTMPUGUI;
+    private TextMeshProUGUI _objTMPUGUI;
+    
     private void Awake()
     {
-        scoreTMPUGUI = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        timerTMPUGUI = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        objTMPUGUI = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        _scoreTMPUGUI = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        _timerTMPUGUI = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        _objTMPUGUI = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
     }
 
     private void Start()
     {
         Objectives objective = GameManager.Instance.GetObjective();
         
-        objTMPUGUI.text = objective switch {        // switch statement of different objective types
+        _objTMPUGUI.text = objective switch
+        {
             Objectives.Steal => "Steal The Item",
             Objectives.Destroy => "Destroy The Item",
             Objectives.Escape => "Escape The Level",
@@ -32,9 +34,9 @@ public class GameManagerUI : MonoBehaviour
 
     private void Update()
     {
-        scoreTMPUGUI.text = GameManager.Instance.GetScore().ToString();
-        timerTMPUGUI.text = GameManager.Instance.GetTimer().ToString();
+        _scoreTMPUGUI.text = GameManager.Instance.GetScore().ToString();
+        _timerTMPUGUI.text = GameManager.Instance.GetTimer().ToString();
 
-        if (GameManager.Instance.GetObjectiveComplete()) objTMPUGUI.text = "Objective Complete";
+        if (GameManager.Instance.GetObjectiveComplete()) _objTMPUGUI.text = "Objective Complete";
     }
 }

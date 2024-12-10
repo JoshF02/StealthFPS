@@ -17,103 +17,105 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    private int score = 0;
-    private float timer = 0f;
-    private float maxTimer = 12000.0f;
-    private Objectives objective;
+    [Header("Objectives")]
+    [SerializeField] private GameObject _stealItem;
+    private int _score = 0;
+    private float _timer = 0f;
+    private float _maxTimer = 12000.0f;
+    private Objectives _objective;
+    private bool _objectiveComplete = false;
 
-    private bool objectiveComplete = false;
-
-    [SerializeField] private GameObject stealItem;
-
-    // Perks
-    public bool silentStep = false; // can make gets private but wont show
-    public bool faster = false;
-    public bool noBodies = false;
-    public bool invisWhenStill = false;
-    public int slot1;
-    public int slot2;
-    public int perkNum;
+    [Header("Perks and Throwables")]
+    [SerializeField] private int _perkNum;
+    [field:SerializeField] public bool SilentStep { get; private set; } = false; 
+    [field:SerializeField] public bool Faster { get; private set; } = false;
+    [field:SerializeField] public bool NoBodies { get; private set; } = false;
+    [field:SerializeField] public bool InvisWhenStill { get; private set; } = false;
+    [field:SerializeField] public int ThrowableSlot1 { get; private set; }
+    [field:SerializeField] public int ThrowableSlot2 { get; private set; }
+    
 
     private void Awake() 
     { 
-        if (Instance != null && Instance != this) Destroy(this); // can only be 1 instance
+        if ((Instance != null) && (Instance != this)) Destroy(this); // can only be 1 instance
         else Instance = this; 
 
-        timer = maxTimer;
+        _timer = _maxTimer;
 
         //int rand = UnityEngine.Random.Range(0, (int)Objectives.Max);
-        //objective = (Objectives)rand;
+        //_objective = (Objectives)rand;
+        _objective = Objectives.Steal;
 
-        objective = Objectives.Steal;
-
-        switch (objective) {
+        switch (_objective)
+        {
             case Objectives.Steal:
-                Instantiate(stealItem);
+                Instantiate(_stealItem);
                 break;
             default:
                 Debug.Log("not steal");
                 break;
         }
 
-        slot1 = UnityEngine.Random.Range(0, 6);
-        slot2 = slot1;
-        while (slot2 == slot1) slot2 = UnityEngine.Random.Range(0, 6);
-        perkNum = UnityEngine.Random.Range(0, 4);
+        ThrowableSlot1 = UnityEngine.Random.Range(0, 6);
+        ThrowableSlot2 = ThrowableSlot1;
+        while (ThrowableSlot2 == ThrowableSlot1) ThrowableSlot2 = UnityEngine.Random.Range(0, 6);
+        _perkNum = UnityEngine.Random.Range(0, 4);
 
-        switch(perkNum) {
+        switch(_perkNum)
+        {
             case 0:
-                silentStep = true;
+                SilentStep = true;
                 break;
             case 1:
-                faster = true;
+                Faster = true;
                 break;
             case 2:
-                noBodies = true;
+                NoBodies = true;
                 break;
             case 3:
-                invisWhenStill = true;
+                InvisWhenStill = true;
                 break;
         }
     }
 
     private void Update()
     {
-        timer -= Time.deltaTime;
+        _timer -= Time.deltaTime;
 
-        if (timer <= 0) {
+        if (_timer <= 0)
+        {
             EndGame();
         }
     }
 
     public double GetTimer()
     {
-        return Math.Round(timer, 2);
+        return Math.Round(_timer, 2);
     }
 
     public int GetScore()
     {
-        return score;
+        return _score;
     }
 
     public void IncreaseScoreBy(int amount)
     {
-        score += amount;
+        _score += amount;
     }
 
     public Objectives GetObjective()
     {
-        return objective;
+        return _objective;
     }
 
     public void CompleteObjective()
     {
-        objectiveComplete = true;
+        _objectiveComplete = true;
     }
 
     public bool GetObjectiveComplete()
     {
-        return objectiveComplete;
+        return _objectiveComplete;
     }
 
     public void EndGame()

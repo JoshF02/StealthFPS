@@ -6,13 +6,12 @@ using UnityEngine;
 [Serializable]
 public class BaseState
 {
-    public string name;
-
+    public string Name { get; private set; }
     protected StateMachine stateMachine;
     
     public BaseState(string name, StateMachine stateMachine)
     {
-        this.name = name;
+        this.Name = name;
         this.stateMachine = stateMachine;
     }
 

@@ -171,5 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f944f9a3470879f45b7af1fd912492cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decoyPrefab: {fileID: 903286676498243145, guid: 58a27355f1e45c14085c74c99a5786dd,
+  _decoyPrefab: {fileID: 903286676498243145, guid: 58a27355f1e45c14085c74c99a5786dd,
     type: 3}

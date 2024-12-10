@@ -120,4 +120,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58f4c34a347a41478313e5ae57f57cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: Steal Item
+  _interactText: Steal Item

@@ -171,5 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b29fde3ec57bc140abcdcb424c7d2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleporterPrefab: {fileID: 5162907843787960895, guid: 6a2dc4c79bfe36048a3d91659b86c3e6,
+  _teleporterPrefab: {fileID: 5162907843787960895, guid: 6a2dc4c79bfe36048a3d91659b86c3e6,
     type: 3}

@@ -6,20 +6,20 @@ using UnityEngine;
 
 public class EnemyDetection : MonoBehaviour
 {
-    private readonly float viewDistance = 10.0f;
-    private readonly float viewAngle = 32;
     public bool DetectingSuspicious { get; private set; } = false;
     public bool DetectingDecoy { get; private set; } = false;
     public Transform SuspicousObject { get; private set; } = null;
     public Transform Decoy { get; private set; } = null;
-    private Transform playerTransform = null;
-    [SerializeField] private LayerMask detectionLayerMask;
+    [SerializeField] private LayerMask _detectionLayerMask;
+    private readonly float _viewDistance = 10.0f;
+    private readonly float _viewAngle = 32;
+    private Transform _playerTransform = null;
 
     public bool GetDetectingPlayer()
     {
-        if (playerTransform == null || playerTransform.GetComponent<PlayerActions>().InvisPerkActive) return false;
-        else if (Vector3.Distance(transform.position, playerTransform.position) < 3.0f) return true; // will need to edit value / remove / keep in mind, can detect through thin objs
-        else return CanSeeObject(playerTransform);
+        if (_playerTransform == null || _playerTransform.GetComponent<PlayerActions>().InvisPerkActive) return false;
+        else if (Vector3.Distance(transform.position, _playerTransform.position) < 3.0f) return true; // edit value / remove / keep in mind, can detect through thin objs
+        else return CanSeeObject(_playerTransform);
     }
     public bool GetDetectingTarget(bool targetIsPlayer)
     {
@@ -55,63 +55,61 @@ public class EnemyDetection : MonoBehaviour
         //GetComponent<BoxCollider>().size *= 0.5f;
     } 
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // only objects with rigidbodies set off triggers
     {                                   
-        if (other.name == "Player") {
-            playerTransform = other.transform;
+        if (other.name == "Player")
+        {
+            _playerTransform = other.transform;
         }
-        else if (other.tag == "Suspicious" && !DetectingSuspicious) {
+        else if ((other.tag == "Suspicious") && !DetectingSuspicious)
+        {
             DetectingSuspicious = CanSeeObject(other.transform);
             if (DetectingSuspicious) SuspicousObject = other.transform;
         }
-        else if (other.tag == "Decoy") {
-            //Debug.Log("detecting decoy");
-            DetectingDecoy = CanSeeObject(other.transform);
-            if (DetectingDecoy) Decoy = other.transform;
-        }
-        // only objects with rigidbodies set off triggers
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        if (other.name == "Player") {
-            playerTransform = other.transform;
-        }
-        else if (other.tag == "Suspicious" && !DetectingSuspicious) {
-            DetectingSuspicious = CanSeeObject(other.transform);
-            if (DetectingSuspicious) SuspicousObject = other.transform;
-        }
-        else if (other.tag == "Decoy") {
-            //Debug.Log("detecting decoy");
+        else if (other.tag == "Decoy")
+        {
             DetectingDecoy = CanSeeObject(other.transform);
             if (DetectingDecoy) Decoy = other.transform;
         }
     }
 
-    bool CanSeeObject(Transform obj)
+    private void OnTriggerStay(Collider other)
     {
-        if (Vector3.Distance(transform.position, obj.position) > viewDistance) return false;    // out of range
+        if (other.name == "Player")
+        {
+            _playerTransform = other.transform;
+        }
+        else if ((other.tag == "Suspicious") && !DetectingSuspicious)
+        {
+            DetectingSuspicious = CanSeeObject(other.transform);
+            if (DetectingSuspicious) SuspicousObject = other.transform;
+        }
+        else if (other.tag == "Decoy")
+        {
+            DetectingDecoy = CanSeeObject(other.transform);
+            if (DetectingDecoy) Decoy = other.transform;
+        }
+    }
+
+    private bool CanSeeObject(Transform obj)    // could change to detection meter filling up, rather than instant
+    {
+        if (Vector3.Distance(transform.position, obj.position) > _viewDistance) return false;    // out of range
 
         Vector3 dir = (obj.position - transform.position).normalized;
         float angle = Vector3.Angle(transform.forward, dir);
 
-        if (angle > viewAngle) return false; // out of view cone
+        if (angle > _viewAngle) return false; // out of view cone
 
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, dir, out hit, viewDistance, detectionLayerMask)) {   // obstructed
-            if (hit.collider.gameObject.name != obj.name) {
-                return false;
-            }
-        }
+        if (Physics.Raycast(transform.position, dir, out RaycastHit hit, _viewDistance, _detectionLayerMask) && (hit.collider.gameObject.name != obj.name)) return false; // obstructed
 
-        return true;    // could change to detection meter filling up, rather than instant
+        return true;    
     }
 
-    void OnDrawGizmos() // shows viewcone lines
+    private void OnDrawGizmos() // shows viewcone lines
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, transform.parent.forward * viewDistance);
-        Gizmos.DrawRay(transform.position, Quaternion.Euler(0, viewAngle, 0) * transform.parent.forward * viewDistance);
-        Gizmos.DrawRay(transform.position, Quaternion.Euler(0, -viewAngle, 0) * transform.parent.forward * viewDistance);
+        Gizmos.DrawRay(transform.position, transform.parent.forward * _viewDistance);
+        Gizmos.DrawRay(transform.position, Quaternion.Euler(0, _viewAngle, 0) * transform.parent.forward * _viewDistance);
+        Gizmos.DrawRay(transform.position, Quaternion.Euler(0, -_viewAngle, 0) * transform.parent.forward * _viewDistance);
     }
 }

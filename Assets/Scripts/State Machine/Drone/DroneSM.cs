@@ -21,10 +21,10 @@ public class DroneSM : StateMachine
     public Vector3[] Waypoints { get; private set; }
     public GameObject HuntAlertObj { get; private set; }
     public GameObject CombatAlertObj { get; private set; }
-    [HideInInspector] public int patrolIndex = 0;
-    [HideInInspector] public bool beenShot = false;
-    [HideInInspector] public float reenterCombatFromAlertCooldown = 0f;
-    [SerializeField] public LayerMask laserLayerMask;
+    [HideInInspector] public int PatrolIndex = 0;
+    [HideInInspector] public bool BeenShot = false;
+    [HideInInspector] public float ReenterCombatFromAlertCooldown = 0f;
+    [field:SerializeField] public LayerMask LaserLayerMask { get; private set; }
 
     private void Awake()
     {
@@ -52,7 +52,8 @@ public class DroneSM : StateMachine
 
         Waypoints = new Vector3[PatrolPath.childCount];
 
-        for (int i = 0; i < Waypoints.Length; i++) {
+        for (int i = 0; i < Waypoints.Length; i++)
+        {
             Waypoints[i] = PatrolPath.GetChild(i).position;
         }
     }
@@ -62,13 +63,14 @@ public class DroneSM : StateMachine
         return PatrolState;
     }
 
-    void OnDrawGizmos() // visualises patrol path
+    private void OnDrawGizmos() // visualises patrol path
     {
         PatrolPath = transform.parent.GetChild(1);
         Vector3 startPos = PatrolPath.GetChild(0).position;
         Vector3 prevPos = startPos;
 
-        foreach(Transform waypoint in PatrolPath) {
+        foreach(Transform waypoint in PatrolPath)
+        {
             Gizmos.DrawSphere(waypoint.position, 0.3f);
             Gizmos.DrawLine(prevPos, waypoint.position);
             prevPos = waypoint.position;

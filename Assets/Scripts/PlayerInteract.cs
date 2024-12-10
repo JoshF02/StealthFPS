@@ -5,50 +5,54 @@ using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour
 {
-    [SerializeField] private PlayerInteractUI playerInteractUI;
-    [SerializeField] private LayerMask layerMask;
-    private float range = 2.5f;
-    private Camera fpsCam;
-    private Slider slider;
-    private float timer = 0f;
+    [SerializeField] private PlayerInteractUI _playerInteractUI;
+    [SerializeField] private LayerMask _layerMask;
+    private float _range = 2.5f;
+    private Camera _fpsCam;
+    private Slider _slider;
+    private float _timer = 0f;
 
     private void Awake()
     {
-        slider = playerInteractUI.gameObject.GetComponent<Slider>();
-        fpsCam = transform.GetChild(0).GetComponent<Camera>();
+        _slider = _playerInteractUI.gameObject.GetComponent<Slider>();
+        _fpsCam = transform.GetChild(0).GetComponent<Camera>();
     }
 
     private void Update()
     {
         IInteractible interactible = GetInteractibleObjectRaycast();   // if interactible found, show UI popup
-        if(interactible != null) {
-            playerInteractUI.Show(interactible);
+        if(interactible != null)
+        {
+            _playerInteractUI.Show(interactible);
     
-            if (Input.GetKey(KeyCode.E)) {  // if E held, fill the circular slider up over time
-                timer += Time.deltaTime;
+            if (Input.GetKey(KeyCode.E))    // if E held, fill the circular slider up over time
+            {  
+                _timer += Time.deltaTime;
 
-                if(timer >= 1.0f) { // when slider full, trigger interaction
-                    timer = 0f;
+                if(_timer >= 1.0f)  // when slider full, trigger interaction
+                { 
+                    _timer = 0f;
                     interactible.Interact(transform);  
                 }
-            } else {
-                if(timer >= 0f) timer -= Time.deltaTime;
             }
+            else if(_timer >= 0f) _timer -= Time.deltaTime;
 
-        } else {
-            playerInteractUI.Hide();
-            timer = 0f;
+        }
+        else
+        {
+            _playerInteractUI.Hide();
+            _timer = 0f;
         }
 
-        slider.value = timer;
+        _slider.value = _timer;
     }
 
     private IInteractible GetInteractibleObjectRaycast()
     {
         IInteractible target = null;
 
-        RaycastHit hit;
-        if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, layerMask)) {
+        if (Physics.Raycast(_fpsCam.transform.position, _fpsCam.transform.forward, out RaycastHit hit, _range, _layerMask))
+        {
             target = hit.transform.GetComponent<IInteractible>();
         }
 

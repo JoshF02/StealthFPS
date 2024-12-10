@@ -15,7 +15,8 @@ public class DroneBaseState : BaseState
     {
         base.UpdateLogic();
 
-        if (sm.Hearing.DisableForSecs > 0) {
+        if (sm.Hearing.DisableForSecs > 0)
+        {
             Debug.Log("disabling for " + sm.Hearing.DisableForSecs);
             sm.ChangeState(sm.DisabledState);
         }

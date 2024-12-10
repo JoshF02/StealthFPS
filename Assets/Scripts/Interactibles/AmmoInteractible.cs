@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class AmmoInteractible : MonoBehaviour, IInteractible
 {
-    [SerializeField] private string interactText;
-    [SerializeField] private Transform weaponHolder;
-    /*private WeaponSwitching weaponSwitching;
-
-    private void Awake()
-    {
-        weaponSwitching = weaponHolder.GetComponent<WeaponSwitching>();
-    }*/
+    [SerializeField] private string _interactText;
+    [SerializeField] private Transform _weaponHolder;
 
     public void Interact(Transform interactorTransform)
     {
-        //Gun heldWeapon = weaponHolder.GetChild(weaponSwitching.selectedWeapon).GetComponent<Gun>();   // refill only current weapon
-        //heldWeapon.RefillAmmo();
-
-        foreach (Transform weapon in weaponHolder) {        // refill all weapons
+        foreach (Transform weapon in _weaponHolder) // refill all weapons
+        {        
             Gun weaponGun = weapon.GetComponent<Gun>();
             weaponGun.RefillAmmo();
         }
@@ -28,7 +20,7 @@ public class AmmoInteractible : MonoBehaviour, IInteractible
 
     public string GetInteractText()
     {
-        return interactText;
+        return _interactText;
     }
 
     public Transform GetTransform()

@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    public BaseState currentState;
+    public BaseState CurrentState { get; private set; }
 
-    void Start()
+    private void Start()
     {
-        currentState = GetInitialState();
-        if (currentState != null)
-            currentState.Enter();
+        CurrentState = GetInitialState();
+        CurrentState?.Enter();
     }
 
-    void Update()
+    private void Update()
     {
-        if (currentState != null)
-            currentState.UpdateLogic();
+        CurrentState?.UpdateLogic();
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
-        if (currentState != null)
-            currentState.UpdatePhysics();
+        CurrentState?.UpdatePhysics();
     }
 
     protected virtual BaseState GetInitialState()
@@ -32,9 +29,8 @@ public class StateMachine : MonoBehaviour
 
     public void ChangeState(BaseState newState)
     {
-        currentState.Exit();
-
-        currentState = newState;
+        CurrentState.Exit();
+        CurrentState = newState;
         newState.Enter();
     }
 }
