@@ -913,6 +913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f624c5f890613e4384ac16ef62b6912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 50
   _bodyPrefab: {fileID: 3018759091780828105, guid: 3e792f5221f15fd4d9153fa217364da7,
     type: 3}
 --- !u!114 &4419239046441496597

@@ -76,6 +76,7 @@
      <Compile Include="Assets\Scripts\PlayerSound.cs" />
      <Compile Include="Assets\Scripts\Throwables\Throwable.cs" />
      <Compile Include="Assets\Scripts\Throwables\ThrowingKnife.cs" />
+     <Compile Include="Assets\Scripts\Interactibles\DoorInteractible.cs" />
      <Compile Include="Assets\Scripts\WeaponSwitching.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

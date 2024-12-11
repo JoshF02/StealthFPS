@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    private float _health;
+    [SerializeField] private float _health;
 
     public virtual void TakeDamage(float amount)
     {

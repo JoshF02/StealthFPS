@@ -7,6 +7,7 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] private PlayerInteractUI _playerInteractUI;
     [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private float _interactionLength = 1.0f;
     private float _range = 2.5f;
     private Camera _fpsCam;
     private Slider _slider;
@@ -29,7 +30,7 @@ public class PlayerInteract : MonoBehaviour
             {  
                 _timer += Time.deltaTime;
 
-                if(_timer >= 1.0f)  // when slider full, trigger interaction
+                if(_timer >= _interactionLength)  // when slider full, trigger interaction
                 { 
                     _timer = 0f;
                     interactible.Interact(transform);  
@@ -44,7 +45,7 @@ public class PlayerInteract : MonoBehaviour
             _timer = 0f;
         }
 
-        _slider.value = _timer;
+        _slider.value = _timer / _interactionLength;
     }
 
     private IInteractible GetInteractibleObjectRaycast()

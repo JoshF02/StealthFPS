@@ -767,7 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionLayerMask:
+  _detectionLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &188171953
@@ -1341,7 +1341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6beeef3d1070ffd47932a04de56fa75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  _health: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,15 +1834,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ddab46d258d9ee48a056018a3ad6398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stealItem: {fileID: 3072072546669155594, guid: d919a6b9f3232134893f3661e4168372,
+  _stealItem: {fileID: 3072072546669155594, guid: d919a6b9f3232134893f3661e4168372,
     type: 3}
-  silentStep: 0
-  faster: 0
-  noBodies: 0
-  invisWhenStill: 0
-  slot1: 0
-  slot2: 0
-  perkNum: 0
+  _perkNum: 0
+  <SilentStep>k__BackingField: 0
+  <Faster>k__BackingField: 0
+  <NoBodies>k__BackingField: 0
+  <InvisWhenStill>k__BackingField: 0
+  <ThrowableSlot1>k__BackingField: 0
+  <ThrowableSlot2>k__BackingField: 0
 --- !u!4 &478324494
 Transform:
   m_ObjectHideFlags: 0
@@ -1870,7 +1870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f2d2c47962ce84ea6d3c8316948107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundGO: {fileID: 4747399652365190479, guid: b41a0c04df8df07458ae5e45ee9aee7f, type: 3}
+  _soundGO: {fileID: 4747399652365190479, guid: b41a0c04df8df07458ae5e45ee9aee7f,
+    type: 3}
 --- !u!1 &489005864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2351,7 +2352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6beeef3d1070ffd47932a04de56fa75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 250
+  _health: 0
 --- !u!1 &600961607
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,10 +3154,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adcbb2ac3c09d7f4abdfe0bff032abba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: Pick up Weapon
-  weaponHolder: {fileID: 2094757926131301373}
-  sniper: {fileID: 8408476401740267316, guid: a8b977531197a234cbed355f6a4f0105, type: 3}
-  shotgun: {fileID: 6605725741888279694, guid: 78ca5497eea46844d973a4dca964802d, type: 3}
+  _interactText: Pick Up Weapon
+  _weaponHolder: {fileID: 2094757926131301373}
+  _sniper: {fileID: 8408476401740267316, guid: a8b977531197a234cbed355f6a4f0105, type: 3}
+  _shotgun: {fileID: 6605725741888279694, guid: 78ca5497eea46844d973a4dca964802d,
+    type: 3}
 --- !u!65 &933330281
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3689,7 +3691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6beeef3d1070ffd47932a04de56fa75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  _health: 0
 --- !u!1 &1143781279
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,7 +3838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6beeef3d1070ffd47932a04de56fa75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  _health: 0
 --- !u!1 &1212825268
 GameObject:
   m_ObjectHideFlags: 0
@@ -5199,7 +5201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6beeef3d1070ffd47932a04de56fa75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3000
+  _health: 0
 --- !u!1 &1614585831
 GameObject:
   m_ObjectHideFlags: 0
@@ -5469,7 +5471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6beeef3d1070ffd47932a04de56fa75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 250
+  _health: 0
 --- !u!4 &1708172139
 Transform:
   m_ObjectHideFlags: 0
@@ -5675,7 +5677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4004a9e5443740244bfb37709a33fed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: Interact with Sphere
+  _interactText: Interact With Sphere
 --- !u!135 &1723526478
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6034,8 +6036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75634a758be58d49a8ea9d188759131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: Refill Ammo
-  weaponHolder: {fileID: 2094757926131301373}
+  _interactText: Refill Ammo
+  _weaponHolder: {fileID: 0}
 --- !u!135 &1821942803
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6403,24 +6405,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b628d312496ee4f883ebb0ed94ae59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  _damage: 100
   range: 10
-  fireRate: 2
-  ammoText: {fileID: 0}
-  carriedAmmoText: {fileID: 0}
-  hitmarker: {fileID: 975711019}
-  fpsCam: {fileID: 0}
-  maxAmmo: 8
-  currentAmmo: 0
-  maxCarriedAmmo: 40
-  currentCarriedAmmo: 0
-  reloadTime: 4
-  shootingLayerMask:
+  _fireRate: 15
+  _maxAmmo: 8
+  _currentAmmo: 0
+  _maxCarriedAmmo: 40
+  _currentCarriedAmmo: 0
+  _reloadTime: 4
+  _shootingLayerMask:
     serializedVersion: 2
     m_Bits: 193
-  partToRecoil: {fileID: 17207654}
-  partRecoilSpeed: 20
-  partRecoilDistance: 0.015
+  _partToRecoil: {fileID: 17207654}
+  _partRecoilSpeed: 20
+  _partRecoilDistance: 0.015
 --- !u!64 &1975817606
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6677,8 +6675,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19123698f86e1774e863e8a6770a0c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  containerGameObject: {fileID: 91783393}
-  interactTextMeshProUGUI: {fileID: 1553693755}
+  _containerGameObject: {fileID: 91783393}
+  _interactTextMeshProUGUI: {fileID: 1553693755}
 --- !u!114 &2025730835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6764,7 +6762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.5, y: -10}
   m_SizeDelta: {x: 1600, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2048522950
@@ -6911,24 +6909,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b628d312496ee4f883ebb0ed94ae59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10000
+  _damage: 10000
   range: 100
-  fireRate: 1
-  ammoText: {fileID: 0}
-  carriedAmmoText: {fileID: 0}
-  hitmarker: {fileID: 975711019}
-  fpsCam: {fileID: 0}
-  maxAmmo: 6
-  currentAmmo: 0
-  maxCarriedAmmo: 25
-  currentCarriedAmmo: 0
-  reloadTime: 5
-  shootingLayerMask:
+  _fireRate: 1
+  _maxAmmo: 6
+  _currentAmmo: 0
+  _maxCarriedAmmo: 25
+  _currentCarriedAmmo: 0
+  _reloadTime: 5
+  _shootingLayerMask:
     serializedVersion: 2
     m_Bits: 193
-  partToRecoil: {fileID: 716001174}
-  partRecoilSpeed: 20
-  partRecoilDistance: 0.1
+  _partToRecoil: {fileID: 716001174}
+  _partRecoilSpeed: 20
+  _partRecoilDistance: 0.1
 --- !u!64 &2071398757
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9956,7 +9950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3d9ee41bdf18347aed49909984acbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionLayerMask:
+  _detectionLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!1 &137011205413091163
@@ -10106,24 +10100,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b628d312496ee4f883ebb0ed94ae59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  _damage: 10
   range: 20
-  fireRate: 15
-  ammoText: {fileID: 1804248831}
-  carriedAmmoText: {fileID: 1640499327}
-  hitmarker: {fileID: 975711019}
-  fpsCam: {fileID: 571215709239320310}
-  maxAmmo: 1600
-  currentAmmo: 0
-  maxCarriedAmmo: 64
-  currentCarriedAmmo: 0
-  reloadTime: 2
-  shootingLayerMask:
+  _fireRate: 15
+  _maxAmmo: 1600
+  _currentAmmo: 0
+  _maxCarriedAmmo: 64
+  _currentCarriedAmmo: 0
+  _reloadTime: 2
+  _shootingLayerMask:
     serializedVersion: 2
     m_Bits: 193
-  partToRecoil: {fileID: 1313661036}
-  partRecoilSpeed: 20
-  partRecoilDistance: 0.04
+  _partToRecoil: {fileID: 1313661036}
+  _partRecoilSpeed: 20
+  _partRecoilDistance: 0.07
 --- !u!64 &1705538078346518837
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10252,10 +10242,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0572ccd86979cd74bbafe8f96f17848d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInteractUI: {fileID: 2025730834}
-  layerMask:
+  _playerInteractUI: {fileID: 2025730834}
+  _layerMask:
     serializedVersion: 2
     m_Bits: 64
+  _interactionLength: 0.5
+--- !u!1001 &2886943625878440705
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4188889257153132927, guid: 6e90cd01794da4f428c1d8e5be0c2658,
+        type: 3}
+      propertyPath: _playerActions
+      value: 
+      objectReference: {fileID: 3223343919105071394}
+    - target: {fileID: 6671090581508012218, guid: 6e90cd01794da4f428c1d8e5be0c2658,
+        type: 3}
+      propertyPath: m_Name
+      value: Wallpiece_Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690628004685197857, guid: 6e90cd01794da4f428c1d8e5be0c2658,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690628004685197857, guid: 6e90cd01794da4f428c1d8e5be0c2658,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000023841858
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690628004685197857, guid: 6e90cd01794da4f428c1d8e5be0c2658,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690628004685197857, guid: 6e90cd01794da4f428c1d8e5be0c2658,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690628004685197857, guid: 6e90cd01794da4f428c1d8e5be0c2658,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690628004685197857, guid: 6e90cd01794da4f428c1d8e5be0c2658,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690628004685197857, guid: 6e90cd01794da4f428c1d8e5be0c2658,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690628004685197857, guid: 6e90cd01794da4f428c1d8e5be0c2658,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690628004685197857, guid: 6e90cd01794da4f428c1d8e5be0c2658,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690628004685197857, guid: 6e90cd01794da4f428c1d8e5be0c2658,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e90cd01794da4f428c1d8e5be0c2658, type: 3}
 --- !u!114 &3223343919105071394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10268,33 +10332,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5643f6d205a905e4e81031a97b56fa6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  mouseSensitivity: 4
-  forceMagnitude: 0.1
-  scrollWheelRotation: 0
-  isAiming: 0
-  step: 0.01
-  maxStepDistance: 0.06
-  rotationStep: 4
-  maxRotationStep: 5
-  smooth: 10
-  speedCurve: 0
-  travelLimit: {x: 0.0025, y: 0.0025, z: 0.0025}
-  bobLimit: {x: 0.001, y: 0.001, z: 0.001}
-  bobExaggeration: 6
-  multiplier: {x: 0.2, y: 0.2, z: 0.2}
-  smokeGrenade: {fileID: 975181926835640718, guid: 846e865e9c22bab40b7f0a4cfec9d717,
+  IsAiming: 0
+  _mouseSensitivity: 4
+  _forceMagnitude: 0.1
+  _step: 0.01
+  _maxStepDistance: 0.06
+  _rotationStep: 4
+  _maxRotationStep: 5
+  _smooth: 10
+  _speedCurve: 0
+  _travelLimit: {x: 0.0025, y: 0.0025, z: 0.0025}
+  _bobLimit: {x: 0.001, y: 0.001, z: 0.001}
+  _bobExaggeration: 6
+  _multiplier: {x: 0.2, y: 0.2, z: 0.2}
+  _smokeGrenade: {fileID: 975181926835640718, guid: 846e865e9c22bab40b7f0a4cfec9d717,
     type: 3}
-  stone: {fileID: 6093005845324860779, guid: 36eec0743c3f0ff43ab9d5e3e62139ba, type: 3}
-  throwingKnife: {fileID: 7579824525254459245, guid: 61806b7d1b4ec55458a7ceba01a1aaaa,
+  _stone: {fileID: 6093005845324860779, guid: 36eec0743c3f0ff43ab9d5e3e62139ba, type: 3}
+  _throwingKnife: {fileID: 7579824525254459245, guid: 61806b7d1b4ec55458a7ceba01a1aaaa,
     type: 3}
-  empGrenade: {fileID: 2525097625948369028, guid: 1f3cfb87db171c448824085602360e5e,
+  _empGrenade: {fileID: 2525097625948369028, guid: 1f3cfb87db171c448824085602360e5e,
     type: 3}
-  decoyThrowable: {fileID: 7955065385057335299, guid: 4248d3499fe77c945b1e2b843130dfb0,
+  _decoyThrowable: {fileID: 7955065385057335299, guid: 4248d3499fe77c945b1e2b843130dfb0,
     type: 3}
-  teleporterThrowable: {fileID: 815534138503465637, guid: 159e8e83976b9b3469bdad7072437090,
+  _teleporterThrowable: {fileID: 815534138503465637, guid: 159e8e83976b9b3469bdad7072437090,
     type: 3}
-  InvisPerkActive: 0
+  <InvisPerkActive>k__BackingField: 0
 --- !u!4 &3284249640971020198
 Transform:
   m_ObjectHideFlags: 0
@@ -10459,14 +10521,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9b2d5ddc84e3a48b8ad5be2f7f91c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 3396703521628755975}
-  scopeOverlay: {fileID: 2048522948}
-  crosshair: {fileID: 2050562961}
-  weaponCamera: {fileID: 137011205413091163}
-  mainCamera: {fileID: 571215709239320310}
-  scopedFOV: 15
-  sniperNumID: 0
-  selectedWeapon: 0
+  _animator: {fileID: 3396703521628755975}
+  _scopeOverlay: {fileID: 2048522948}
+  _crosshair: {fileID: 2050562961}
+  _weaponCamera: {fileID: 137011205413091163}
+  _mainCamera: {fileID: 571215709239320310}
+  _scopedFOV: 15
+  _sniperNumID: 1
+  _selectedWeapon: 0
 --- !u!4 &5414693334204713867
 Transform:
   m_ObjectHideFlags: 0
@@ -11160,7 +11222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f87277d4d8cd8d41a9d80948f759bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedWeapon: 0
+  <SelectedWeapon>k__BackingField: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -11181,3 +11243,4 @@ SceneRoots:
   - {fileID: 1901862261}
   - {fileID: 1966039326}
   - {fileID: 1542093708}
+  - {fileID: 2886943625878440705}
